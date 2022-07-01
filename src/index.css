@@ -1,13 +1,207 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Bebas Neue', cursive;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.maingamewindow {
+    width: auto;
+    height: auto;
+}
+
+#gamescreen {
+    width: 800px;
+    height: 600px;
+    background-image: url(../public/img/bgcity.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-color: black;
+    position: absolute;
+}
+
+#ptsede {
+    position: absolute;
+    top: 54px;
+    left: 65px;
+}
+
+#ptsede:hover {
+    position: absolute;
+    top: 54px;
+    left: 65px;
+    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+}
+
+#businesscenter {
+    position: absolute;
+    top: 146px;
+    left: 45px;
+}
+
+#businesscenter:hover {
+    position: absolute;
+    top: 146px;
+    left: 45px;
+    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+}
+
+#apartment {
+    position: absolute;
+    top: 86px;
+    left: 238px;
+}
+
+#apartment:hover {
+    position: absolute;
+    top: 86px;
+    left: 238px;
+    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+}
+
+#hospital {
+    position: absolute;
+    top: 207px;
+    left: 187px;
+}
+
+#hospital:hover {
+    position: absolute;
+    top: 207px;
+    left: 187px;
+    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+}
+
+#university {
+    position: absolute;
+    top: 320px;
+    left: 65px;
+}
+
+#university:hover {
+    position: absolute;
+    top: 320px;
+    left: 65px;
+    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+}
+
+#mayorhall {
+    position: absolute;
+    top: 179px;
+    left: 360px;
+}
+
+#mayorhall:hover {
+    position: absolute;
+    top: 179px;
+    left: 360px;
+    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+}
+
+#kindamall {
+    position: absolute;
+    top: 24px;
+    left: 361px;
+}
+
+#hotel {
+    position: absolute;
+    top: 86px;
+    left: 527px;
+}
+
+#hotel:hover {
+    position: absolute;
+    top: 86px;
+    left: 527px;
+    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+}
+
+#convenience {
+    position: absolute;
+    top: 74px;
+    left: 572px;
+}
+
+#bank {
+    position: absolute;
+    top: 179px;
+    left: 632px;
+}
+
+#bank:hover {
+    position: absolute;
+    top: 179px;
+    left: 632px;
+    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+}
+
+#shoppingmall {
+    position: absolute;
+    top: 250px;
+    left: 509px;
+}
+
+#shoppingmall:hover {
+    position: absolute;
+    top: 250px;
+    left: 509px;
+    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+}
+
+#sports {
+    position: absolute;
+    top: 330px;
+    left: 357px;
+}
+
+#sports:hover {
+    position: absolute;
+    top: 330px;
+    left: 357px;
+    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+}
+
+#convenience2 {
+    position: absolute;
+    top: 333px;
+    left: 438px;
+}
+
+#supermarket {
+    position: absolute;
+    top: 390px;
+    left: 200px;
+}
+
+#camara {
+    position: absolute;
+    top: 400px;
+    left: 250px;
+}
+
+#camara:hover {
+    position: absolute;
+    top: 400px;
+    left: 250px;
+    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+}
+
+#overlay {
+    width: 800px;
+    height: 600px;
+    background-image: url(../public/img/overlay.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+}
+
+#topbar {
+    pointer-events: none;
+    width: 600px;
+    height: auto;
+    position: absolute;
+    left: 100px;
 }
