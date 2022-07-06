@@ -1,20 +1,20 @@
-import { Link } from 'react-router-dom';
-import styles from './components/mainmenu.module.css'
+import { useContext } from "react";
+import { Navigate } from "react-router-dom";
+import { AuthContext } from "./components/AuthContex";
+import "./login.css";
 
-function MainMenu() {
+const Login = () => {
+  
+  const { signInWithGoogle, signed, signInEmail } = useContext(AuthContext);
 
-    return (
+  async function loginGoogle() {
+    await signInWithGoogle();
+  }
+  if (!signed) {
+    return signInEmail();
+  } else {
+    return <Navigate to="/MainGameWindow" />;
+  }
+};
 
-        <div className={styles.MainMenu}>
-
-            <p>Menu Principal</p>
-            <Link to="/MainGameWindow">
-                <button>
-                    Jogar
-                </button>
-            </Link>
-        </div>
-    )
-}
-
-export default MainMenu
+export default Login;

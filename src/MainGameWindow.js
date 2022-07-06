@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Topbar from './components/Topbar';
-
+import UserData from './components/UserData';
 function MainGameWindow() {
 
   return (
     <div className="MainGameWindow">
       <div id="gamescreen">
-
         <Link to="/Ptsede">
           <img src='../img/ptsede.png' alt="" id="ptsede" />
         </Link>
@@ -46,7 +45,8 @@ function MainGameWindow() {
           <img src='../img/camara.png' alt="" id="camara" />
         </Link>
         <img src='../img/overlay.png' alt="" id="overlay" />
-          <Topbar />
+        <Topbar />
+        <UserData />
       </div>
     </div>
   )

@@ -5,16 +5,16 @@ import MoneyContext from './TopBarContext';
 
 function Ptsede() {
 
-    const { money, setMoney } = useContext(MoneyContext)
+    // const { money, setMoney } = useContext(MoneyContext)
 
     return (
         <div className={styles.InsideP} >
 
             <p>Sede do Partido</p>
-            <p>{money}</p>
+            {/* <p>{money}</p>
             <button onClick={() => setMoney(parseInt(money) + 2000)}>
                 Receber Orcamento
-            </button><br></br>
+            </button><br></br> */}
             <Link to="/MainGameWindow">
                 <button>
                     Voltar
