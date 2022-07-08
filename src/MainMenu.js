@@ -4,8 +4,9 @@ import { AuthContext } from "./components/AuthContex";
 import "./login.css";
 
 const Login = () => {
-  
+
   const { signInWithGoogle, signed, signInEmail } = useContext(AuthContext);
+
 
   async function loginGoogle() {
     await signInWithGoogle();
@@ -13,6 +14,7 @@ const Login = () => {
   if (!signed) {
     return signInEmail();
   } else {
+
     return <Navigate to="/MainGameWindow" />;
   }
 };

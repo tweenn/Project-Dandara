@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Topbar from './components/Topbar';
-import UserData from './components/UserData';
+import { motion } from "framer-motion";
+
 function MainGameWindow() {
 
   return (
-    <div className="MainGameWindow">
+    <motion.div className="MainGameWindow"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div id="gamescreen">
         <Link to="/Ptsede">
           <img src='../img/ptsede.png' alt="" id="ptsede" />
@@ -46,9 +51,8 @@ function MainGameWindow() {
         </Link>
         <img src='../img/overlay.png' alt="" id="overlay" />
         <Topbar />
-        <UserData />
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -11,9 +11,8 @@ export const AuthContext = createContext({})
 export const AuthProvider = ({ children }) => {
     const auth = getAuth(app);
     const [user, setUser] = useState(null);
-    const [name, setName] = useState();
     const [error, setError] = useState(false);
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState(null);
     const [password, setPassword] = useState("");
 
     useEffect(() => {
@@ -94,9 +93,10 @@ export const AuthProvider = ({ children }) => {
     return (
         <AuthContext.Provider
 
-            value={{ signInWithGoogle, signed: !!user, user, signOut, auth, name, handleLogin, signedEmail: !!user, signInEmail }}>
+            value={{ signInWithGoogle, signed: !!user, user, signOut, auth, handleLogin, signedEmail: !!user, signInEmail }}>
             {children}
 
         </AuthContext.Provider>
     )
 };
+

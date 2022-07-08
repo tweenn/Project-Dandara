@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import styles from './topbar.module.css';
-import MoneyContext from './TopBarContext';
+import { UserContext } from "./UserDataContext";
 
 function Topbar() {
 
-    const { money } = useContext(MoneyContext)
+    const { money } = useContext(UserContext)
+
 
     return (
         <div>
