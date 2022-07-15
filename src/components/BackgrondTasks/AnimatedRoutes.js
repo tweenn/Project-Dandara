@@ -1,18 +1,18 @@
 import { React } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Ptsede from "./Ptsede";
-import MainGameWindow from '../MainGameWindow';
-import BusinessCenter from './BusinessCenter';
-import Apartment from './Apartment';
-import Bank from './Bank';
-import Camara from './Camara';
-import Hospital from './Hospital';
-import Hotel from './Hotel';
-import MayorHall from './MayorHall';
-import ShoppingMall from './ShoppingMall';
-import Sports from './Sports';
-import University from './University';
-import MainMenu from '../MainMenu';
+import Ptsede from "../Places/Ptsede";
+import MainGameWindow from '../../MainGameWindow'
+import BusinessCenter from '../Places/BusinessCenter';
+import Apartment from '../Places/Apartment';
+import Bank from '../Places/Bank';
+import Camara from '../Places/Camara';
+import Hospital from '../Places/Hospital';
+import Hotel from '../Places/Hotel';
+import MayorHall from '../Places/MayorHall';
+import ShoppingMall from '../Places/ShoppingMall';
+import Sports from '../Places/Sports';
+import University from '../Places/University';
+import MainMenu from '../../MainMenu';
 import { PrivateRoutes } from './PrivateIndex';
 
 

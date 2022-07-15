@@ -1,8 +1,8 @@
-import styles from './insideplace.module.css'
+import styles from '../Styles/insideplace.module.css'
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-function BusinessCenter() {
+function MayorHall() {
 
     return (
 
@@ -11,7 +11,7 @@ function BusinessCenter() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <p>Business Center</p>
+            <p>Prefeitura</p>
             <Link to="/MainGameWindow">
                 <button>
                     Voltar
@@ -23,4 +23,4 @@ function BusinessCenter() {
     );
 }
 
-export default BusinessCenter
+export default MayorHall

@@ -1,8 +1,8 @@
-import styles from './insideplace.module.css'
+import styles from '../Styles/insideplace.module.css'
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-function Sports() {
+function Hotel() {
 
     return (
 
@@ -11,7 +11,7 @@ function Sports() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <p>Centro de Esportes</p>
+            <p>Hotel</p>
             <Link to="/MainGameWindow">
                 <button>
                     Voltar
@@ -23,4 +23,4 @@ function Sports() {
     );
 }
 
-export default Sports
+export default Hotel

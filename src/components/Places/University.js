@@ -1,8 +1,8 @@
-import styles from './insideplace.module.css'
+import styles from '../Styles/insideplace.module.css'
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-function Hospital() {
+function University() {
 
     return (
 
@@ -11,7 +11,7 @@ function Hospital() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <p>Hospital</p>
+            <p>Universidade Federal</p>
             <Link to="/MainGameWindow">
                 <button>
                     Voltar
@@ -23,4 +23,4 @@ function Hospital() {
     );
 }
 
-export default Hospital
+export default University

@@ -1,8 +1,8 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import React from "react";
-import { AuthProvider } from './components/AuthContex';
-import AnimatedRoutes from './components/AnimatedRoutes'
-import { UserDataContext } from './components/UserDataContext';
+import { AuthProvider } from './components/BackgrondTasks/AuthContex';
+import AnimatedRoutes from './components/BackgrondTasks/AnimatedRoutes'
+import { UserDataContext } from './components/BackgrondTasks/UserDataContext';
 
 
 function App() {

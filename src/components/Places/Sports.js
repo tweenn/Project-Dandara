@@ -1,8 +1,8 @@
-import styles from './insideplace.module.css'
+import styles from '../Styles/insideplace.module.css'
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-function MayorHall() {
+function Sports() {
 
     return (
 
@@ -11,7 +11,7 @@ function MayorHall() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <p>Prefeitura</p>
+            <p>Centro de Esportes</p>
             <Link to="/MainGameWindow">
                 <button>
                     Voltar
@@ -23,4 +23,4 @@ function MayorHall() {
     );
 }
 
-export default MayorHall
+export default Sports

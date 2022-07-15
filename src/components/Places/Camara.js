@@ -1,8 +1,8 @@
-import styles from './insideplace.module.css'
+import styles from '../Styles/insideplace.module.css'
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-function ShoppingMall() {
+function Camara() {
 
     return (
 
@@ -11,7 +11,7 @@ function ShoppingMall() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <p>Shopping Center</p>
+            <p>Câmara dos Deputados</p>
             <Link to="/MainGameWindow">
                 <button>
                     Voltar
@@ -23,4 +23,4 @@ function ShoppingMall() {
     );
 }
 
-export default ShoppingMall
+export default Camara

@@ -1,8 +1,9 @@
-import styles from './insideplace.module.css'
+import styles from '../Styles/insideplace.module.css'
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-function Camara() {
+
+function Apartment() {
 
     return (
 
@@ -11,7 +12,7 @@ function Camara() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <p>Câmara dos Deputados</p>
+            <p>Seu Apartamento</p>
             <Link to="/MainGameWindow">
                 <button>
                     Voltar
@@ -23,4 +24,4 @@ function Camara() {
     );
 }
 
-export default Camara
+export default Apartment

@@ -1,22 +1,19 @@
 import { useContext } from "react";
-import { Navigate } from "react-router-dom";
-import { AuthContext } from "./components/AuthContex";
-import "./login.css";
+import { AuthContext } from "./components/BackgrondTasks/AuthContex";
+import { UpdateUserId } from "./components/BackgrondTasks/PreGameInitialization";
+import "./components/Styles/login.css";
 
 const Login = () => {
 
-  const { signInWithGoogle, signed, signInEmail } = useContext(AuthContext);
+  const { signed, signInEmail } = useContext(AuthContext);
 
-
-  async function loginGoogle() {
-    await signInWithGoogle();
-  }
   if (!signed) {
     return signInEmail();
-  } else {
 
-    return <Navigate to="/MainGameWindow" />;
+  } else {
+    return <UpdateUserId />
   }
+
 };
 
 export default Login;

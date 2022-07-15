@@ -1,9 +1,9 @@
-import { db } from "../firebase-config";
-import styles from './insideplace.module.css'
+import { db } from "../BackgrondTasks/firebase-config";
+import styles from '../Styles/insideplace.module.css'
 import React, { useContext } from "react";
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
-import { UserContext } from './UserDataContext';
+import { UserContext } from '../BackgrondTasks/UserDataContext';
 import { doc, updateDoc } from 'firebase/firestore';
 
 
@@ -28,10 +28,10 @@ function Ptsede() {
             exit={{ opacity: 0 }}
         >
 
-            <p>Sede do Partido</p>
-            <p>Orcamento: {money}</p>
+            <h1>Sede do Partido</h1>
+            <p>Orçamento: {money}</p>
             <button onClick={() => { updateMoney(); setMoney(newMoney); }}>
-                Receber Orcamento
+                Receber Orçamento
             </button><br />
             <Link to="/MainGameWindow">
                 <button>

@@ -1,8 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
-import { app } from "../firebase-config";
+import { app } from "./firebase-config";
 import { Navigate } from "react-router-dom";
-
 
 const provider = new GoogleAuthProvider();
 
@@ -39,7 +38,7 @@ export const AuthProvider = ({ children }) => {
                 setUser(user)
                 sessionStorage.setItem("@AuthFirebase:token", token);
                 sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
-                // navigate("/MainGameWindow");
+
             })
             .catch((error) => {
                 setError(true);
@@ -47,15 +46,17 @@ export const AuthProvider = ({ children }) => {
     }
 
     const signInEmail = () => {
-        return <div className="login">
-            <form onSubmit={handleLogin}>
-                <input type="email" placeholder="Digite o seu e-mail." onChange={e => setEmail(e.target.value)} />
-                <input type="password" placeholder="Digite a sua senha." onChange={e => setPassword(e.target.value)} />
-                <button type="submit">Entrar</button>
-                {error && <span>E-mail/Senha inválidos.</span>}
-            </form>
-            <br />
-            <button onClick={() => signInWithGoogle()}>Entrar com o Google</button>
+        return <div className="loginWrapper">
+            <div className="login">
+                <form onSubmit={handleLogin}>
+                    <input type="email" placeholder="Digite o seu e-mail." onChange={e => setEmail(e.target.value)} />
+                    <input type="password" placeholder="Digite a sua senha." onChange={e => setPassword(e.target.value)} />
+                    <button type="submit">Entrar</button>
+                    {error && <span className="spanLogin">E-mail/Senha inválidos.</span>}
+                </form>
+                <br />
+                <button onClick={() => signInWithGoogle()}>Entrar com o Google</button>
+            </div>
         </div>
     };
 
@@ -71,6 +72,7 @@ export const AuthProvider = ({ children }) => {
                 setUser(user)
                 sessionStorage.setItem("@AuthFirebase:token", token);
                 sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
+
 
             }).catch((error) => {
 

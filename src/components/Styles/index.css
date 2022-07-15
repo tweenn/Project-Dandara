@@ -1,21 +1,19 @@
 body {
+    height: 600px;
     padding: 0%;
     margin: 0%;
-    font-family: 'Bebas Neue', cursive;
-}
-
-.maingamewindow {
-    width: auto;
-    height: auto;
+    font-family: 'Fredoka One', cursive;
+    background-image: linear-gradient(rgb(255, 84, 79), rgb(250, 209, 38));
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #gamescreen {
     width: 800px;
     height: 600px;
-    background-image: url(../public/img/bgcity.png);
+    background-image: url(../../../public/img/bgcity.png);
     background-size: auto;
     background-repeat: no-repeat;
-    background-color: black;
     position: absolute;
 }
 
@@ -29,7 +27,7 @@ body {
     position: absolute;
     top: 54px;
     left: 65px;
-    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #businesscenter {
@@ -42,7 +40,7 @@ body {
     position: absolute;
     top: 146px;
     left: 45px;
-    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #apartment {
@@ -55,7 +53,7 @@ body {
     position: absolute;
     top: 86px;
     left: 238px;
-    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #hospital {
@@ -68,7 +66,7 @@ body {
     position: absolute;
     top: 207px;
     left: 187px;
-    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #university {
@@ -81,7 +79,7 @@ body {
     position: absolute;
     top: 320px;
     left: 65px;
-    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #mayorhall {
@@ -94,7 +92,7 @@ body {
     position: absolute;
     top: 179px;
     left: 360px;
-    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #kindamall {
@@ -113,7 +111,7 @@ body {
     position: absolute;
     top: 86px;
     left: 527px;
-    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #convenience {
@@ -132,7 +130,7 @@ body {
     position: absolute;
     top: 179px;
     left: 632px;
-    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #shoppingmall {
@@ -145,7 +143,7 @@ body {
     position: absolute;
     top: 250px;
     left: 509px;
-    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #sports {
@@ -158,7 +156,7 @@ body {
     position: absolute;
     top: 330px;
     left: 357px;
-    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #convenience2 {
@@ -183,13 +181,13 @@ body {
     position: absolute;
     top: 400px;
     left: 250px;
-    filter: drop-shadow(0 0 1rem rgb(255, 130, 130)) brightness(110%);
+    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #overlay {
     width: 800px;
     height: 600px;
-    background-image: url(../public/img/overlay.png);
+    background-image: url(../../../public/img/overlay.png);
     background-size: auto;
     background-repeat: no-repeat;
     position: absolute;
@@ -204,4 +202,29 @@ body {
     height: auto;
     position: absolute;
     left: 100px;
+}
+
+#speechbubble {
+    width: 600px;
+    height: auto;
+    position: absolute;
+    left: 175px;
+    top: 400px;
+}
+
+.speechbubbletext {
+    width: 410px;
+    height: 190px;
+    position: absolute;
+    left: 190px;
+    top: 390px;
+    color: white;
+}
+
+.Typewriter {
+    width: 410px;
+    height: 190px;
+    position: absolute;
+    top: 20px;
+    color: white;
 }
