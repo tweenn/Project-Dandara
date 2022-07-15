@@ -13,6 +13,8 @@ import ShoppingMall from '../Places/ShoppingMall';
 import Sports from '../Places/Sports';
 import University from '../Places/University';
 import MainMenu from '../../MainMenu';
+import AccountCreation from '../BackgrondTasks/AccountCreation';
+import MainMenuRegistered from '../../MainMenuRegistered';
 import { PrivateRoutes } from './PrivateIndex';
 
 
@@ -21,6 +23,8 @@ export default function AnimatedRoutes() {
     return (
         <Routes location={location} key={location.pathname}>
             <Route path="/" element={<MainMenu />} />
+            <Route path="/MainMenuRegistered" element={<MainMenuRegistered />} />
+            <Route path="/AccountCreation" element={<AccountCreation />} />
             <Route path="/MainGameWindow" element={<PrivateRoutes />}>
                 <Route path="/MainGameWindow" element={<MainGameWindow />} />
             </Route>

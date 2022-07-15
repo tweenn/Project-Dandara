@@ -14,7 +14,7 @@ export const UserDataInit = () => {
     if (id) {
         if (id === user.email) {
             const userRef = doc(db, 'users', id)
-            console.log('usuario ja existe, atualizando dados para base local');
+            //usuario ja existe, atualizando dados para base local
             onSnapshot(userRef, (doc) => {
                 setMoney(doc.data().money);
                 setPlayerName(doc.data().name);

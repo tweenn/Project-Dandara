@@ -14,7 +14,7 @@ export const SetNewPlayerName = () => {
 
     const createUserHandler = async (e) => {
         e.preventDefault();
-        console.log('usuario nao existe, criando entrada no firebase');
+        //usuario nao existe, criando entrada no firebase
         await setDoc(doc(db, "users", user.email), {
             name: playerName,
             money: Number('1000'),
@@ -26,7 +26,8 @@ export const SetNewPlayerName = () => {
     }
     return <div className="login">
         <form onSubmit={createUserHandler}>
-            <input type="text" placeholder="Digite seu nome:" onChange={event => setPlayerName(event.target.value)} />
+            <h2>Escolha um nome para seu personagem:</h2>
+            <input type="text" placeholder="Nome:" onChange={event => setPlayerName(event.target.value)} required />
             <button type="submit">Jogar!</button>
         </form>
     </div>

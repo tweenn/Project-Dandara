@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "./firebase-config";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 
 const provider = new GoogleAuthProvider();
 
@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState(false);
     const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState("");
+    const [password, setPassword] = useState('');
 
     useEffect(() => {
         const loadStorageAuth = () => {
@@ -54,8 +54,25 @@ export const AuthProvider = ({ children }) => {
                     <button type="submit">Entrar</button>
                     {error && <span className="spanLogin">E-mail/Senha inválidos.</span>}
                 </form>
+                <Link to="/AccountCreation">
+                    <button>Criar nova conta</button>
+                </Link>
                 <br />
                 <button onClick={() => signInWithGoogle()}>Entrar com o Google</button>
+            </div>
+        </div>
+    };
+
+    const signInEmail2 = () => {
+        return <div className="loginWrapper">
+            <div className="login">
+                <h2>Conta criada com sucesso! Favor efetuar o login:</h2>
+                <form onSubmit={handleLogin}>
+                    <input type="email" placeholder="Digite o seu e-mail." onChange={e => setEmail(e.target.value)} />
+                    <input type="password" placeholder="Digite a sua senha." onChange={e => setPassword(e.target.value)} />
+                    <button type="submit">Entrar</button>
+                    {error && <span className="spanLogin">E-mail/Senha inválidos.</span>}
+                </form>
             </div>
         </div>
     };
@@ -95,7 +112,7 @@ export const AuthProvider = ({ children }) => {
     return (
         <AuthContext.Provider
 
-            value={{ signInWithGoogle, signed: !!user, user, signOut, auth, handleLogin, signedEmail: !!user, signInEmail }}>
+            value={{ signInWithGoogle, signed: !!user, user, signOut, auth, handleLogin, signedEmail: !!user, signInEmail, signInEmail2, setEmail, setPassword, password, email }}>
             {children}
 
         </AuthContext.Provider>
