@@ -8,7 +8,7 @@ import "../Styles/login.css";
 
 export const SetNewPlayerName = () => {
     const { user } = useContext(AuthContext);
-    const { setMoney, setPlayerName, playerName, setId } = useContext(UserContext);
+    const { setMoney, setPlayerName, playerName, setId, setCurrentQuest } = useContext(UserContext);
 
     const navigate = useNavigate();
 
@@ -17,11 +17,14 @@ export const SetNewPlayerName = () => {
         //usuario nao existe, criando entrada no firebase
         await setDoc(doc(db, "users", user.email), {
             name: playerName,
-            money: Number('1000'),
-            email: user.email
+            money: 1000,
+            email: user.email,
+            quest: 1,
+            disabledSede: false,
         });
         setId(user.email);
-        setMoney(Number('1000'));
+        setMoney(1000);
+        setCurrentQuest(1);
         navigate('/MainGameWindow');
     }
     return <div className="login">

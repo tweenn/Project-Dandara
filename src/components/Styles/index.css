@@ -198,10 +198,11 @@ body {
 
 #topbar {
     pointer-events: none;
-    width: 600px;
+    width: 700px;
     height: auto;
     position: absolute;
-    left: 100px;
+    left: 20px;
+    top: 3px;
 }
 
 #speechbubble {
@@ -210,6 +211,16 @@ body {
     position: absolute;
     left: 175px;
     top: 400px;
+    cursor: pointer;
+}
+
+#bubblePortrait {
+    width: 110px;
+    height: auto;
+    position: absolute;
+    left: 643px;
+    top: 409px;
+    cursor: pointer;
 }
 
 .speechbubbletext {
@@ -219,6 +230,7 @@ body {
     left: 190px;
     top: 390px;
     color: white;
+    cursor: pointer;
 }
 
 .Typewriter {

@@ -2,8 +2,7 @@ import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { app } from "./firebase-config";
 import { useContext, useState } from 'react';
 import { AuthContext } from './AuthContex';
-import { UserContext } from './UserDataContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import "../Styles/login.css";
 
 export default function SetNewPlayerName() {
@@ -24,7 +23,6 @@ export default function SetNewPlayerName() {
                 setError(true);
             });
 
-
     }
     return <div className="login">
         <form onSubmit={createUserHandler}>
@@ -33,5 +31,11 @@ export default function SetNewPlayerName() {
             <button type="submit">Registrar</button>
             {error && <span className="spanLogin">E-mail já existente e/ou E-mail/Senha inválidos.</span>}
         </form>
+        <br />
+        <Link to="/MainGameWindow">
+            <button>
+                Voltar
+            </button>
+        </Link>
     </div>
 }

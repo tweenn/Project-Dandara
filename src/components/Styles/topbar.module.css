@@ -1,7 +1,15 @@
 .moneybar {
     color: white;
     position: absolute;
-    top: -5px;
-    left: 450px;
-    font-size: larger;
+    top: -4px;
+    left: 466px;
+    font-size: large;
+}
+
+.countdownbar {
+    color: white;
+    position: absolute;
+    top: -4px;
+    left: 52px;
+    font-size: large;
 }

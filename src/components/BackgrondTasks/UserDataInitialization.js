@@ -9,7 +9,7 @@ import MainGameWindow from '../../MainGameWindow'
 export const UserDataInit = () => {
 
     const { user } = useContext(AuthContext);
-    const { id, setMoney, setPlayerName } = useContext(UserContext);
+    const { id, setMoney, setPlayerName, setCurrentQuest } = useContext(UserContext);
 
     if (id) {
         if (id === user.email) {
@@ -18,6 +18,7 @@ export const UserDataInit = () => {
             onSnapshot(userRef, (doc) => {
                 setMoney(doc.data().money);
                 setPlayerName(doc.data().name);
+                setCurrentQuest(doc.data().quest);
             })
         }
         return <MainGameWindow />

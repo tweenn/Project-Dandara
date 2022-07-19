@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Topbar from './components/BackgrondTasks/Topbar';
 import { motion } from "framer-motion";
-import SpeechBubbleContext from "./components/BackgrondTasks/SpeechBubble";
+import { SpeechBubbleContext } from "./components/BackgrondTasks/SpeechBubble";
 
 function MainGameWindow() {
 

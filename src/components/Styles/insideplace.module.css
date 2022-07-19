@@ -25,3 +25,8 @@ h2 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     letter-spacing: 2px;
 }
+
+p2 {
+    color: rgb(255, 166, 0);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
