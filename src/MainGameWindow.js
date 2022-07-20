@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { SpeechBubbleContext } from "./components/BackgrondTasks/SpeechBubble";
 
 function MainGameWindow() {
-
   return (
     <div id="GameWrapper">
       <motion.div className="MainGameWindow"

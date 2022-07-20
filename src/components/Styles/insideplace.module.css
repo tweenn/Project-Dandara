@@ -14,6 +14,41 @@
     flex-direction: column;
 }
 
+.wrapper {
+    width: 600px;
+    height: 550px;
+    padding: 0%;
+    margin: 0%;
+    color: black;
+    opacity: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.grouped {
+    padding: 0%;
+    margin: 0%;
+    color: black;
+    opacity: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.headergrouped {
+    padding: 0%;
+    margin: 0%;
+    color: black;
+    opacity: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    display: inline;
+}
+
 h1 {
     color: rgb(255, 166, 0);
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -26,7 +61,31 @@ h2 {
     letter-spacing: 2px;
 }
 
+h4 {
+    color: rgb(255, 255, 255);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    letter-spacing: 2px;
+    display: inline;
+}
+
+.countdown {
+    color: rgb(255, 166, 0);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
 p2 {
     color: rgb(255, 166, 0);
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.Campanha {
+    width: 640px;
+    height: auto;
+    padding: 0%;
+    margin: 0%;
+    color: black;
+    opacity: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 }

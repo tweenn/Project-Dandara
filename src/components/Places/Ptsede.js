@@ -6,16 +6,18 @@ import { motion } from "framer-motion";
 import { UserContext } from '../BackgrondTasks/UserDataContext';
 import { doc, updateDoc, onSnapshot } from 'firebase/firestore';
 import { SpeechBubbleContext } from "../BackgrondTasks/SpeechBubble";
+import Countdown from 'react-countdown';
 
 
 function Ptsede() {
 
-    const { money, setMoney, id, currentQuest, setCurrentQuest } = useContext(UserContext)
+    const { money, setMoney, id, currentQuest, setCurrentQuest, respect } = useContext(UserContext)
     const [disable, setDisable] = useState(false);
+    const [countdownTimer, setCountdownTimer] = useState('');
 
     const Ref = doc(db, 'users', id)
 
-    let newMoney = money + 1000
+    let newMoney = money + (1000 * respect)
 
     const updateMoney = async (id, money) => {
         await updateDoc(Ref, {
@@ -29,8 +31,36 @@ function Ptsede() {
         })
     };
 
+    const reenableButton = async (id, disabledSede) => {
+        setDisable(false);
+        await updateDoc(Ref, {
+            disabledSede: false
+        })
+    };
+
+    const updateSedeCountdown = async (id, sedeCountdown) => {
+        await updateDoc(Ref, {
+            sedeCountdown: Date.now() + 86400000
+        })
+    };
+
+    const ShowCountdown = () => {
+        return (
+            <Countdown Countdown date={countdownTimer} onComplete={reenableButton} daysInHours={true} className={styles.countdown} />
+        )
+    }
+
+    const checkCountDown = () => {
+        if (countdownTimer) {
+            if (Date.now() >= countdownTimer) {
+                reenableButton();
+            }
+        }
+    }
+
     onSnapshot(Ref, (doc) => {
         setDisable(doc.data().disabledSede);
+        setCountdownTimer(doc.data().sedeCountdown);
     })
 
     const updateQuest = async (id, quest) => {
@@ -43,6 +73,7 @@ function Ptsede() {
     }
     useEffect(() => {
         updateQuest();
+        checkCountDown();
     });
 
     return (
@@ -51,17 +82,49 @@ function Ptsede() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-
-            <h1>Sede do Partido</h1>
-            <p>Seu Orçamento: {money}</p>
-            <button disabled={disable} onClick={() => { updateDisabledSede(); updateMoney(); setMoney(newMoney); setDisable(true); }}>
-                Receber Orçamento
-            </button><br />
-            <Link to="/MainGameWindow">
-                <button>
-                    Voltar
-                </button>
-            </Link>
+            <div className={styles.wrapper}>
+                <h1>Sede do Partido</h1>
+                <div className={styles.headergrouped}>
+                    <h4>Orçamento total: {money}</h4><br />
+                    <h4>Nível de respeito: {respect}</h4><br />
+                    <h4>Orçamento diário: {1000 * respect}</h4><br />
+                </div>
+                <div className={styles.grouped}>
+                    <button disabled={disable} onClick={() => { updateDisabledSede(); updateSedeCountdown(); updateMoney(); setMoney(newMoney); setDisable(true); setCountdownTimer(Date.now() + 86400000) }}>
+                        Receber Orçamento
+                    </button><ShowCountdown /><br />
+                </div>
+                <h2>Criar Campanha Publicitária:</h2>
+                <div className={styles.Campanha}>
+                    <div>
+                        <button>
+                            Outdoors
+                        </button>
+                        <button>
+                            Jornais e Revistas
+                        </button>
+                    </div>
+                    <div>
+                        <button>
+                            Rádio
+                        </button>
+                        <button>
+                            Redes Sociais
+                        </button>
+                    </div>
+                    <div>
+                        <button>
+                            Televisão
+                        </button>
+                    </div>
+                </div>
+                <br />
+                <Link to="/MainGameWindow">
+                    <button>
+                        Voltar
+                    </button>
+                </Link>
+            </div>
             <SpeechBubbleContext />
         </motion.div>
     )

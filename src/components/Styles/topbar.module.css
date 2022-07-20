@@ -1,15 +1,31 @@
 .moneybar {
     color: white;
     position: absolute;
-    top: -4px;
-    left: 466px;
+    top: -3px;
+    left: 460px;
     font-size: large;
 }
 
 .countdownbar {
     color: white;
     position: absolute;
-    top: -4px;
+    top: -3px;
     left: 52px;
+    font-size: large;
+}
+
+.followersbar {
+    color: white;
+    position: absolute;
+    top: -3px;
+    left: 242px;
+    font-size: large;
+}
+
+.respectbar {
+    color: white;
+    position: absolute;
+    top: -3px;
+    left: 372px;
     font-size: large;
 }
