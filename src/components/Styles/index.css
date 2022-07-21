@@ -228,15 +228,89 @@ body {
     height: 190px;
     position: absolute;
     left: 190px;
-    top: 390px;
+    top: 410px;
     color: white;
     cursor: pointer;
 }
 
-.Typewriter {
-    width: 410px;
-    height: 190px;
+.overlaypages {
+    width: 650px;
+    height: 490px;
+    background-color: rgba(0, 0, 0, 0.90);
+    background-size: cover;
     position: absolute;
+    top: 56px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.alignright {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px;
+}
+
+.atributeslist {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.points {
+    position: absolute;
+    left: 300px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.campaignResults {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campaignResultsAtributes {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rating {
+    position: absolute;
+    left: 242px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.rating2 {
+    position: absolute;
+    left: 437px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grade {
+    position: absolute;
+    height: 50px;
+    font-size: 70px;
     top: 20px;
     color: white;
+}
+
+.gradeTitle {
+    position: absolute;
+    top: 30px;
 }

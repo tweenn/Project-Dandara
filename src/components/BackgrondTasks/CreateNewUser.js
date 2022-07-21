@@ -8,7 +8,7 @@ import "../Styles/login.css";
 
 export const SetNewPlayerName = () => {
     const { user } = useContext(AuthContext);
-    const { setMoney, setPlayerName, playerName, setId, setCurrentQuest, setFollowers, setRespect } = useContext(UserContext);
+    const { setMoney, setPlayerName, playerName, setId, setCurrentQuest, setFollowers, setRespect, setCampaignResult } = useContext(UserContext);
 
     const navigate = useNavigate();
 
@@ -22,8 +22,11 @@ export const SetNewPlayerName = () => {
             quest: 1,
             disabledSede: false,
             sedeCountdown: 0,
+            campaignCountdown: 0,
             followers: 100,
             respect: 1,
+            campaignResult: 0,
+            ActiveCampaign: null,
         });
         setId(user.email);
         setMoney(1000);

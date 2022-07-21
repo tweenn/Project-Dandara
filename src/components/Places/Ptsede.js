@@ -7,29 +7,25 @@ import { UserContext } from '../BackgrondTasks/UserDataContext';
 import { doc, updateDoc, onSnapshot } from 'firebase/firestore';
 import { SpeechBubbleContext } from "../BackgrondTasks/SpeechBubble";
 import Countdown from 'react-countdown';
+import { CampaignCreation } from "../BackgrondTasks/CampaignCreation";
+import { CampaignResults } from "../BackgrondTasks/CampaignResultsPage";
 
 
 function Ptsede() {
 
-    const { money, setMoney, id, currentQuest, setCurrentQuest, respect } = useContext(UserContext)
+    const { money, setMoney, id, currentQuest, setCurrentQuest, respect, setCampaign, setCampaignCost, activeCampaign, setActiveCampaign } = useContext(UserContext);
     const [disable, setDisable] = useState(false);
-    const [countdownTimer, setCountdownTimer] = useState('');
+    const [disableCampaign, setDisableCampaign] = useState(false);
+    const [countdownTimer, setCountdownTimer] = useState();
+    const [countdownTimerCampaign, setCountdownTimerCampaign] = useState(null);
 
     const Ref = doc(db, 'users', id)
 
     let newMoney = money + (1000 * respect)
 
-    const updateMoney = async (id, money) => {
-        await updateDoc(Ref, {
-            money: newMoney
-        })
-    };
-
-    const updateDisabledSede = async (id, disabledSede) => {
-        await updateDoc(Ref, {
-            disabledSede: true
-        })
-    };
+    const updateMoney = async (id, money) => await updateDoc(Ref, { money: newMoney })
+    const updateDisabledSede = async (id, disabledSede) => await updateDoc(Ref, { disabledSede: true })
+    const updateSedeCountdown = async (id, sedeCountdown) => await updateDoc(Ref, { sedeCountdown: (Date.now() + 86400000) })
 
     const reenableButton = async (id, disabledSede) => {
         setDisable(false);
@@ -38,17 +34,16 @@ function Ptsede() {
         })
     };
 
-    const updateSedeCountdown = async (id, sedeCountdown) => {
+    const reenableButtonCampaign = async (id, disabledCampaign) => {
+        setDisableCampaign(false);
         await updateDoc(Ref, {
-            sedeCountdown: Date.now() + 86400000
+            disabledCampaign: false
         })
     };
 
-    const ShowCountdown = () => {
-        return (
-            <Countdown Countdown date={countdownTimer} onComplete={reenableButton} daysInHours={true} className={styles.countdown} />
-        )
-    }
+
+    const ShowCountdown = () => <Countdown Countdown date={countdownTimer} onComplete={reenableButton} daysInHours={true} className={styles.countdown} />
+    const ShowCountdownCampaign = () => <Countdown Countdown date={countdownTimerCampaign} onComplete={reenableButtonCampaign} daysInHours={true} className={styles.countdown} />
 
     const checkCountDown = () => {
         if (countdownTimer) {
@@ -60,7 +55,10 @@ function Ptsede() {
 
     onSnapshot(Ref, (doc) => {
         setDisable(doc.data().disabledSede);
+        setDisableCampaign(doc.data().disabledCampaign);
         setCountdownTimer(doc.data().sedeCountdown);
+        setCountdownTimerCampaign(doc.data().campaignCountdown);
+        setActiveCampaign(doc.data().activeCampaign);
     })
 
     const updateQuest = async (id, quest) => {
@@ -71,6 +69,7 @@ function Ptsede() {
             setCurrentQuest(currentQuest + 1)
         }
     }
+
     useEffect(() => {
         updateQuest();
         checkCountDown();
@@ -97,27 +96,33 @@ function Ptsede() {
                 <h2>Criar Campanha Publicitária:</h2>
                 <div className={styles.Campanha}>
                     <div>
-                        <button>
+                        <button disabled={disableCampaign} onClick={() => { setCampaign('Outdoors'); setCampaignCost(1000); setDisableCampaign(true); }}>
                             Outdoors
                         </button>
-                        <button>
+                        <button disabled={disableCampaign} onClick={() => { setCampaign('Jornais e Revistas'); setCampaignCost(2000); setDisableCampaign(true); }}>
                             Jornais e Revistas
                         </button>
                     </div>
                     <div>
-                        <button>
-                            Rádio
+                        <button disabled={disableCampaign} onClick={() => { setCampaign('Internet'); setCampaignCost(4000); setDisableCampaign(true); }}>
+                            Internet
                         </button>
-                        <button>
+                        <button disabled={disableCampaign} onClick={() => { setCampaign('Redes Sociais'); setCampaignCost(5000); setDisableCampaign(true); }}>
                             Redes Sociais
                         </button>
                     </div>
                     <div>
-                        <button>
+                        <button disabled={disableCampaign} onClick={() => { setCampaign('Rádio'); setCampaignCost(10000); setDisableCampaign(true); }}>
+                            Rádio
+                        </button>
+                        <button disabled={disableCampaign} onClick={() => { setCampaign('Televisão'); setCampaignCost(50000); setDisableCampaign(true); }}>
                             Televisão
                         </button>
                     </div>
                 </div>
+
+                <ShowCountdownCampaign />
+
                 <br />
                 <Link to="/MainGameWindow">
                     <button>
@@ -126,6 +131,8 @@ function Ptsede() {
                 </Link>
             </div>
             <SpeechBubbleContext />
+            <CampaignCreation />
+            <CampaignResults />
         </motion.div>
     )
 }

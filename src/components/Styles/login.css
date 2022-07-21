@@ -39,6 +39,16 @@ button {
     letter-spacing: 1px;
 }
 
+.smallbutton {
+    background-image: url(../../../public/img/smallbutton.png);
+    width: 44px;
+}
+
+.smallbutton:disabled {
+    background-image: url(../../../public/img/smallbuttondisabled.png);
+    width: 44px;
+}
+
 button:disabled {
     width: 210px;
     height: 40px;

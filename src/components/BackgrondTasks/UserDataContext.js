@@ -11,11 +11,15 @@ export const UserDataContext = ({ children }) => {
     const [currentQuest, setCurrentQuest] = useState('');
     const [followers, setFollowers] = useState();
     const [respect, setRespect] = useState();
+    const [campaign, setCampaign] = useState('');
+    const [activeCampaign, setActiveCampaign] = useState('');
+    const [campaignCost, setCampaignCost] = useState('');
+    const [campaignResult, setCampaignResult] = useState(null);
 
     return (
         <UserContext.Provider
 
-            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect }}>
+            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect, campaign, setCampaign, campaignCost, setCampaignCost, campaignResult, setCampaignResult, activeCampaign, setActiveCampaign }}>
             {children}
 
         </UserContext.Provider>
