@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { db } from "./firebase-config";
 import { UserContext } from './UserDataContext';
 import { doc, updateDoc } from 'firebase/firestore';
@@ -6,27 +6,28 @@ import Typewriter from 'typewriter-effect';
 
 export const CampaignResults = () => {
 
-    const { activeCampaign, campaignResult, id, setActiveCampaign, ArtStars, TextStars, MusicStars, VideoStars, setArtStars, setTextStars, setMusicStars, setVideoStars, campaignStars } = useContext(UserContext);
-
-    const [gradeLetter, setGradeLetter] = useState();
+    const { activeCampaign, campaignResult, id, setActiveCampaign, ArtStars, TextStars, MusicStars, VideoStars, setArtStars, setTextStars, setMusicStars, setVideoStars, gradeLetter, tributeImportance, setTributeImportance, setGradeLetter } = useContext(UserContext);
 
     const Ref = doc(db, 'users', id)
 
     const UpdateActiveCampaign = async (id, activeCampaign) => await updateDoc(Ref, { activeCampaign: null })
+
 
     const resetStars = () => {
         setArtStars(null);
         setTextStars(null);
         setVideoStars(null);
         setMusicStars(null);
+        setTributeImportance(null);
+        setGradeLetter(null);
     }
 
-    if (activeCampaign && (ArtStars !== '-' || TextStars !== '-' || VideoStars !== '-' || MusicStars !== '-') && (ArtStars !== null || TextStars !== null || VideoStars !== null || MusicStars !== null)) {
-
+    if (activeCampaign && (ArtStars !== '-' || TextStars !== '-' || VideoStars !== '-' || MusicStars !== '-') && (ArtStars !== null || TextStars !== null || VideoStars !== null || MusicStars !== null) && (tributeImportance) && (setGradeLetter)) {
+        console.log(gradeLetter);
         return (
             <div className="overlaypages" >
                 <div>
-                    <h3>Resultado da sua Campanha para {activeCampaign}:</h3>
+                    <h3>Resultado da sua Campanha para </h3><h4>{activeCampaign}:</h4>
                 </div>
                 <h2 className="gradeTitle"><Typewriter options={{ delay: 10, cursor: null }}
                     onInit={(typewriter) => {
@@ -38,7 +39,7 @@ export const CampaignResults = () => {
                         onInit={(typewriter) => {
                             typewriter
                                 .pauseFor(8000)
-                                .typeString('D')
+                                .typeString(gradeLetter)
                                 .start();
                         }} /></h2><br /><br />
                 <div className="campaignResults">
@@ -57,7 +58,7 @@ export const CampaignResults = () => {
                             onInit={(typewriter) => {
                                 typewriter
                                     .pauseFor(500)
-                                    .typeString('MUITO ALTA')
+                                    .typeString(tributeImportance[0])
                                     .start();
                             }} /></h4>
                         <h5 className="rating2"><Typewriter options={{ delay: 10, cursor: null }}
@@ -80,7 +81,7 @@ export const CampaignResults = () => {
                             onInit={(typewriter) => {
                                 typewriter
                                     .pauseFor(2000)
-                                    .typeString('MUITO ALTA')
+                                    .typeString(tributeImportance[1])
                                     .start();
                             }} /></h4>
                         <h5 className="rating2"><Typewriter options={{ delay: 10, cursor: null }}
@@ -104,7 +105,7 @@ export const CampaignResults = () => {
                             onInit={(typewriter) => {
                                 typewriter
                                     .pauseFor(3500)
-                                    .typeString('N/A')
+                                    .typeString(tributeImportance[2])
                                     .start();
                             }} /></h4>
 
@@ -129,7 +130,7 @@ export const CampaignResults = () => {
                             onInit={(typewriter) => {
                                 typewriter
                                     .pauseFor(5000)
-                                    .typeString('N/A')
+                                    .typeString(tributeImportance[3])
                                     .start();
                             }} /></h4>
 
@@ -163,12 +164,99 @@ export const CampaignResults = () => {
 
 export const UpdateStars = () => {
 
-    const { campaignStars, setArtStars, setTextStars, setMusicStars, setVideoStars } = useContext(UserContext);
+    const { campaignStars, setArtStars, setTextStars, setMusicStars, setVideoStars, setGradeLetter, activeCampaign, setTributeImportance } = useContext(UserContext);
+
+    const setImportance = () => {
+        if (activeCampaign === "Outdoors") {
+            setTributeImportance(['MUITO ALTA', 'MUITO ALTA', 'N/A', 'N/A']);
+        }
+        if (activeCampaign === "Jornais e Revistas") {
+            setTributeImportance(['ALTA', 'MUITO ALTA', 'N/A', 'N/A']);
+        }
+        if (activeCampaign === "Internet") {
+            setTributeImportance(['ALTA', 'MUITO ALTA', 'BAIXA', 'BAIXA']);
+        }
+        if (activeCampaign === "Redes Sociais") {
+            setTributeImportance(['ALTA', 'BAIXA', 'MUITO ALTA', 'ALTA']);
+        }
+        if (activeCampaign === "Rádio") {
+            setTributeImportance(['N/A', 'MUITO ALTA', 'N/A', 'MUITO ALTA']);
+        }
+        if (activeCampaign === "Televisão") {
+            setTributeImportance(['ALTA', 'BAIXA', 'MUITO ALTA', 'ALTA']);
+        }
+    }
+
+    function calcGrade(w1, w2, w3, w4, parval) {
+        return Math.floor(((campaignStars[0] * w1) + (campaignStars[1] * w2) + (campaignStars[2] * w3) + (campaignStars[3] * w4) / parval) / ((w1 / 2) + (w2 / 2) + (w3 / 2) + (w4 / 2)))
+    }
+
+    const defineGrade = () => {
+        if (activeCampaign === "Outdoors") {
+            const actualGrade = calcGrade(2, 2, 0, 0, 2)
+            if (actualGrade >= 10) setGradeLetter('A+')
+            if (actualGrade === 9) setGradeLetter('A')
+            if (actualGrade === 8) setGradeLetter('B')
+            if (actualGrade === 7) setGradeLetter('C')
+            if (actualGrade === 6) setGradeLetter('D')
+            if (actualGrade <= 5) setGradeLetter('F')
+            console.log(actualGrade)
+        }
+        if (activeCampaign === "Jornais e Revistas") {
+            const actualGrade = calcGrade(2, 3, 0, 0, 2)
+            if (actualGrade >= 10) setGradeLetter('A+')
+            if (actualGrade === 9) setGradeLetter('A')
+            if (actualGrade === 8) setGradeLetter('B')
+            if (actualGrade === 7) setGradeLetter('C')
+            if (actualGrade === 6) setGradeLetter('D')
+            if (actualGrade <= 5) setGradeLetter('F')
+            console.log(actualGrade)
+        }
+        if (activeCampaign === "Internet") {
+            const actualGrade = calcGrade(2, 3, 1, 1, 4)
+            if (actualGrade >= 10) setGradeLetter('A+')
+            if (actualGrade === 9) setGradeLetter('A')
+            if (actualGrade === 8) setGradeLetter('B')
+            if (actualGrade === 7) setGradeLetter('C')
+            if (actualGrade === 6) setGradeLetter('D')
+            if (actualGrade <= 5) setGradeLetter('F')
+            console.log(actualGrade)
+        }
+        if (activeCampaign === "Redes Sociais") {
+            const actualGrade = calcGrade(2, 1, 3, 2, 4)
+            if (actualGrade >= 10) setGradeLetter('A+')
+            if (actualGrade === 9) setGradeLetter('A')
+            if (actualGrade === 8) setGradeLetter('B')
+            if (actualGrade === 7) setGradeLetter('C')
+            if (actualGrade === 6) setGradeLetter('D')
+            if (actualGrade <= 5) setGradeLetter('F')
+            console.log(actualGrade)
+        }
+        if (activeCampaign === "Rádio") {
+            const actualGrade = calcGrade(0, 3, 0, 3, 2)
+            if (actualGrade >= 10) setGradeLetter('A+')
+            if (actualGrade === 9) setGradeLetter('A')
+            if (actualGrade === 8) setGradeLetter('B')
+            if (actualGrade === 7) setGradeLetter('C')
+            if (actualGrade === 6) setGradeLetter('D')
+            if (actualGrade <= 5) setGradeLetter('F')
+            console.log(actualGrade)
+        }
+        if (activeCampaign === "Televisão") {
+            const actualGrade = calcGrade(2, 1, 4, 2, 4)
+            if (actualGrade >= 10) setGradeLetter('A+')
+            if (actualGrade === 9) setGradeLetter('A')
+            if (actualGrade === 8) setGradeLetter('B')
+            if (actualGrade === 7) setGradeLetter('C')
+            if (actualGrade === 6) setGradeLetter('D')
+            if (actualGrade <= 5) setGradeLetter('F')
+            console.log(actualGrade)
+        }
+    }
 
     const setStars = () => {
 
         if (campaignStars) {
-
             switch (campaignStars[0]) {
                 case 0: setArtStars('☆☆☆☆☆'); break;
                 case 1: setArtStars('★☆☆☆☆'); break;
@@ -177,6 +265,9 @@ export const UpdateStars = () => {
                 case 4: setArtStars('★★★★☆'); break;
                 case 5: setArtStars('★★★★★'); break;
                 default: setArtStars('-'); break;
+            }
+            if (campaignStars[0] > 5) {
+                setArtStars('★★★★★');
             }
             switch (campaignStars[1]) {
                 case 0: setTextStars('☆☆☆☆☆'); break;
@@ -187,6 +278,9 @@ export const UpdateStars = () => {
                 case 5: setTextStars('★★★★★'); break;
                 default: setTextStars('-'); break;
             }
+            if (campaignStars[1] > 5) {
+                setTextStars('★★★★★');
+            }
             switch (campaignStars[2]) {
                 case 0: setVideoStars('☆☆☆☆☆'); break;
                 case 1: setVideoStars('★☆☆☆☆'); break;
@@ -195,6 +289,9 @@ export const UpdateStars = () => {
                 case 4: setVideoStars('★★★★☆'); break;
                 case 5: setVideoStars('★★★★★'); break;
                 default: setVideoStars('-'); break;
+            }
+            if (campaignStars[2] > 5) {
+                setVideoStars('★★★★★');
             }
             switch (campaignStars[3]) {
                 case 0: setMusicStars('☆☆☆☆☆'); break;
@@ -205,10 +302,15 @@ export const UpdateStars = () => {
                 case 5: setMusicStars('★★★★★'); break;
                 default: setMusicStars('-'); break;
             }
+            if (campaignStars[3] > 5) {
+                setMusicStars('★★★★★');
+            }
         }
     }
 
     useEffect(() => {
         setStars();
+        setImportance();
+        defineGrade();
     }, [campaignStars]);
 }

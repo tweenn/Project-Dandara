@@ -20,11 +20,14 @@ export const UserDataContext = ({ children }) => {
     const [TextStars, setTextStars] = useState(null);
     const [MusicStars, setMusicStars] = useState(null);
     const [VideoStars, setVideoStars] = useState(null);
+    const [gradeLetter, setGradeLetter] = useState();
+    const [tributeImportance, setTributeImportance] = useState([]);
+
 
     return (
         <UserContext.Provider
 
-            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect, campaign, setCampaign, campaignCost, setCampaignCost, campaignResult, setCampaignResult, activeCampaign, setActiveCampaign, campaignStars, setCampaignStars, ArtStars, setArtStars, TextStars, setTextStars, MusicStars, setMusicStars, VideoStars, setVideoStars }}>
+            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect, campaign, setCampaign, campaignCost, setCampaignCost, campaignResult, setCampaignResult, activeCampaign, setActiveCampaign, campaignStars, setCampaignStars, ArtStars, setArtStars, TextStars, setTextStars, MusicStars, setMusicStars, VideoStars, setVideoStars, gradeLetter, setGradeLetter, tributeImportance, setTributeImportance }}>
             {children}
 
         </UserContext.Provider>

@@ -81,11 +81,8 @@ function Ptsede() {
     useEffect(() => {
         updateQuest();
         checkCountDown();
+        checkCountDownCampaign()
     });
-
-    useEffect(() => {
-        checkCountDownCampaign();
-    }, [countdownTimerCampaign]);
 
     return (
         <motion.div className={styles.InsideP}

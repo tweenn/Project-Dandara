@@ -66,6 +66,7 @@ h3 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     letter-spacing: 1px;
     margin-top: 3px;
+    display: inline;
 }
 
 h4 {
