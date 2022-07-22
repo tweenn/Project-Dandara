@@ -205,6 +205,19 @@ body {
     top: 2.2px;
 }
 
+#topbutton {
+    width: 55px;
+    height: 40px;
+    position: absolute;
+    left: 730px;
+    top: 8px;
+    background-image: url(../../../public/img/topbutton.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0%;
+    padding: 0%;
+}
+
 #speechbubble {
     width: 600px;
     height: auto;
@@ -234,9 +247,10 @@ body {
 }
 
 .overlaypages {
+    border-radius: 25px;
     width: 650px;
     height: 490px;
-    background-color: rgba(0, 0, 0, 0.90);
+    background-color: rgba(0, 0, 0, 0.85);
     background-size: cover;
     position: absolute;
     top: 56px;
@@ -313,4 +327,74 @@ body {
 .gradeTitle {
     position: absolute;
     top: 30px;
+}
+
+.topMenu {
+    border-radius: 25px;
+    width: 400px;
+    height: 400px;
+    background: none;
+    position: absolute;
+    top: -190px;
+    left: 572px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.topMenuButtons {
+    width: 210;
+    height: 38px;
+    padding: 0;
+    background-image: url(../../../public/img/greenbutton.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.ranking {
+    border-radius: 25px;
+    width: 650px;
+    height: 490px;
+    background-color: rgba(0, 0, 0, 0.85);
+    background-size: cover;
+    position: absolute;
+    top: 56px;
+    left: 70px;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: space-between;
+    flex-direction: column;
+}
+
+.rankingSections {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.centerRank {
+    position: absolute;
+    left: 300px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.centerRank2 {
+    position: absolute;
+    left: 455px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonVoltar {
+    position: absolute;
+    top: 440px;
 }

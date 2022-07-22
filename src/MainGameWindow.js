@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from 'react-router-dom';
 import Topbar from './components/BackgrondTasks/Topbar';
 import { motion } from "framer-motion";
 import { SpeechBubbleContext } from "./components/BackgrondTasks/SpeechBubble";
 import { RankPulling } from "./components/BackgrondTasks/RankPulling";
+import Ranking from "./components/BackgrondTasks/Ranking"
+import TopMenu from "./components/BackgrondTasks/TopMenu";
+import { UserContext } from "./components/BackgrondTasks/UserDataContext";
 
 function MainGameWindow() {
+
+  const { topMenuOpen, setTopMenuOpen } = useContext(UserContext)
+
   return (
     <div id="GameWrapper">
       <motion.div className="MainGameWindow"
@@ -13,6 +19,7 @@ function MainGameWindow() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
+
         <div id="gamescreen">
           <Link to="/Ptsede">
             <img src='../img/ptsede.png' alt="" id="ptsede" />
@@ -53,8 +60,13 @@ function MainGameWindow() {
           </Link>
           <img src='../img/overlay.png' alt="" id="overlay" />
           <Topbar />
+          <TopMenu />
           <SpeechBubbleContext />
           <RankPulling />
+          <Ranking />
+          <div>
+            <button id="topbutton" onClick={() => setTopMenuOpen(!topMenuOpen)} />
+          </div>
         </div>
       </motion.div>
     </div>

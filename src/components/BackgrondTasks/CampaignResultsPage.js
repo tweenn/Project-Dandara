@@ -3,6 +3,7 @@ import { db } from "./firebase-config";
 import { UserContext } from './UserDataContext';
 import { doc, updateDoc } from 'firebase/firestore';
 import Typewriter from 'typewriter-effect';
+import { motion } from "framer-motion";
 
 export const CampaignResults = () => {
 
@@ -25,7 +26,11 @@ export const CampaignResults = () => {
     if (activeCampaign && (ArtStars !== '-' || TextStars !== '-' || VideoStars !== '-' || MusicStars !== '-') && (ArtStars !== null || TextStars !== null || VideoStars !== null || MusicStars !== null) && (tributeImportance) && (setGradeLetter)) {
 
         return (
-            <div className="overlaypages" >
+            <motion.div className="overlaypages"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+            >
                 <div>
                     <h3>Resultado da sua Campanha para </h3><h4>{activeCampaign}:</h4>
                 </div>
@@ -157,7 +162,7 @@ export const CampaignResults = () => {
                         }} /></h2>
                 </div>
                 <button onClick={() => { UpdateActiveCampaign(); setActiveCampaign(null); resetStars(); setFollowers(followers + campaignResult); UpdateFollowers(); }}>Voltar</button>
-            </div >
+            </motion.div>
         )
     }
 }

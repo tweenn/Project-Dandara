@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { db } from "../BackgrondTasks/firebase-config";
 import { UserContext } from '../BackgrondTasks/UserDataContext';
 import { doc, updateDoc } from 'firebase/firestore';
+import { motion } from "framer-motion";
 
 export const CampaignCreation = () => {
 
@@ -39,7 +40,7 @@ export const CampaignCreation = () => {
     }
 
     const UpdateResult = async () => await updateDoc(Ref, { campaignResult: campaignResult })
-    const UpdateCountdown = async () => await updateDoc(Ref, { campaignCountdown: (Date.now() + 10000) })
+    const UpdateCountdown = async () => await updateDoc(Ref, { campaignCountdown: (Date.now() + 3600000) })
     const UpdateDisabledCampaign = async () => await updateDoc(Ref, { disabledCampaign: true })
     const UpdateActiveCampaign = async () => await updateDoc(Ref, { activeCampaign: campaign })
     const UpdateMoney = async () => await updateDoc(Ref, { money: money - campaignCost })
@@ -135,7 +136,11 @@ export const CampaignCreation = () => {
 
         return (
 
-            <div className="overlaypages" >
+            <motion.div className="overlaypages"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+            >
                 <div>
                     <h3>Criação de Campanha para {campaign}</h3>
                     <h4 className="alignright">Custo: {campaignCost}</h4>
@@ -198,7 +203,7 @@ export const CampaignCreation = () => {
                     <button onClick={() => { CampaignTotal() }} disabled={AvaliablePoints > 0 || campaignCost > money}>Confirmar Campanha</button>
                     <button onClick={() => { setCampaign(''); resetResources() }}>Cancelar Campanha</button>
                 </div>
-            </div>
+            </motion.div>
 
         );
     }

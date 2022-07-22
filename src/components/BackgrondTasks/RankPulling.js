@@ -7,7 +7,7 @@ const userCollectionRef = collection(db, "users");
 
 export const RankPulling = () => {
 
-    const { setRank, id, setTotalPlayers } = useContext(UserContext);
+    const { setRank, id, setTotalPlayers, setRankingAll } = useContext(UserContext);
 
     const q = query(userCollectionRef, orderBy('followers'), limit(100));
 
@@ -19,6 +19,7 @@ export const RankPulling = () => {
             const position = emails.indexOf(id)
             setRank(position + 1);
             setTotalPlayers(users.length);
+            setRankingAll(users);
         };
         getRank();
     }, []);
