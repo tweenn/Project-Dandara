@@ -15,11 +15,16 @@ export const UserDataContext = ({ children }) => {
     const [activeCampaign, setActiveCampaign] = useState('');
     const [campaignCost, setCampaignCost] = useState('');
     const [campaignResult, setCampaignResult] = useState(null);
+    const [campaignStars, setCampaignStars] = useState([]);
+    const [ArtStars, setArtStars] = useState(null);
+    const [TextStars, setTextStars] = useState(null);
+    const [MusicStars, setMusicStars] = useState(null);
+    const [VideoStars, setVideoStars] = useState(null);
 
     return (
         <UserContext.Provider
 
-            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect, campaign, setCampaign, campaignCost, setCampaignCost, campaignResult, setCampaignResult, activeCampaign, setActiveCampaign }}>
+            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect, campaign, setCampaign, campaignCost, setCampaignCost, campaignResult, setCampaignResult, activeCampaign, setActiveCampaign, campaignStars, setCampaignStars, ArtStars, setArtStars, TextStars, setTextStars, MusicStars, setMusicStars, VideoStars, setVideoStars }}>
             {children}
 
         </UserContext.Provider>

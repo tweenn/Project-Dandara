@@ -8,12 +8,12 @@ import { doc, updateDoc, onSnapshot } from 'firebase/firestore';
 import { SpeechBubbleContext } from "../BackgrondTasks/SpeechBubble";
 import Countdown from 'react-countdown';
 import { CampaignCreation } from "../BackgrondTasks/CampaignCreation";
-import { CampaignResults } from "../BackgrondTasks/CampaignResultsPage";
+import { CampaignResults, UpdateStars } from "../BackgrondTasks/CampaignResultsPage";
 
 
 function Ptsede() {
 
-    const { money, setMoney, id, currentQuest, setCurrentQuest, respect, setCampaign, setCampaignCost, activeCampaign, setActiveCampaign } = useContext(UserContext);
+    const { money, setMoney, id, currentQuest, setCurrentQuest, respect, setCampaign, setCampaignCost, setActiveCampaign } = useContext(UserContext);
     const [disable, setDisable] = useState(false);
     const [disableCampaign, setDisableCampaign] = useState(false);
     const [countdownTimer, setCountdownTimer] = useState();
@@ -53,6 +53,14 @@ function Ptsede() {
         }
     }
 
+    const checkCountDownCampaign = () => {
+        if (countdownTimerCampaign) {
+            if (Date.now() >= countdownTimerCampaign) {
+                reenableButtonCampaign();
+            }
+        }
+    }
+
     onSnapshot(Ref, (doc) => {
         setDisable(doc.data().disabledSede);
         setDisableCampaign(doc.data().disabledCampaign);
@@ -74,6 +82,10 @@ function Ptsede() {
         updateQuest();
         checkCountDown();
     });
+
+    useEffect(() => {
+        checkCountDownCampaign();
+    }, [countdownTimerCampaign]);
 
     return (
         <motion.div className={styles.InsideP}
@@ -133,6 +145,7 @@ function Ptsede() {
             <SpeechBubbleContext />
             <CampaignCreation />
             <CampaignResults />
+            <UpdateStars />
         </motion.div>
     )
 }

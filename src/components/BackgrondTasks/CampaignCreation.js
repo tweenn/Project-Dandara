@@ -5,7 +5,7 @@ import { doc, updateDoc } from 'firebase/firestore';
 
 export const CampaignCreation = () => {
 
-    const { campaign, campaignCost, respect, setCampaign, campaignResult, setCampaignResult, id, setActiveCampaign } = useContext(UserContext);
+    const { campaign, campaignCost, respect, setCampaign, campaignResult, setCampaignResult, id, setActiveCampaign, setCampaignStars } = useContext(UserContext);
 
     const [AvaliablePoints, setAvaliablePoints] = useState(respect * 10);
     const [ArtPoints, setArtPoints] = useState(0);
@@ -21,6 +21,21 @@ export const CampaignCreation = () => {
 
     function resultFollowers(min, max) {
         return Math.random() * (max - min) + min;
+    }
+
+    function weights(art, text, video, music) {
+        return (
+            (Math.max(0, (art - ArtPoints)) + Math.max(0, (text - TextPoints)) + Math.max(0, (video - VideoPoints)) + Math.max(0, (music - MusicPoints))) * 10
+        )
+    }
+
+    const StarsCount = () => {
+        let ArtStars = ArtMultiplier ? Math.floor(ArtPoints / 5) : null
+        let TextStars = TextMultiplier ? Math.floor(TextPoints / 5) : null
+        let VideoStars = VideoMultiplier ? Math.floor(VideoPoints / 5) : null
+        let MusicStars = MusicMultiplier ? Math.floor(MusicPoints / 5) : null
+        let newArr = [ArtStars, TextStars, VideoStars, MusicStars];
+        setCampaignStars(newArr);
     }
 
     const UpdateResult = async (id, money) => await updateDoc(Ref, { campaignResult: campaignResult })
@@ -44,6 +59,7 @@ export const CampaignCreation = () => {
             UpdateDisabledCampaign();
             UpdateResult();
             UpdateCountdown();
+            StarsCount();
             setCampaign('');
             resetResources();
         }
@@ -56,14 +72,14 @@ export const CampaignCreation = () => {
     if (campaign === "Outdoors") {
 
         const CampaignTotal = () => {
-            setCampaignResult(Math.floor(((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(6, 8)));
+            setCampaignResult(Math.floor(((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(6, 8) - weights(5, 5, 0, 0)));
         }
 
         const SetMultipliers = () => {
             setArtMultiplier(2);
             setTextMultiplier(2);
-            setVideoMultiplier(0);
-            setMusicMultiplier(0);
+            setVideoMultiplier(null);
+            setMusicMultiplier(null);
         }
 
         return (

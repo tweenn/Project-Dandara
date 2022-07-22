@@ -26,7 +26,7 @@ export const SetNewPlayerName = () => {
             followers: 100,
             respect: 1,
             campaignResult: 0,
-            ActiveCampaign: null,
+            activeCampaign: null,
         });
         setId(user.email);
         setMoney(1000);
