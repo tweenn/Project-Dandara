@@ -5,7 +5,7 @@ import CountDownTimer from "@inlightmedia/react-countdown-timer"
 
 function Topbar() {
 
-    const { money, followers, respect } = useContext(UserContext)
+    const { money, followers, respect, rank, totalPlayers } = useContext(UserContext)
 
 
     return (
@@ -22,6 +22,9 @@ function Topbar() {
             </div>
             <div className={styles.moneybar}>
                 <p>{money}</p>
+            </div>
+            <div className={styles.rankbar}>
+                <p>{rank}º/{totalPlayers}</p>
             </div>
         </div>
     );

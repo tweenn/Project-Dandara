@@ -23,18 +23,18 @@ function Ptsede() {
 
     let newMoney = money + (1000 * respect)
 
-    const updateMoney = async (id, money) => await updateDoc(Ref, { money: newMoney })
-    const updateDisabledSede = async (id, disabledSede) => await updateDoc(Ref, { disabledSede: true })
-    const updateSedeCountdown = async (id, sedeCountdown) => await updateDoc(Ref, { sedeCountdown: (Date.now() + 86400000) })
+    const updateMoney = async () => await updateDoc(Ref, { money: newMoney })
+    const updateDisabledSede = async () => await updateDoc(Ref, { disabledSede: true })
+    const updateSedeCountdown = async () => await updateDoc(Ref, { sedeCountdown: (Date.now() + 86400000) })
 
-    const reenableButton = async (id, disabledSede) => {
+    const reenableButton = async () => {
         setDisable(false);
         await updateDoc(Ref, {
             disabledSede: false
         })
     };
 
-    const reenableButtonCampaign = async (id, disabledCampaign) => {
+    const reenableButtonCampaign = async () => {
         setDisableCampaign(false);
         await updateDoc(Ref, {
             disabledCampaign: false
@@ -69,7 +69,7 @@ function Ptsede() {
         setActiveCampaign(doc.data().activeCampaign);
     })
 
-    const updateQuest = async (id, quest) => {
+    const updateQuest = async () => {
         if (currentQuest === 2) {
             await updateDoc(Ref, {
                 quest: currentQuest + 1

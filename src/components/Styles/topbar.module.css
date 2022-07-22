@@ -29,3 +29,11 @@
     left: 372px;
     font-size: large;
 }
+
+.rankbar {
+    color: white;
+    position: absolute;
+    top: -3px;
+    left: 605px;
+    font-size: large;
+}

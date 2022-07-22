@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Topbar from './components/BackgrondTasks/Topbar';
 import { motion } from "framer-motion";
 import { SpeechBubbleContext } from "./components/BackgrondTasks/SpeechBubble";
+import { RankPulling } from "./components/BackgrondTasks/RankPulling";
 
 function MainGameWindow() {
   return (
@@ -53,6 +54,7 @@ function MainGameWindow() {
           <img src='../img/overlay.png' alt="" id="overlay" />
           <Topbar />
           <SpeechBubbleContext />
+          <RankPulling />
         </div>
       </motion.div>
     </div>

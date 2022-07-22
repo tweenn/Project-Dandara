@@ -5,7 +5,7 @@ import { doc, updateDoc } from 'firebase/firestore';
 
 export const CampaignCreation = () => {
 
-    const { campaign, campaignCost, respect, setCampaign, campaignResult, setCampaignResult, id, setActiveCampaign, setCampaignStars } = useContext(UserContext);
+    const { campaign, campaignCost, respect, setCampaign, campaignResult, setCampaignResult, id, setActiveCampaign, setCampaignStars, money, setMoney } = useContext(UserContext);
 
     const [AvaliablePoints, setAvaliablePoints] = useState(respect * 10);
     const [ArtPoints, setArtPoints] = useState(0);
@@ -38,10 +38,11 @@ export const CampaignCreation = () => {
         setCampaignStars(newArr);
     }
 
-    const UpdateResult = async (id, money) => await updateDoc(Ref, { campaignResult: campaignResult })
-    const UpdateCountdown = async (id, money) => await updateDoc(Ref, { campaignCountdown: (Date.now() + 10000) })
-    const UpdateDisabledCampaign = async (id, disabledCampaign) => await updateDoc(Ref, { disabledCampaign: true })
-    const UpdateActiveCampaign = async (id, activeCampaign) => await updateDoc(Ref, { activeCampaign: campaign })
+    const UpdateResult = async () => await updateDoc(Ref, { campaignResult: campaignResult })
+    const UpdateCountdown = async () => await updateDoc(Ref, { campaignCountdown: (Date.now() + 10000) })
+    const UpdateDisabledCampaign = async () => await updateDoc(Ref, { disabledCampaign: true })
+    const UpdateActiveCampaign = async () => await updateDoc(Ref, { activeCampaign: campaign })
+    const UpdateMoney = async () => await updateDoc(Ref, { money: money - campaignCost })
 
     const resetResources = () => {
         setAvaliablePoints(respect * 10);
@@ -59,6 +60,8 @@ export const CampaignCreation = () => {
             UpdateResult();
             UpdateCountdown();
             StarsCount();
+            UpdateMoney();
+            setMoney(money - campaignCost);
             setCampaign('');
             resetResources();
         }
@@ -136,6 +139,7 @@ export const CampaignCreation = () => {
                 <div>
                     <h3>Criação de Campanha para {campaign}</h3>
                     <h4 className="alignright">Custo: {campaignCost}</h4>
+                    <h4 className="alignright">Seu orçamento atual: {money}</h4>
                 </div>
                 <div>
                     <h4>Alocação de Recursos Disponíveis:</h4> <h5>{AvaliablePoints}</h5>
@@ -191,7 +195,7 @@ export const CampaignCreation = () => {
                     </div>
                 </div>
                 <div>
-                    <button onClick={() => { CampaignTotal() }} disabled={AvaliablePoints > 0}>Confirmar Campanha</button>
+                    <button onClick={() => { CampaignTotal() }} disabled={AvaliablePoints > 0 || campaignCost > money}>Confirmar Campanha</button>
                     <button onClick={() => { setCampaign(''); resetResources() }}>Cancelar Campanha</button>
                 </div>
             </div>

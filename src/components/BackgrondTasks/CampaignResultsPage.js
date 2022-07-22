@@ -6,12 +6,12 @@ import Typewriter from 'typewriter-effect';
 
 export const CampaignResults = () => {
 
-    const { activeCampaign, campaignResult, id, setActiveCampaign, ArtStars, TextStars, MusicStars, VideoStars, setArtStars, setTextStars, setMusicStars, setVideoStars, gradeLetter, tributeImportance, setTributeImportance, setGradeLetter } = useContext(UserContext);
+    const { activeCampaign, campaignResult, id, setActiveCampaign, ArtStars, TextStars, MusicStars, VideoStars, setArtStars, setTextStars, setMusicStars, setVideoStars, gradeLetter, tributeImportance, setTributeImportance, setGradeLetter, setFollowers, followers } = useContext(UserContext);
 
     const Ref = doc(db, 'users', id)
 
-    const UpdateActiveCampaign = async (id, activeCampaign) => await updateDoc(Ref, { activeCampaign: null })
-
+    const UpdateActiveCampaign = async () => await updateDoc(Ref, { activeCampaign: null })
+    const UpdateFollowers = async () => await updateDoc(Ref, { followers: campaignResult + followers })
 
     const resetStars = () => {
         setArtStars(null);
@@ -23,7 +23,7 @@ export const CampaignResults = () => {
     }
 
     if (activeCampaign && (ArtStars !== '-' || TextStars !== '-' || VideoStars !== '-' || MusicStars !== '-') && (ArtStars !== null || TextStars !== null || VideoStars !== null || MusicStars !== null) && (tributeImportance) && (setGradeLetter)) {
-        console.log(gradeLetter);
+
         return (
             <div className="overlaypages" >
                 <div>
@@ -156,7 +156,7 @@ export const CampaignResults = () => {
                                 .start();
                         }} /></h2>
                 </div>
-                <button onClick={() => { UpdateActiveCampaign(); setActiveCampaign(null); resetStars(); }}>Voltar</button>
+                <button onClick={() => { UpdateActiveCampaign(); setActiveCampaign(null); resetStars(); setFollowers(followers + campaignResult); UpdateFollowers(); }}>Voltar</button>
             </div >
         )
     }
@@ -200,7 +200,6 @@ export const UpdateStars = () => {
             if (actualGrade === 7) setGradeLetter('C')
             if (actualGrade === 6) setGradeLetter('D')
             if (actualGrade <= 5) setGradeLetter('F')
-            console.log(actualGrade)
         }
         if (activeCampaign === "Jornais e Revistas") {
             const actualGrade = calcGrade(2, 3, 0, 0, 2)
@@ -210,7 +209,6 @@ export const UpdateStars = () => {
             if (actualGrade === 7) setGradeLetter('C')
             if (actualGrade === 6) setGradeLetter('D')
             if (actualGrade <= 5) setGradeLetter('F')
-            console.log(actualGrade)
         }
         if (activeCampaign === "Internet") {
             const actualGrade = calcGrade(2, 3, 1, 1, 4)
@@ -220,7 +218,6 @@ export const UpdateStars = () => {
             if (actualGrade === 7) setGradeLetter('C')
             if (actualGrade === 6) setGradeLetter('D')
             if (actualGrade <= 5) setGradeLetter('F')
-            console.log(actualGrade)
         }
         if (activeCampaign === "Redes Sociais") {
             const actualGrade = calcGrade(2, 1, 3, 2, 4)
@@ -230,17 +227,15 @@ export const UpdateStars = () => {
             if (actualGrade === 7) setGradeLetter('C')
             if (actualGrade === 6) setGradeLetter('D')
             if (actualGrade <= 5) setGradeLetter('F')
-            console.log(actualGrade)
         }
         if (activeCampaign === "Rádio") {
             const actualGrade = calcGrade(0, 3, 0, 3, 2)
-            if (actualGrade >= 10) setGradeLetter('A+')
-            if (actualGrade === 9) setGradeLetter('A')
-            if (actualGrade === 8) setGradeLetter('B')
-            if (actualGrade === 7) setGradeLetter('C')
-            if (actualGrade === 6) setGradeLetter('D')
-            if (actualGrade <= 5) setGradeLetter('F')
-            console.log(actualGrade)
+            if (actualGrade >= 8) setGradeLetter('A+')
+            if (actualGrade === 7) setGradeLetter('A')
+            if (actualGrade === 6) setGradeLetter('B')
+            if (actualGrade === 5) setGradeLetter('C')
+            if (actualGrade === 4) setGradeLetter('D')
+            if (actualGrade <= 3) setGradeLetter('F')
         }
         if (activeCampaign === "Televisão") {
             const actualGrade = calcGrade(2, 1, 4, 2, 4)
@@ -250,7 +245,6 @@ export const UpdateStars = () => {
             if (actualGrade === 7) setGradeLetter('C')
             if (actualGrade === 6) setGradeLetter('D')
             if (actualGrade <= 5) setGradeLetter('F')
-            console.log(actualGrade)
         }
     }
 
