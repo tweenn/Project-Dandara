@@ -7,6 +7,7 @@ import { RankPulling } from "./components/BackgrondTasks/RankPulling";
 import Ranking from "./components/BackgrondTasks/Ranking"
 import TopMenu from "./components/BackgrondTasks/TopMenu";
 import { UserContext } from "./components/BackgrondTasks/UserDataContext";
+import { TopBarExplanationBack, TopBarExplanationFront } from "./components/BackgrondTasks/TopBarExplanation";
 
 function MainGameWindow() {
 
@@ -19,7 +20,6 @@ function MainGameWindow() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-
         <div id="gamescreen">
           <Link to="/Ptsede">
             <img src='../img/ptsede.png' alt="" id="ptsede" />
@@ -59,9 +59,11 @@ function MainGameWindow() {
             <img src='../img/camara.png' alt="" id="camara" />
           </Link>
           <img src='../img/overlay.png' alt="" id="overlay" />
+          <SpeechBubbleContext />
+          <TopBarExplanationBack />
           <Topbar />
           <TopMenu />
-          <SpeechBubbleContext />
+          <TopBarExplanationFront />
           <RankPulling />
           <Ranking />
           <div>

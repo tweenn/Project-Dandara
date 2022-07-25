@@ -19,7 +19,7 @@ export const SetNewPlayerName = () => {
             name: playerName,
             money: 1000,
             email: user.email,
-            quest: 1,
+            quest: 0,
             disabledSede: false,
             sedeCountdown: 0,
             campaignCountdown: 0,
@@ -27,10 +27,11 @@ export const SetNewPlayerName = () => {
             respect: 1,
             campaignResult: 0,
             activeCampaign: null,
+            guest: null,
         });
         setId(user.email);
         setMoney(1000);
-        setCurrentQuest(1);
+        setCurrentQuest(0);
         setFollowers(100);
         setRespect(1);
         navigate('/MainGameWindow');

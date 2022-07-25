@@ -70,11 +70,44 @@ function Ptsede() {
     })
 
     const updateQuest = async () => {
-        if (currentQuest === 2) {
+        if (currentQuest === 3) {
             await updateDoc(Ref, {
                 quest: currentQuest + 1
             })
             setCurrentQuest(currentQuest + 1)
+        }
+        if (currentQuest === 11) {
+            await updateDoc(Ref, {
+                quest: currentQuest + 1
+            })
+            setCurrentQuest(currentQuest + 1)
+        }
+    }
+
+    const updateQuest2 = async () => {
+        if (currentQuest === 5) {
+            await updateDoc(Ref, {
+                quest: currentQuest + 1
+            })
+            setCurrentQuest(currentQuest + 1)
+        }
+        if (currentQuest === 4) {
+            await updateDoc(Ref, {
+                quest: currentQuest + 2
+            })
+            setCurrentQuest(currentQuest + 2)
+        }
+        if (currentQuest === 13) {
+            await updateDoc(Ref, {
+                quest: currentQuest + 1
+            })
+            setCurrentQuest(currentQuest + 1)
+        }
+        if (currentQuest === 12) {
+            await updateDoc(Ref, {
+                quest: currentQuest + 2
+            })
+            setCurrentQuest(currentQuest + 2)
         }
     }
 
@@ -101,14 +134,14 @@ function Ptsede() {
                     <h4>Orçamento diário: {1000 * respect}</h4><br />
                 </div>
                 <div className={styles.grouped}>
-                    <button disabled={disable} onClick={() => { updateDisabledSede(); updateSedeCountdown(); updateMoney(); setMoney(newMoney); setDisable(true); setCountdownTimer(Date.now() + 86400000) }}>
+                    <button disabled={disable} onClick={() => { updateDisabledSede(); updateSedeCountdown(); updateMoney(); setMoney(newMoney); setDisable(true); setCountdownTimer(Date.now() + 86400000); updateQuest2(); }}>
                         Receber Orçamento
                     </button><ShowCountdown /><br />
                 </div>
                 <h2>Criar Campanha Publicitária:</h2>
                 <div className={styles.Campanha}>
                     <div>
-                        <button disabled={disableCampaign} onClick={() => { setCampaign('Outdoors'); setCampaignCost(1000); setDisableCampaign(true); }}>
+                        <button disabled={disableCampaign} onClick={() => { setCampaign('Outdoors'); setCampaignCost(1000); setDisableCampaign(true); updateQuest2(); }}>
                             Outdoors
                         </button>
                         <button disabled={disableCampaign} onClick={() => { setCampaign('Jornais e Revistas'); setCampaignCost(2000); setDisableCampaign(true); }}>
@@ -116,16 +149,16 @@ function Ptsede() {
                         </button>
                     </div>
                     <div>
-                        <button disabled={disableCampaign} onClick={() => { setCampaign('Internet'); setCampaignCost(4000); setDisableCampaign(true); }}>
-                            Internet
+                        <button disabled={disableCampaign} onClick={() => { setCampaign('Rádio'); setCampaignCost(4000); setDisableCampaign(true); }}>
+                            Rádio
                         </button>
-                        <button disabled={disableCampaign} onClick={() => { setCampaign('Redes Sociais'); setCampaignCost(5000); setDisableCampaign(true); }}>
-                            Redes Sociais
+                        <button disabled={disableCampaign} onClick={() => { setCampaign('Internet'); setCampaignCost(5000); setDisableCampaign(true); }}>
+                            Internet
                         </button>
                     </div>
                     <div>
-                        <button disabled={disableCampaign} onClick={() => { setCampaign('Rádio'); setCampaignCost(10000); setDisableCampaign(true); }}>
-                            Rádio
+                        <button disabled={disableCampaign} onClick={() => { setCampaign('Redes Sociais'); setCampaignCost(10000); setDisableCampaign(true); }}>
+                            Redes Sociais
                         </button>
                         <button disabled={disableCampaign} onClick={() => { setCampaign('Televisão'); setCampaignCost(50000); setDisableCampaign(true); }}>
                             Televisão
@@ -142,9 +175,9 @@ function Ptsede() {
                     </button>
                 </Link>
             </div>
-            <SpeechBubbleContext />
             <CampaignCreation />
             <CampaignResults />
+            <SpeechBubbleContext />
             <UpdateStars />
         </motion.div>
     )

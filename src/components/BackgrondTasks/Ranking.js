@@ -20,29 +20,31 @@ function Ranking() {
                     <h3 className="centerRank">Seguidores</h3>
                     <h3>Respeito</h3>
                 </div>
-                {rankingAll.map((rankingAll) => {
-                    if (rankingAll.email === id) {
-                        return (
-                            <div>
-                                <div className="rankingSections">
-                                    <h6>{rankingAll.name}</h6>
-                                    <h6 className="centerRank">{rankingAll.followers}</h6>
-                                    <h6 className="centerRank2">{rankingAll.respect}</h6>
+                <div className="rankingscroll">
+                    {rankingAll.map((rankingAll) => {
+                        if (rankingAll.email === id) {
+                            return (
+                                <div>
+                                    <div className="rankingSections">
+                                        <h6>{rankingAll.name}</h6>
+                                        <h6 className="centerRank">{rankingAll.followers}</h6>
+                                        <h6 className="centerRank2">{rankingAll.respect}</h6>
+                                    </div>
                                 </div>
-                            </div>
-                        );
-                    } else {
-                        return (
-                            <div>
-                                <div className="rankingSections">
-                                    <h4>{rankingAll.name}</h4>
-                                    <h4 className="centerRank">{rankingAll.followers}</h4>
-                                    <h4 className="centerRank2">{rankingAll.respect}</h4>
+                            );
+                        } else {
+                            return (
+                                <div>
+                                    <div className="rankingSections">
+                                        <h4>{rankingAll.name}</h4>
+                                        <h4 className="centerRank">{rankingAll.followers}</h4>
+                                        <h4 className="centerRank2">{rankingAll.respect}</h4>
+                                    </div>
                                 </div>
-                            </div>
-                        );
-                    }
-                })}
+                            );
+                        }
+                    })}
+                </div>
                 <div className="buttonVoltar" onClick={() => { setRankingOpen(false); }}>
                     <button>Voltar</button>
                 </div>

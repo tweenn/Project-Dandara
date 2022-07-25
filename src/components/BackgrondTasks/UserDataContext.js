@@ -26,12 +26,15 @@ export const UserDataContext = ({ children }) => {
     const [totalPlayers, setTotalPlayers] = useState();
     const [topMenuOpen, setTopMenuOpen] = useState(false);
     const [rankingOpen, setRankingOpen] = useState(false);
-    const [rankingAll, setRankingAll] = useState(false);
+    const [rankingAll, setRankingAll] = useState();
+    const [guest, setGuest] = useState();
+    const [guestCost, setGuestCost] = useState();
+    const [topBarExplanation, setTopBarExplanation] = useState(true);
 
     return (
         <UserContext.Provider
 
-            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect, campaign, setCampaign, campaignCost, setCampaignCost, campaignResult, setCampaignResult, activeCampaign, setActiveCampaign, campaignStars, setCampaignStars, ArtStars, setArtStars, TextStars, setTextStars, MusicStars, setMusicStars, VideoStars, setVideoStars, gradeLetter, setGradeLetter, tributeImportance, setTributeImportance, rank, setRank, totalPlayers, setTotalPlayers, topMenuOpen, setTopMenuOpen, rankingOpen, setRankingOpen, rankingAll, setRankingAll }}>
+            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect, campaign, setCampaign, campaignCost, setCampaignCost, campaignResult, setCampaignResult, activeCampaign, setActiveCampaign, campaignStars, setCampaignStars, ArtStars, setArtStars, TextStars, setTextStars, MusicStars, setMusicStars, VideoStars, setVideoStars, gradeLetter, setGradeLetter, tributeImportance, setTributeImportance, rank, setRank, totalPlayers, setTotalPlayers, topMenuOpen, setTopMenuOpen, rankingOpen, setRankingOpen, rankingAll, setRankingAll, guest, setGuest, guestCost, setGuestCost, topBarExplanation, setTopBarExplanation }}>
             {children}
 
         </UserContext.Provider>

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "./components/BackgrondTasks/AuthContex";
 import { UpdateUserId } from "./components/BackgrondTasks/PreGameInitialization";
 import "./components/Styles/login.css";
+import "./components/Styles/loginmobile.css";
 
 const Login = () => {
 

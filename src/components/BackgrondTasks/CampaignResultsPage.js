@@ -7,12 +7,13 @@ import { motion } from "framer-motion";
 
 export const CampaignResults = () => {
 
-    const { activeCampaign, campaignResult, id, setActiveCampaign, ArtStars, TextStars, MusicStars, VideoStars, setArtStars, setTextStars, setMusicStars, setVideoStars, gradeLetter, tributeImportance, setTributeImportance, setGradeLetter, setFollowers, followers } = useContext(UserContext);
+    const { activeCampaign, campaignResult, id, setActiveCampaign, ArtStars, TextStars, MusicStars, VideoStars, setArtStars, setTextStars, setMusicStars, setVideoStars, gradeLetter, tributeImportance, setTributeImportance, setGradeLetter, setFollowers, followers, guest, setGuest } = useContext(UserContext);
 
     const Ref = doc(db, 'users', id)
 
     const UpdateActiveCampaign = async () => await updateDoc(Ref, { activeCampaign: null })
     const UpdateFollowers = async () => await updateDoc(Ref, { followers: campaignResult + followers })
+    const UpdateGuest = async () => { await updateDoc(Ref, { guest: null }); setGuest(null) }
 
     const resetStars = () => {
         setArtStars(null);
@@ -150,7 +151,7 @@ export const CampaignResults = () => {
                         onInit={(typewriter) => {
                             typewriter
                                 .pauseFor(6000)
-                                .typeString('CONVIDADO: -')
+                                .typeString('CONVIDADO: ' + (guest ? guest[0] : 'Nenhum'))
                                 .start();
                         }} /></h5><br />
                     <h2><Typewriter options={{ delay: 10, cursor: null }}
@@ -161,7 +162,7 @@ export const CampaignResults = () => {
                                 .start();
                         }} /></h2>
                 </div>
-                <button onClick={() => { UpdateActiveCampaign(); setActiveCampaign(null); resetStars(); setFollowers(followers + campaignResult); UpdateFollowers(); }}>Voltar</button>
+                <button onClick={() => { UpdateActiveCampaign(); setActiveCampaign(null); resetStars(); setFollowers(followers + campaignResult); UpdateFollowers(); UpdateGuest(); }}>Voltar</button>
             </motion.div>
         )
     }
@@ -203,8 +204,8 @@ export const UpdateStars = () => {
             if (actualGrade === 9) setGradeLetter('A')
             if (actualGrade === 8) setGradeLetter('B')
             if (actualGrade === 7) setGradeLetter('C')
-            if (actualGrade === 6) setGradeLetter('D')
-            if (actualGrade <= 5) setGradeLetter('F')
+            if (actualGrade >= 2 && actualGrade <= 6) setGradeLetter('D')
+            if (actualGrade <= 1) setGradeLetter('F')
         }
         if (activeCampaign === "Jornais e Revistas") {
             const actualGrade = calcGrade(2, 3, 0, 0, 2)
@@ -212,26 +213,8 @@ export const UpdateStars = () => {
             if (actualGrade === 9) setGradeLetter('A')
             if (actualGrade === 8) setGradeLetter('B')
             if (actualGrade === 7) setGradeLetter('C')
-            if (actualGrade === 6) setGradeLetter('D')
-            if (actualGrade <= 5) setGradeLetter('F')
-        }
-        if (activeCampaign === "Internet") {
-            const actualGrade = calcGrade(2, 3, 1, 1, 4)
-            if (actualGrade >= 10) setGradeLetter('A+')
-            if (actualGrade === 9) setGradeLetter('A')
-            if (actualGrade === 8) setGradeLetter('B')
-            if (actualGrade === 7) setGradeLetter('C')
-            if (actualGrade === 6) setGradeLetter('D')
-            if (actualGrade <= 5) setGradeLetter('F')
-        }
-        if (activeCampaign === "Redes Sociais") {
-            const actualGrade = calcGrade(2, 1, 3, 2, 4)
-            if (actualGrade >= 10) setGradeLetter('A+')
-            if (actualGrade === 9) setGradeLetter('A')
-            if (actualGrade === 8) setGradeLetter('B')
-            if (actualGrade === 7) setGradeLetter('C')
-            if (actualGrade === 6) setGradeLetter('D')
-            if (actualGrade <= 5) setGradeLetter('F')
+            if (actualGrade >= 4 && actualGrade <= 6) setGradeLetter('D')
+            if (actualGrade <= 3) setGradeLetter('F')
         }
         if (activeCampaign === "Rádio") {
             const actualGrade = calcGrade(0, 3, 0, 3, 2)
@@ -241,6 +224,25 @@ export const UpdateStars = () => {
             if (actualGrade === 5) setGradeLetter('C')
             if (actualGrade === 4) setGradeLetter('D')
             if (actualGrade <= 3) setGradeLetter('F')
+            console.log(actualGrade)
+        }
+        if (activeCampaign === "Internet") {
+            const actualGrade = calcGrade(2, 3, 1, 1, 4)
+            if (actualGrade >= 10) setGradeLetter('A+')
+            if (actualGrade === 9) setGradeLetter('A')
+            if (actualGrade === 8) setGradeLetter('B')
+            if (actualGrade === 7) setGradeLetter('C')
+            if (actualGrade >= 4 && actualGrade <= 6) setGradeLetter('D')
+            if (actualGrade <= 3) setGradeLetter('F')
+        }
+        if (activeCampaign === "Redes Sociais") {
+            const actualGrade = calcGrade(2, 1, 3, 2, 4)
+            if (actualGrade >= 10) setGradeLetter('A+')
+            if (actualGrade === 9) setGradeLetter('A')
+            if (actualGrade === 8) setGradeLetter('B')
+            if (actualGrade === 7) setGradeLetter('C')
+            if (actualGrade >= 3 && actualGrade <= 6) setGradeLetter('D')
+            if (actualGrade <= 2) setGradeLetter('F')
         }
         if (activeCampaign === "Televisão") {
             const actualGrade = calcGrade(2, 1, 4, 2, 4)

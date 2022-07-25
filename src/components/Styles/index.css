@@ -219,11 +219,11 @@ body {
 }
 
 #speechbubble {
-    width: 600px;
+    width: 620px;
     height: auto;
     position: absolute;
-    left: 175px;
-    top: 400px;
+    left: 170px;
+    top: 403px;
     cursor: pointer;
 }
 
@@ -231,8 +231,8 @@ body {
     width: 110px;
     height: auto;
     position: absolute;
-    left: 643px;
-    top: 409px;
+    left: 656px;
+    top: 418px;
     cursor: pointer;
 }
 
@@ -259,6 +259,122 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+}
+
+.topbarexplanation {
+    border-radius: 25px;
+    width: 800px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.85);
+    background-size: cover;
+    position: absolute;
+    cursor: pointer;
+}
+
+.selector1 {
+    border-radius: 25px;
+    width: 170px;
+    height: 30px;
+    top: 11px;
+    left: 24px;
+    background-color: rgba(255, 153, 36, 0.6);
+    background-size: cover;
+    position: absolute;
+}
+
+.selector2 {
+    border-radius: 25px;
+    width: 110px;
+    height: 30px;
+    top: 11px;
+    left: 208px;
+    background-color: rgba(255, 153, 36, 0.6);
+    background-size: cover;
+    position: absolute;
+}
+
+.selector3 {
+    border-radius: 25px;
+    width: 80px;
+    height: 30px;
+    top: 11px;
+    left: 340px;
+    background-color: rgba(255, 153, 36, 0.6);
+    background-size: cover;
+    position: absolute;
+}
+
+.selector4 {
+    border-radius: 25px;
+    width: 130px;
+    height: 30px;
+    top: 11px;
+    left: 430px;
+    background-color: rgba(255, 153, 36, 0.6);
+    background-size: cover;
+    position: absolute;
+}
+
+.selector5 {
+    border-radius: 25px;
+    width: 110px;
+    height: 30px;
+    top: 11px;
+    left: 570px;
+    background-color: rgba(255, 153, 36, 0.6);
+    background-size: cover;
+    position: absolute;
+}
+
+.continuar {
+    width: 300px;
+    height: 30px;
+    top: 250px;
+    left: 250px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.desc1 {
+    position: absolute;
+    width: 180px;
+    top: 35px;
+    left: 20px;
+    font-size: 15px;
+}
+
+.desc2 {
+    position: absolute;
+    width: 180px;
+    top: 35px;
+    left: -8px;
+    font-size: 15px;
+    color: white;
+}
+
+.desc3 {
+    position: absolute;
+    width: 180px;
+    top: 35px;
+    left: -12px;
+    font-size: 15px;
+}
+
+.desc4 {
+    position: absolute;
+    width: 180px;
+    top: 35px;
+    left: 10px;
+    font-size: 15px;
+    color: white;
+}
+
+.desc5 {
+    position: absolute;
+    width: 180px;
+    top: 35px;
+    left: 8px;
+    font-size: 15px;
 }
 
 .alignright {
@@ -368,6 +484,30 @@ body {
     align-items: center;
     align-content: space-between;
     flex-direction: column;
+}
+
+.rankingscroll {
+    height: 290px;
+    overflow-y: auto;
+    scrollbar-color: rgb(255, 153, 36) #ff4800;
+}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: rgb(255, 153, 36);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff4800;
+    -webkit-border-radius: 1ex;
+    border-radius: 1ex;
+    -webkit-box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
 }
 
 .rankingSections {

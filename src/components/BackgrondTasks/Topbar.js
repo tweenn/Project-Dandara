@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import styles from '../Styles/topbar.module.css';
+import '../Styles/topbar.css';
+import '../Styles/topbarmobile.css';
 import { UserContext } from "./UserDataContext";
 import CountDownTimer from "@inlightmedia/react-countdown-timer"
 
@@ -11,19 +12,19 @@ function Topbar() {
     return (
         <div>
             <img src='../img/topbar.png' alt="" id="topbar" />
-            <div className={styles.countdownbar}>
+            <div className='countdownbar'>
                 <CountDownTimer shouldShowTimeUnits="true" shouldHidePrecedingZeros="true" dateTime="2022-10-02T06:00:00Z" />
             </div>
-            <div className={styles.followersbar}>
+            <div className='followersbar'>
                 <p>{followers}</p>
             </div>
-            <div className={styles.respectbar}>
+            <div className='respectbar'>
                 <p>{respect}</p>
             </div>
-            <div className={styles.moneybar}>
+            <div className='moneybar'>
                 <p>{money}</p>
             </div>
-            <div className={styles.rankbar}>
+            <div className='rankbar'>
                 <p>{rank}º/{totalPlayers}</p>
             </div>
         </div>

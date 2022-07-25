@@ -1,0 +1,352 @@
+/* @media screen and (max-width:1000px) {
+    body {
+        height: 450px;
+        width: auto;
+        padding: 0%;
+        margin: 0%;
+        font-family: 'Fredoka One', cursive;
+        background-image: linear-gradient(rgb(255, 84, 79), rgb(250, 209, 38));
+        background-repeat: repeat-x;
+    }
+    #gamescreen {
+        height: 450px;
+        background-image: url(../../../public/img/bgcity.png);
+        background-size: 520px;
+        background-repeat: no-repeat;
+        position: absolute;
+    }
+    #ptsede {
+        width: 100px;
+        position: absolute;
+        top: 54px;
+        left: 65px;
+    }
+    #ptsede:hover {
+        position: absolute;
+        top: 54px;
+        left: 65px;
+        filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
+    }
+    #businesscenter {
+        position: absolute;
+        top: 146px;
+        left: 45px;
+    }
+    #businesscenter:hover {
+        position: absolute;
+        top: 146px;
+        left: 45px;
+        filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
+    }
+    #apartment {
+        position: absolute;
+        top: 86px;
+        left: 238px;
+    }
+    #apartment:hover {
+        position: absolute;
+        top: 86px;
+        left: 238px;
+        filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
+    }
+    #hospital {
+        position: absolute;
+        top: 207px;
+        left: 187px;
+    }
+    #hospital:hover {
+        position: absolute;
+        top: 207px;
+        left: 187px;
+        filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
+    }
+    #university {
+        position: absolute;
+        top: 320px;
+        left: 65px;
+    }
+    #university:hover {
+        position: absolute;
+        top: 320px;
+        left: 65px;
+        filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
+    }
+    #mayorhall {
+        position: absolute;
+        top: 179px;
+        left: 360px;
+    }
+    #mayorhall:hover {
+        position: absolute;
+        top: 179px;
+        left: 360px;
+        filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
+    }
+    #kindamall {
+        position: absolute;
+        top: 24px;
+        left: 361px;
+    }
+    #hotel {
+        position: absolute;
+        top: 86px;
+        left: 527px;
+    }
+    #hotel:hover {
+        position: absolute;
+        top: 86px;
+        left: 527px;
+        filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
+    }
+    #convenience {
+        position: absolute;
+        top: 74px;
+        left: 572px;
+    }
+    #bank {
+        position: absolute;
+        top: 179px;
+        left: 632px;
+    }
+    #bank:hover {
+        position: absolute;
+        top: 179px;
+        left: 632px;
+        filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
+    }
+    #shoppingmall {
+        position: absolute;
+        top: 250px;
+        left: 509px;
+    }
+    #shoppingmall:hover {
+        position: absolute;
+        top: 250px;
+        left: 509px;
+        filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
+    }
+    #sports {
+        position: absolute;
+        top: 330px;
+        left: 357px;
+    }
+    #sports:hover {
+        position: absolute;
+        top: 330px;
+        left: 357px;
+        filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
+    }
+    #convenience2 {
+        position: absolute;
+        top: 333px;
+        left: 438px;
+    }
+    #supermarket {
+        position: absolute;
+        top: 390px;
+        left: 200px;
+    }
+    #camara {
+        position: absolute;
+        top: 400px;
+        left: 250px;
+    }
+    #camara:hover {
+        position: absolute;
+        top: 400px;
+        left: 250px;
+        filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
+    }
+    #overlay {
+        width: 800px;
+        height: 600px;
+        background-image: url(../../../public/img/overlay.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        pointer-events: none;
+    }
+    #topbar {
+        pointer-events: none;
+        width: 480px;
+        height: auto;
+        position: absolute;
+        left: 20px;
+        top: 2.2px;
+    }
+    #topbutton {
+        width: 55px;
+        height: 40px;
+        position: absolute;
+        left: 730px;
+        top: 8px;
+        background-image: url(../../../public/img/topbutton.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: 0%;
+        padding: 0%;
+    }
+    #speechbubble {
+        width: 600px;
+        height: auto;
+        position: absolute;
+        left: 175px;
+        top: 400px;
+        cursor: pointer;
+    }
+    #bubblePortrait {
+        width: 110px;
+        height: auto;
+        position: absolute;
+        left: 643px;
+        top: 409px;
+        cursor: pointer;
+    }
+    .speechbubbletext {
+        width: 410px;
+        height: 190px;
+        position: absolute;
+        left: 190px;
+        top: 410px;
+        color: white;
+        cursor: pointer;
+    }
+    .overlaypages {
+        border-radius: 25px;
+        width: 650px;
+        height: 490px;
+        background-color: rgba(0, 0, 0, 0.85);
+        background-size: cover;
+        position: absolute;
+        top: 56px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+    .alignright {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0px;
+    }
+    .atributeslist {
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+    .points {
+        position: absolute;
+        left: 260px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .campaignResults {
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .campaignResultsAtributes {
+        width: 500px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .rating {
+        position: absolute;
+        left: 242px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+    }
+    .rating2 {
+        position: absolute;
+        left: 437px;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .grade {
+        position: absolute;
+        height: 50px;
+        font-size: 70px;
+        top: 20px;
+        color: white;
+    }
+    .gradeTitle {
+        position: absolute;
+        top: 30px;
+    }
+    .topMenu {
+        border-radius: 25px;
+        width: 400px;
+        height: 400px;
+        background: none;
+        position: absolute;
+        top: -190px;
+        left: 572px;
+        color: white;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .topMenuButtons {
+        width: 210;
+        height: 38px;
+        padding: 0;
+        background-image: url(../../../public/img/greenbutton.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .ranking {
+        border-radius: 25px;
+        width: 650px;
+        height: 490px;
+        background-color: rgba(0, 0, 0, 0.85);
+        background-size: cover;
+        position: absolute;
+        top: 56px;
+        left: 70px;
+        color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: space-between;
+        flex-direction: column;
+    }
+    .rankingSections {
+        width: 500px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .centerRank {
+        position: absolute;
+        left: 300px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+    }
+    .centerRank2 {
+        position: absolute;
+        left: 455px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+    }
+    .buttonVoltar {
+        position: absolute;
+        top: 440px;
+    }
+} */
