@@ -10,6 +10,7 @@ import Countdown from 'react-countdown';
 import { CampaignCreation } from "../BackgrondTasks/CampaignCreation";
 import { CampaignResults, UpdateStars } from "../BackgrondTasks/CampaignResultsPage";
 import { ShareCampaign } from "../BackgrondTasks/ShareCampaign";
+import { RespectManager } from "../BackgrondTasks/RespectManager";
 
 function Ptsede() {
 
@@ -18,15 +19,32 @@ function Ptsede() {
     const [disableCampaign, setDisableCampaign] = useState(false);
     const [countdownTimer, setCountdownTimer] = useState();
     const [countdownTimerCampaign, setCountdownTimerCampaign] = useState(null);
+    const [dailyMoney, setDailyMoney] = useState();
 
     const Ref = doc(db, 'users', id)
 
-    let newMoney = money + (1000 * respect)
+    const calcDailyMoney = () => {
+        switch (respect) {
+            case 1: setDailyMoney(1000); break;
+            case 2: setDailyMoney(3000); break;
+            case 3: setDailyMoney(5000); break;
+            case 4: setDailyMoney(8000); break;
+            case 5: setDailyMoney(13000); break;
+            case 6: setDailyMoney(20000); break;
+            case 7: setDailyMoney(30000); break;
+            case 8: setDailyMoney(43000); break;
+            case 9: setDailyMoney(59000); break;
+            case 10: setDailyMoney(75000); break;
+            case 11: setDailyMoney(100000); break;
+            case 12: setDailyMoney(125000); break;
+        }
+    }
+
+    const newMoney = money + dailyMoney
 
     const updateMoney = async () => await updateDoc(Ref, { money: newMoney })
     const updateDisabledSede = async () => await updateDoc(Ref, { disabledSede: true })
     const updateSedeCountdown = async () => await updateDoc(Ref, { sedeCountdown: (Date.now() + 86400000) })
-    const resetCampaignCountdown = async () => await updateDoc(Ref, { campaignCountdown: 0 })
 
     const reenableButton = async () => {
         setDisable(false);
@@ -115,6 +133,7 @@ function Ptsede() {
     useEffect(() => {
         updateQuest();
         checkCountDown();
+        calcDailyMoney();
     });
 
     useEffect(() => {
@@ -132,7 +151,7 @@ function Ptsede() {
                 <div className={styles.headergrouped}>
                     <h4>Orçamento total: {money}</h4><br />
                     <h4>Nível de respeito: {respect}</h4><br />
-                    <h4>Orçamento diário: {1000 * respect}</h4><br />
+                    <h4>Orçamento diário: {dailyMoney}</h4><br />
                 </div>
                 <div className={styles.grouped}>
                     <button disabled={disable} onClick={() => { updateDisabledSede(); updateSedeCountdown(); updateMoney(); setMoney(newMoney); setDisable(true); setCountdownTimer(Date.now() + 86400000); updateQuest2(); }}>
@@ -180,6 +199,7 @@ function Ptsede() {
             <ShareCampaign />
             <SpeechBubbleContext />
             <UpdateStars />
+            <RespectManager />
         </motion.div >
     )
 }

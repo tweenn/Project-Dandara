@@ -8,7 +8,7 @@ import "../Styles/login.css";
 
 export const SetNewPlayerName = () => {
     const { user } = useContext(AuthContext);
-    const { setMoney, setPlayerName, playerName, setId, setCurrentQuest, setFollowers, setRespect, setCampaignResult } = useContext(UserContext);
+    const { setMoney, setPlayerName, playerName, setId, setCurrentQuest, setFollowers, setRespect, setBillboard, setShowLevelOnce } = useContext(UserContext);
 
     const navigate = useNavigate();
 
@@ -28,12 +28,16 @@ export const SetNewPlayerName = () => {
             campaignResult: 0,
             activeCampaign: null,
             guest: null,
+            billboard: false,
+            showlevelonce: 2,
         });
         setId(user.email);
         setMoney(1000);
         setCurrentQuest(0);
         setFollowers(100);
         setRespect(1);
+        setBillboard(false);
+        setShowLevelOnce(2);
         navigate('/MainGameWindow');
     }
     return <div className="login">

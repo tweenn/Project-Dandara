@@ -218,6 +218,10 @@ body {
     padding: 0%;
 }
 
+.bubblewrapper {
+    z-index: 9999;
+}
+
 #speechbubble {
     width: 620px;
     height: auto;
@@ -272,6 +276,22 @@ body {
     color: white;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlaylevelup {
+    border-radius: 25px;
+    width: 380px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.85);
+    background-size: cover;
+    position: absolute;
+    top: 160px;
+    left: 210px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
@@ -552,4 +572,15 @@ body {
 .buttonVoltar {
     position: absolute;
     top: 440px;
+}
+
+.extrasOverlay {
+    width: 800px;
+    height: 600px;
+}
+
+#billboard {
+    position: absolute;
+    top: 391px;
+    left: 64px;
 }

@@ -8,7 +8,6 @@ function Topbar() {
 
     const { money, followers, respect, rank, totalPlayers } = useContext(UserContext)
 
-
     return (
         <div>
             <img src='../img/topbar.png' alt="" id="topbar" />

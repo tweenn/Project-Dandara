@@ -8,6 +8,8 @@ import Ranking from "./components/BackgrondTasks/Ranking"
 import TopMenu from "./components/BackgrondTasks/TopMenu";
 import { UserContext } from "./components/BackgrondTasks/UserDataContext";
 import { TopBarExplanationBack, TopBarExplanationFront } from "./components/BackgrondTasks/TopBarExplanation";
+import { RespectManager } from "./components/BackgrondTasks/RespectManager";
+import { ExtrasOverlay } from "./components/BackgrondTasks/ExtrasOverlay";
 
 function MainGameWindow() {
 
@@ -66,6 +68,8 @@ function MainGameWindow() {
           <TopBarExplanationFront />
           <RankPulling />
           <Ranking />
+          <ExtrasOverlay />
+          <RespectManager />
           <div>
             <button id="topbutton" onClick={() => setTopMenuOpen(!topMenuOpen)} />
           </div>

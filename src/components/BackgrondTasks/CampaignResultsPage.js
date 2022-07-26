@@ -7,13 +7,14 @@ import { motion } from "framer-motion";
 
 export const CampaignResults = () => {
 
-    const { activeCampaign, campaignResult, id, setActiveCampaign, ArtStars, TextStars, MusicStars, VideoStars, setArtStars, setTextStars, setMusicStars, setVideoStars, gradeLetter, tributeImportance, setTributeImportance, setGradeLetter, setFollowers, followers, guest, setGuest, currentQuest, setCurrentQuest, campaignDonations, setCampaignDonations, money, setMoney } = useContext(UserContext);
+    const { activeCampaign, campaignResult, id, setActiveCampaign, ArtStars, TextStars, MusicStars, VideoStars, setArtStars, setTextStars, setMusicStars, setVideoStars, gradeLetter, tributeImportance, setTributeImportance, setGradeLetter, setFollowers, followers, guest, setGuest, currentQuest, setCurrentQuest, campaignDonations, setCampaignDonations, money, setMoney, setBillboard } = useContext(UserContext);
 
     const Ref = doc(db, 'users', id)
 
     const UpdateActiveCampaign = async () => await updateDoc(Ref, { activeCampaign: null })
     const UpdateFollowers = async () => await updateDoc(Ref, { followers: campaignResult + followers })
     const UpdateGuest = async () => { await updateDoc(Ref, { guest: null }); setGuest(null) }
+    const UpdateBillboard = async () => { await updateDoc(Ref, { billboard: true }); setBillboard(true); }
     const UpdateMoney = async () => { await updateDoc(Ref, { money: money + campaignDonations }); setMoney(money + campaignDonations) }
 
     const updateQuest = async () => {
@@ -21,7 +22,8 @@ export const CampaignResults = () => {
             await updateDoc(Ref, {
                 quest: currentQuest + 1
             })
-            setCurrentQuest(currentQuest + 1)
+            setCurrentQuest(currentQuest + 1);
+            UpdateBillboard();
         }
     }
 

@@ -37,7 +37,7 @@ export const SpeechBubbleContext = ({ children }) => {
 
     if (bubble) {
         return (
-            <div ref={clickedOutside} onClick={() => { RemoveBubble(); }}>
+            <div ref={clickedOutside} onClick={() => { RemoveBubble(); }} className="bubblewrapper">
                 <img src='../../img/speechbubble.png' alt="" id="speechbubble" />
                 <img src={bubblePortrait} alt="" id="bubblePortrait" />
                 <div className="speechbubbletext" >

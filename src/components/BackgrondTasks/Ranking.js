@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "./UserDataContext";
 import { motion } from "framer-motion";
+import { RespectManager } from "../BackgrondTasks/RespectManager";
 
 function Ranking() {
 
@@ -48,6 +49,7 @@ function Ranking() {
                 <div className="buttonVoltar" onClick={() => { setRankingOpen(false); }}>
                     <button>Voltar</button>
                 </div>
+                <RespectManager />
             </motion.div>
         )
     }
