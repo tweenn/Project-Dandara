@@ -1,32 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect } from "react";
 import { db } from "../BackgrondTasks/firebase-config";
 import { doc, updateDoc } from 'firebase/firestore';
 import { UserContext, } from './UserDataContext';
 import { motion } from "framer-motion";
-
-
-export const TopBarExplanationBack = () => {
-
-    const { currentQuest, id, setCurrentQuest } = useContext(UserContext);
-
-    const questRef = doc(db, 'users', id)
-
-    const updateQuest = async (id, quest) => {
-        await updateDoc(questRef, {
-            quest: currentQuest + 1
-        })
-        setCurrentQuest(currentQuest + 1)
-    };
-
-    if (currentQuest === 1) {
-        return (
-            <div onClick={() => { updateQuest(); }} className='topbarexplanation'>
-
-            </div>
-        );
-    }
-}
-
 
 export const TopBarExplanationFront = () => {
 
@@ -74,13 +50,34 @@ export const TopBarExplanationFront = () => {
                     transition={{ delay: 4 }} className='selector5'>
                     <h3 className="desc5">Sua Posição no Ranking Geral</h3>
                 </motion.div>
+            </motion.div>
+        );
+    }
+}
+
+export const TopBarExplanationBack = () => {
+
+    const { currentQuest, id, setCurrentQuest } = useContext(UserContext);
+
+    const questRef = doc(db, 'users', id)
+
+    const updateQuest = async (id, quest) => {
+        await updateDoc(questRef, {
+            quest: currentQuest + 1
+        })
+        setCurrentQuest(currentQuest + 1)
+    };
+
+    if (currentQuest === 1) {
+        return (
+            <div onClick={() => { updateQuest(); }} className='topbarexplanation'>
                 <motion.div initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     exit={{ scale: 0 }}
                     transition={{ delay: 5 }} className='continuar'>
                     <h2 onClick={() => { updateQuest(); }}>Clique para continuar</h2>
                 </motion.div>
-            </motion.div>
+            </div>
         );
     }
 }

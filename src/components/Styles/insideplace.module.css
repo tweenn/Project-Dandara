@@ -112,8 +112,8 @@ p2 {
 .Campanha {
     width: 640px;
     height: auto;
-    padding: 0%;
-    margin: 0%;
+    padding-left: 1px;
+    margin: 0px;
     color: black;
     opacity: 100%;
     display: flex;

@@ -7,13 +7,13 @@ const userCollectionRef = collection(db, "users");
 
 export const RankPulling = () => {
 
-    const { setRank, id, setTotalPlayers, setRankingAll } = useContext(UserContext);
+    const { setRank, id, setTotalPlayers, setRankingAll, followers } = useContext(UserContext);
 
-    const q = query(userCollectionRef, orderBy('followers'), limit(100));
+    const q = query(userCollectionRef, orderBy("followers", "desc"), limit(100));
 
     useEffect(() => {
         const getRank = async () => {
-            const data = await getDocs(userCollectionRef);
+            const data = await getDocs(q);
             const users = (data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
             const emails = users.map(el => el.email)
             const position = emails.indexOf(id)
@@ -22,6 +22,6 @@ export const RankPulling = () => {
             setRankingAll(users);
         };
         getRank();
-    }, []);
+    }, [followers]);
 
 }

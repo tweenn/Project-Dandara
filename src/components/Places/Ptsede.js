@@ -9,11 +9,11 @@ import { SpeechBubbleContext } from "../BackgrondTasks/SpeechBubble";
 import Countdown from 'react-countdown';
 import { CampaignCreation } from "../BackgrondTasks/CampaignCreation";
 import { CampaignResults, UpdateStars } from "../BackgrondTasks/CampaignResultsPage";
-
+import { ShareCampaign } from "../BackgrondTasks/ShareCampaign";
 
 function Ptsede() {
 
-    const { money, setMoney, id, currentQuest, setCurrentQuest, respect, setCampaign, setCampaignCost, setActiveCampaign } = useContext(UserContext);
+    const { money, setMoney, id, currentQuest, setCurrentQuest, respect, setCampaign, setCampaignCost, setActiveCampaign, setSharePage } = useContext(UserContext);
     const [disable, setDisable] = useState(false);
     const [disableCampaign, setDisableCampaign] = useState(false);
     const [countdownTimer, setCountdownTimer] = useState();
@@ -26,6 +26,7 @@ function Ptsede() {
     const updateMoney = async () => await updateDoc(Ref, { money: newMoney })
     const updateDisabledSede = async () => await updateDoc(Ref, { disabledSede: true })
     const updateSedeCountdown = async () => await updateDoc(Ref, { sedeCountdown: (Date.now() + 86400000) })
+    const resetCampaignCountdown = async () => await updateDoc(Ref, { campaignCountdown: 0 })
 
     const reenableButton = async () => {
         setDisable(false);
@@ -165,9 +166,8 @@ function Ptsede() {
                         </button>
                     </div>
                 </div>
-
                 <ShowCountdownCampaign />
-
+                <button onClick={() => setSharePage(true)}>Compartilhar Campanha</button>
                 <br />
                 <Link to="/MainGameWindow">
                     <button>
@@ -177,9 +177,10 @@ function Ptsede() {
             </div>
             <CampaignCreation />
             <CampaignResults />
+            <ShareCampaign />
             <SpeechBubbleContext />
             <UpdateStars />
-        </motion.div>
+        </motion.div >
     )
 }
 

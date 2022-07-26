@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { db } from "./firebase-config";
 import { UserContext } from './UserDataContext';
 import { doc, updateDoc } from 'firebase/firestore';
@@ -7,13 +7,23 @@ import { motion } from "framer-motion";
 
 export const CampaignResults = () => {
 
-    const { activeCampaign, campaignResult, id, setActiveCampaign, ArtStars, TextStars, MusicStars, VideoStars, setArtStars, setTextStars, setMusicStars, setVideoStars, gradeLetter, tributeImportance, setTributeImportance, setGradeLetter, setFollowers, followers, guest, setGuest } = useContext(UserContext);
+    const { activeCampaign, campaignResult, id, setActiveCampaign, ArtStars, TextStars, MusicStars, VideoStars, setArtStars, setTextStars, setMusicStars, setVideoStars, gradeLetter, tributeImportance, setTributeImportance, setGradeLetter, setFollowers, followers, guest, setGuest, currentQuest, setCurrentQuest, campaignDonations, setCampaignDonations, money, setMoney } = useContext(UserContext);
 
     const Ref = doc(db, 'users', id)
 
     const UpdateActiveCampaign = async () => await updateDoc(Ref, { activeCampaign: null })
     const UpdateFollowers = async () => await updateDoc(Ref, { followers: campaignResult + followers })
     const UpdateGuest = async () => { await updateDoc(Ref, { guest: null }); setGuest(null) }
+    const UpdateMoney = async () => { await updateDoc(Ref, { money: money + campaignDonations }); setMoney(money + campaignDonations) }
+
+    const updateQuest = async () => {
+        if (currentQuest === 17) {
+            await updateDoc(Ref, {
+                quest: currentQuest + 1
+            })
+            setCurrentQuest(currentQuest + 1)
+        }
+    }
 
     const resetStars = () => {
         setArtStars(null);
@@ -22,6 +32,7 @@ export const CampaignResults = () => {
         setMusicStars(null);
         setTributeImportance(null);
         setGradeLetter(null);
+        setCampaignDonations(0);
     }
 
     if (activeCampaign && (ArtStars !== '-' || TextStars !== '-' || VideoStars !== '-' || MusicStars !== '-') && (ArtStars !== null || TextStars !== null || VideoStars !== null || MusicStars !== null) && (tributeImportance) && (setGradeLetter)) {
@@ -38,13 +49,13 @@ export const CampaignResults = () => {
                 <h2 className="gradeTitle"><Typewriter options={{ delay: 10, cursor: null }}
                     onInit={(typewriter) => {
                         typewriter
-                            .pauseFor(7000)
+                            .pauseFor(7500)
                             .typeString('NOTA DA CAMPANHA:')
                             .start();
                     }} /></h2><br /><h2 className="grade"><Typewriter options={{ delay: 10, cursor: null }}
                         onInit={(typewriter) => {
                             typewriter
-                                .pauseFor(8000)
+                                .pauseFor(8500)
                                 .typeString(gradeLetter)
                                 .start();
                         }} /></h2><br /><br />
@@ -161,8 +172,15 @@ export const CampaignResults = () => {
                                 .typeString('NOVOS SEGUIDORES: ' + campaignResult)
                                 .start();
                         }} /></h2>
+                    <h4><Typewriter options={{ delay: 10, cursor: null }}
+                        onInit={(typewriter) => {
+                            typewriter
+                                .pauseFor(7000)
+                                .typeString('DOAÇÕES: ' + campaignDonations)
+                                .start();
+                        }} /></h4>
                 </div>
-                <button onClick={() => { UpdateActiveCampaign(); setActiveCampaign(null); resetStars(); setFollowers(followers + campaignResult); UpdateFollowers(); UpdateGuest(); }}>Voltar</button>
+                <button onClick={() => { UpdateActiveCampaign(); setActiveCampaign(null); UpdateMoney(); resetStars(); setFollowers(followers + campaignResult); UpdateFollowers(); UpdateGuest(); updateQuest(); }}>Voltar</button>
             </motion.div>
         )
     }
@@ -170,7 +188,11 @@ export const CampaignResults = () => {
 
 export const UpdateStars = () => {
 
-    const { campaignStars, setArtStars, setTextStars, setMusicStars, setVideoStars, setGradeLetter, activeCampaign, setTributeImportance } = useContext(UserContext);
+    const { campaignStars, setArtStars, setTextStars, setMusicStars, setVideoStars, setGradeLetter, activeCampaign, setTributeImportance, campaignDonations, setCampaignDonations, campaignResult } = useContext(UserContext);
+
+    const defineDonations = () => {
+        setCampaignDonations(campaignDonations * campaignResult)
+    }
 
     const setImportance = () => {
         if (activeCampaign === "Outdoors") {
@@ -224,7 +246,6 @@ export const UpdateStars = () => {
             if (actualGrade === 5) setGradeLetter('C')
             if (actualGrade === 4) setGradeLetter('D')
             if (actualGrade <= 3) setGradeLetter('F')
-            console.log(actualGrade)
         }
         if (activeCampaign === "Internet") {
             const actualGrade = calcGrade(2, 3, 1, 1, 4)
@@ -310,6 +331,7 @@ export const UpdateStars = () => {
     }
 
     useEffect(() => {
+        defineDonations();
         setStars();
         setImportance();
         defineGrade();

@@ -30,7 +30,7 @@ export const SpeechBubbleContext = ({ children }) => {
     }
 
     useEffect(() => {
-        setBubble(false);
+        return () => { setBubble(false); }
     }, [currentQuest]);
 
     const clickedOutside = useDetectClickOutside({ onTriggered: RemoveBubble });
@@ -93,7 +93,7 @@ export const SpeechBubbleContext = ({ children }) => {
             const createBubbleText = () => {
                 setBubblePortrait('../../img/Port-Hotelmanager.png');
                 setBubble(true);
-                setBubbleText('Olá <p2> ' + playerName + '</p2>! Nosso Hotel é sempre visitado por diversos <p2>artistas e famosos</p2> que, por um preço justo, se juntarão à sua <p2>próxima campanha publicitária</p2>, garantindo um super <p2>bônus</p2> nos seu resultado! <br />E você está com sorte! Nossa <p2>Artista Local</p2> está disponível e dentro do seu orçamento, clique em <p2>contratar</p2>.');
+                setBubbleText('Olá <p2> ' + playerName + '</p2>! Nosso Hotel é sempre visitado por diversos <p2>artistas e famosos</p2> que, por um preço justo, se juntarão à sua <p2>próxima campanha publicitária</p2>, garantindo um super <p2>bônus</p2> no seu resultado! <br />E você está com sorte! Nossa <p2>Artista Local</p2> está disponível e dentro do seu orçamento, clique em <p2>contratar</p2>.');
             }
             createBubbleText();
         }
@@ -126,6 +126,22 @@ export const SpeechBubbleContext = ({ children }) => {
                 setBubblePortrait('../../img/Port-Tesoureiro.png');
                 setBubble(true);
                 setBubbleText('Parabéns! A sua primeira campanha foi um <p2>sucesso</p2>! Veja quantos <p2>novos seguidores</p2> ganhamos! <br />E não se preocupe com a sua nota nesse momento, à medida que sua <p2>reputação</p2> crescer, você terá mais pontos de recursos disponíveis para a criação das suas campanhas, garantindo assim resultados cada vez melhores!');
+            }
+            createBubbleText();
+        }
+        if (currentQuest === 18) {
+            const createBubbleText = () => {
+                setBubblePortrait('../../img/Port-Tesoureiro.png');
+                setBubble(true);
+                setBubbleText('Veja agora que um contador de <p2>60 minutos</p2> se iniciou. Durante esse tempo não podemos criar mais campanhas... <br />Mas vem cá, vou te contar um <p2>segredo</p2>: Se você clicar em <p2>Compartilhar Campanha</p2> e contar para os seus amigos sobre o <p2>Project: Dandara</p2>, eu <p2>zero o contador</p2> para você!');
+            }
+            createBubbleText();
+        }
+        if (currentQuest === 20) {
+            const createBubbleText = () => {
+                setBubblePortrait('../../img/Port-Tesoureiro.png');
+                setBubble(true);
+                setBubbleText('<p2>Muito obrigado</p2> por compartilhar, ' + playerName + '! Como agradecimento, eu zerei o contador e você já pode criar sua próxima campanha! E <p2>lembre-se</p2>, sempre que ver o botão de compartilhamento próximo a um contador, você pode compartilhar aquela ação que o contador será <p2>zerado</p2>! ');
             }
             createBubbleText();
         }

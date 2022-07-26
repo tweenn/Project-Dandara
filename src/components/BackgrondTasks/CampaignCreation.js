@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export const CampaignCreation = () => {
 
-    const { campaign, campaignCost, respect, setCampaign, campaignResult, setCampaignResult, id, setActiveCampaign, setCampaignStars, money, setMoney, guest, currentQuest, setCurrentQuest } = useContext(UserContext);
+    const { campaign, campaignCost, respect, setCampaign, campaignResult, setCampaignResult, id, setActiveCampaign, setCampaignStars, money, setMoney, guest, currentQuest, setCurrentQuest, setCampaignDonations } = useContext(UserContext);
 
     const [AvaliablePoints, setAvaliablePoints] = useState(respect * 10);
     const [ArtPoints, setArtPoints] = useState(0);
@@ -28,6 +28,31 @@ export const CampaignCreation = () => {
         return (
             (Math.max(0, (art - ArtPoints)) + Math.max(0, (text - TextPoints)) + Math.max(0, (video - VideoPoints)) + Math.max(0, (music - MusicPoints))) * 10
         )
+    }
+
+    function calcDonations(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    const defineDonations = () => {
+        if (campaign === "Outdoors") {
+            setCampaignDonations(calcDonations(2, 4))
+        }
+        if (campaign === "Jornais e Revistas") {
+            setCampaignDonations(calcDonations(3, 5))
+        }
+        if (campaign === "Rádio") {
+            setCampaignDonations(calcDonations(3, 5))
+        }
+        if (campaign === "Internet") {
+            setCampaignDonations(calcDonations(4, 6))
+        }
+        if (campaign === "Redes Sociais") {
+            setCampaignDonations(calcDonations(5, 7))
+        }
+        if (campaign === "Televisão") {
+            setCampaignDonations(calcDonations(6, 8))
+        }
     }
 
 
@@ -79,6 +104,7 @@ export const CampaignCreation = () => {
             StarsCount();
             UpdateMoney();
             setMoney(money - campaignCost);
+            defineDonations();
             updateQuest();
             setCampaign('');
             resetResources();
@@ -93,22 +119,23 @@ export const CampaignCreation = () => {
 
         const CampaignTotal = () => {
             if (campaign === 'Outdoors') {
-                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(6, 8) - weights(5, 5, 0, 0)) * (guest ? guest[1] : 1)));
+                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(6, 8) - weights(5, 5, 0, 0)) * (guest ? guest[1] : 1) * (ArtPoints >= 1 ? 1 : .5) * (TextPoints >= 1 ? 1 : .5)));
+
             }
             if (campaign === 'Jornais e Revistas') {
-                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(8, 10) - weights(5, 5, 0, 0)) * (guest ? guest[1] : 1)));
+                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(8, 10) - weights(5, 5, 0, 0)) * (guest ? guest[1] : 1) * (ArtPoints >= 1 ? 1 : .5) * (TextPoints >= 1 ? 1 : .33)));
             }
             if (campaign === 'Rádio') {
-                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(12, 14) - weights(0, 5, 0, 5)) * (guest ? guest[1] : 1)));
+                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(12, 14) - weights(0, 5, 0, 5)) * (guest ? guest[1] : 1) * (ArtPoints >= 1 ? 1 : .5) * (TextPoints >= 1 ? 1 : .5)));
             }
             if (campaign === 'Internet') {
-                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(15, 17) - weights(5, 5, 5, 5)) * (guest ? guest[1] : 1)));
+                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(15, 17) - weights(5, 5, 5, 5)) * (guest ? guest[1] : 1) * (ArtPoints >= 1 ? 1 : .75) * (TextPoints >= 1 ? 1 : .75) * (VideoPoints >= 1 ? 1 : .75) * (MusicPoints >= 1 ? 1 : .75)));
             }
             if (campaign === 'Redes Sociais') {
-                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(22, 25) - weights(5, 5, 5, 5)) * (guest ? guest[1] : 1)));
+                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(22, 25) - weights(5, 5, 5, 5)) * (guest ? guest[1] : 1) * (ArtPoints >= 1 ? 1 : .75) * (TextPoints >= 1 ? 1 : .75) * (VideoPoints >= 1 ? 1 : .75) * (MusicPoints >= 1 ? 1 : .75)));
             }
             if (campaign === 'Televisão') {
-                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(50, 60) - weights(5, 5, 5, 5)) * (guest ? guest[1] : 1)));
+                setCampaignResult(Math.floor((((ArtMultiplier * ArtPoints) + (TextMultiplier * TextPoints) + (VideoMultiplier * VideoPoints) + (MusicMultiplier * MusicPoints)) * resultFollowers(50, 60) - weights(5, 5, 5, 5)) * (guest ? guest[1] : 1) * (ArtPoints >= 1 ? 1 : .75) * (TextPoints >= 1 ? 1 : .75) * (VideoPoints >= 1 ? 1 : .75) * (MusicPoints >= 1 ? 1 : .75)));
             }
         }
 

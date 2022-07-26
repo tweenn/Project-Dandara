@@ -24,7 +24,7 @@ function Ranking() {
                     {rankingAll.map((rankingAll) => {
                         if (rankingAll.email === id) {
                             return (
-                                <div>
+                                <div key={id}>
                                     <div className="rankingSections">
                                         <h6>{rankingAll.name}</h6>
                                         <h6 className="centerRank">{rankingAll.followers}</h6>
@@ -34,7 +34,7 @@ function Ranking() {
                             );
                         } else {
                             return (
-                                <div>
+                                <div key={rankingAll.email}>
                                     <div className="rankingSections">
                                         <h4>{rankingAll.name}</h4>
                                         <h4 className="centerRank">{rankingAll.followers}</h4>
