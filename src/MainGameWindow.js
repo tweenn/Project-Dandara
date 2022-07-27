@@ -42,7 +42,9 @@ function MainGameWindow() {
   }, [currentQuest])
 
   return (
+
     <div id="GameWrapper">
+
       <motion.div className="MainGameWindow"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

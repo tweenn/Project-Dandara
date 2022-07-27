@@ -74,7 +74,7 @@ button:disabled {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 950px) and (min-width: 500px) {
     .login {
         height: 100vh;
         width: 100vw;

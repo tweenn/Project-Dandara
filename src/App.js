@@ -8,13 +8,15 @@ import { UserDataContext } from './components/BackgrondTasks/UserDataContext';
 function App() {
 
     return (
-        <AuthProvider>
-            <UserDataContext>
-                <Router>
-                    <AnimatedRoutes />
-                </Router>
-            </UserDataContext>
-        </AuthProvider>
+        <>
+            <AuthProvider>
+                <UserDataContext>
+                    <Router>
+                        <AnimatedRoutes />
+                    </Router>
+                </UserDataContext>
+            </AuthProvider>
+        </>
     )
 }
 
