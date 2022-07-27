@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import '../Styles/topbar.css';
-import '../Styles/topbarmobile.css';
 import { UserContext } from "./UserDataContext";
 import CountDownTimer from "@inlightmedia/react-countdown-timer"
 

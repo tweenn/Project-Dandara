@@ -13,3 +13,6 @@ export const ExtrasOverlay = () => {
         )
     }
 }
+
+// 0 = Ptsede // 1 = BusinessCenter // 2 = Apartment // 3 = Hospital // 4 = University // 5 = MayorHall
+// 6 = Hotel // 7 = Bank // 8 = ShoppingMall // 9 = Sports // 10 = Camara

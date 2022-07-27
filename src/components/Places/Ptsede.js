@@ -154,42 +154,41 @@ function Ptsede() {
                     <h4>Orçamento diário: {dailyMoney}</h4><br />
                 </div>
                 <div className={styles.grouped}>
-                    <button disabled={disable} onClick={() => { updateDisabledSede(); updateSedeCountdown(); updateMoney(); setMoney(newMoney); setDisable(true); setCountdownTimer(Date.now() + 86400000); updateQuest2(); }}>
+                    <button className="buttonMobile" disabled={disable} onClick={() => { updateDisabledSede(); updateSedeCountdown(); updateMoney(); setMoney(newMoney); setDisable(true); setCountdownTimer(Date.now() + 86400000); updateQuest2(); }}>
                         Receber Orçamento
-                    </button><ShowCountdown /><br />
+                    </button><ShowCountdown />
                 </div>
                 <h2>Criar Campanha Publicitária:</h2>
                 <div className={styles.Campanha}>
                     <div>
-                        <button disabled={disableCampaign} onClick={() => { setCampaign('Outdoors'); setCampaignCost(1000); setDisableCampaign(true); updateQuest2(); }}>
+                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { setCampaign('Outdoors'); setCampaignCost(1000); setDisableCampaign(true); updateQuest2(); }}>
                             Outdoors
                         </button>
-                        <button disabled={disableCampaign} onClick={() => { setCampaign('Jornais e Revistas'); setCampaignCost(2000); setDisableCampaign(true); }}>
+                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { setCampaign('Jornais e Revistas'); setCampaignCost(2000); setDisableCampaign(true); }}>
                             Jornais e Revistas
                         </button>
                     </div>
                     <div>
-                        <button disabled={disableCampaign} onClick={() => { setCampaign('Rádio'); setCampaignCost(4000); setDisableCampaign(true); }}>
+                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { setCampaign('Rádio'); setCampaignCost(4000); setDisableCampaign(true); }}>
                             Rádio
                         </button>
-                        <button disabled={disableCampaign} onClick={() => { setCampaign('Internet'); setCampaignCost(5000); setDisableCampaign(true); }}>
+                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { setCampaign('Internet'); setCampaignCost(5000); setDisableCampaign(true); }}>
                             Internet
                         </button>
                     </div>
                     <div>
-                        <button disabled={disableCampaign} onClick={() => { setCampaign('Redes Sociais'); setCampaignCost(10000); setDisableCampaign(true); }}>
+                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { setCampaign('Redes Sociais'); setCampaignCost(10000); setDisableCampaign(true); }}>
                             Redes Sociais
                         </button>
-                        <button disabled={disableCampaign} onClick={() => { setCampaign('Televisão'); setCampaignCost(50000); setDisableCampaign(true); }}>
+                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { setCampaign('Televisão'); setCampaignCost(50000); setDisableCampaign(true); }}>
                             Televisão
                         </button>
                     </div>
                 </div>
                 <ShowCountdownCampaign />
                 <button onClick={() => setSharePage(true)}>Compartilhar Campanha</button>
-                <br />
                 <Link to="/MainGameWindow">
-                    <button>
+                    <button className="buttonMobile">
                         Voltar
                     </button>
                 </Link>

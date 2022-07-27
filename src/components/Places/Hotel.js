@@ -9,7 +9,7 @@ import { SpeechBubbleContext } from "../BackgrondTasks/SpeechBubble";
 
 function Hotel() {
 
-    const { setGuest, guest, setMoney, money, guestCost, setGuestCost, id, currentQuest, setCurrentQuest, setBubble } = useContext(UserContext);
+    const { setGuest, guest, setMoney, money, guestCost, setGuestCost, id, currentQuest, setCurrentQuest } = useContext(UserContext);
     const UpdateMoney = async () => await updateDoc(Ref, { money: money - guestCost })
     const UpdateGuest = async () => await updateDoc(Ref, { guest: guest })
     const Ref = doc(db, 'users', id)

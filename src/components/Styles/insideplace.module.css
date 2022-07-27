@@ -4,6 +4,7 @@
     background-image: url(../../../public/img/placesbg.png);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
     position: absolute;
     padding: 0%;
     margin: 0%;
@@ -151,4 +152,38 @@ p2 {
     justify-content: flex-start;
     position: absolute;
     left: 260px;
+}
+
+@media screen and (max-width: 950px) {
+    .InsideP {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(../../../public/img/placesbg_mobile.png);
+    }
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        padding: 0%;
+        margin: 0%;
+    }
+    button {
+        padding: 0%;
+        margin: 0%;
+    }
+    .box {
+        height: 73px;
+        width: 600px;
+    }
+    .guests {
+        height: 82px;
+        width: 82px;
+    }
 }

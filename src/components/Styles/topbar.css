@@ -1,6 +1,6 @@
 .moneybar {
     color: white;
-    position: absolute;
+    position: fixed;
     top: -3px;
     left: 460px;
     font-size: large;
@@ -8,7 +8,7 @@
 
 .countdownbar {
     color: white;
-    position: absolute;
+    position: fixed;
     top: -3px;
     left: 52px;
     font-size: large;
@@ -16,7 +16,7 @@
 
 .followersbar {
     color: white;
-    position: absolute;
+    position: fixed;
     top: -3px;
     left: 242px;
     font-size: large;
@@ -24,7 +24,7 @@
 
 .respectbar {
     color: white;
-    position: absolute;
+    position: fixed;
     top: -3px;
     left: 372px;
     font-size: large;
@@ -32,7 +32,7 @@
 
 .rankbar {
     color: white;
-    position: absolute;
+    position: fixed;
     top: -3px;
     left: 605px;
     font-size: large;

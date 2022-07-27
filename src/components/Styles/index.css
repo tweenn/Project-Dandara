@@ -1,5 +1,5 @@
 body {
-    height: 600px;
+    height: 100vh;
     padding: 0%;
     margin: 0%;
     font-family: 'Fredoka One', cursive;
@@ -9,12 +9,16 @@ body {
 }
 
 #gamescreen {
-    width: 800px;
-    height: 600px;
-    background-image: url(../../../public/img/bgcity.png);
-    background-size: auto;
-    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
     position: absolute;
+    overflow: scroll;
+    scrollbar-width: 0px;
+}
+
+#bgcity {
+    position: absolute;
+    z-index: -999;
 }
 
 #ptsede {
@@ -200,7 +204,7 @@ body {
     pointer-events: none;
     width: 700px;
     height: auto;
-    position: absolute;
+    position: fixed;
     left: 20px;
     top: 2.2px;
 }
@@ -208,7 +212,7 @@ body {
 #topbutton {
     width: 55px;
     height: 40px;
-    position: absolute;
+    position: fixed;
     left: 730px;
     top: 8px;
     background-image: url(../../../public/img/topbutton.png);
@@ -528,21 +532,17 @@ body {
 }
 
 ::-webkit-scrollbar {
-    height: 12px;
-    width: 12px;
-    background: rgb(255, 153, 36);
+    height: 0px;
+    width: 0px;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #ff4800;
-    -webkit-border-radius: 1ex;
-    border-radius: 1ex;
-    -webkit-box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.75);
-    box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.75);
+    background: transparent;
 }
 
 ::-webkit-scrollbar-corner {
-    background: #000;
+    background: transparent;
 }
 
 .rankingSections {
@@ -583,4 +583,66 @@ body {
     position: absolute;
     top: 391px;
     left: 64px;
+}
+
+@media screen and (max-width: 950px) {
+    #speechbubble {
+        position: fixed;
+        top: 200px;
+    }
+    #bubblePortrait {
+        position: fixed;
+        top: 215px;
+    }
+    .speechbubbletext {
+        position: fixed;
+        top: 207px;
+    }
+    .selector1,
+    .selector2,
+    .selector3,
+    .selector4,
+    .selector5 {
+        position: fixed;
+    }
+    .topbarexplanation {
+        position: fixed;
+    }
+    .ranking {
+        height: 320px;
+        position: fixed;
+    }
+    .rankingscroll {
+        height: 140px;
+    }
+    .buttonVoltar {
+        position: fixed;
+        top: 330px;
+    }
+    .overlayshare {
+        position: fixed;
+        top: 90px;
+    }
+    .overlaypages {
+        border-radius: 25px;
+        width: 650px;
+        height: 370px;
+        background-color: rgba(0, 0, 0, 0.85);
+        background-size: cover;
+        position: absolute;
+        top: 10px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+    .grade {
+        top: 10px;
+        left: 480px;
+    }
+    .overlaylevelup {
+        top: 70px;
+        position: fixed;
+    }
 }
