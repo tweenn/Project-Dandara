@@ -8,7 +8,7 @@ function Topbar() {
     const { money, followers, respect, rank, totalPlayers } = useContext(UserContext)
 
     return (
-        <div>
+        <>
             <img src='../img/topbar.png' alt="" id="topbar" />
             <div className='countdownbar'>
                 <CountDownTimer shouldShowTimeUnits="true" shouldHidePrecedingZeros="true" dateTime="2022-10-02T06:00:00Z" />
@@ -25,7 +25,7 @@ function Topbar() {
             <div className='rankbar'>
                 <p>{rank}º/{totalPlayers}</p>
             </div>
-        </div>
+        </>
     );
 }
 

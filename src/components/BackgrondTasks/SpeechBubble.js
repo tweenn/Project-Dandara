@@ -2,7 +2,6 @@ import React, { useState, createContext, useContext, useEffect } from "react";
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from "../BackgrondTasks/firebase-config";
 import { UserContext } from './UserDataContext';
-import { useDetectClickOutside } from 'react-detect-click-outside';
 import Typewriter from 'typewriter-effect';
 
 export const BubbleContext = createContext({})
@@ -33,11 +32,10 @@ export const SpeechBubbleContext = ({ children }) => {
         return () => { setBubble(false); }
     }, [currentQuest]);
 
-    const clickedOutside = useDetectClickOutside({ onTriggered: RemoveBubble });
 
     if (bubble) {
         return (
-            <div ref={clickedOutside} onClick={() => { RemoveBubble(); }} className="bubblewrapper">
+            <div onClick={() => { RemoveBubble(); }} className="bubblewrapper">
                 <img src='../../img/speechbubble.png' alt="" id="speechbubble" />
                 <img src={bubblePortrait} alt="" id="bubblePortrait" />
                 <div className="speechbubbletext" >

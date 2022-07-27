@@ -35,11 +35,12 @@ export const UserDataContext = ({ children }) => {
     const [billboard, setBillboard] = useState(false);
     const [showLevelOnce, setShowLevelOnce] = useState();
     const [fullscreen, setFullscreen] = useState(false);
+    const [mobile, setMobile] = useState(false);
 
     return (
         <UserContext.Provider
 
-            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect, campaign, setCampaign, campaignCost, setCampaignCost, campaignResult, setCampaignResult, activeCampaign, setActiveCampaign, campaignStars, setCampaignStars, ArtStars, setArtStars, TextStars, setTextStars, MusicStars, setMusicStars, VideoStars, setVideoStars, gradeLetter, setGradeLetter, tributeImportance, setTributeImportance, rank, setRank, totalPlayers, setTotalPlayers, topMenuOpen, setTopMenuOpen, rankingOpen, setRankingOpen, rankingAll, setRankingAll, guest, setGuest, guestCost, setGuestCost, topBarExplanation, setTopBarExplanation, sharePage, setSharePage, campaignDonations, setCampaignDonations, billboard, setBillboard, showLevelOnce, setShowLevelOnce, fullscreen, setFullscreen }}>
+            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect, campaign, setCampaign, campaignCost, setCampaignCost, campaignResult, setCampaignResult, activeCampaign, setActiveCampaign, campaignStars, setCampaignStars, ArtStars, setArtStars, TextStars, setTextStars, MusicStars, setMusicStars, VideoStars, setVideoStars, gradeLetter, setGradeLetter, tributeImportance, setTributeImportance, rank, setRank, totalPlayers, setTotalPlayers, topMenuOpen, setTopMenuOpen, rankingOpen, setRankingOpen, rankingAll, setRankingAll, guest, setGuest, guestCost, setGuestCost, topBarExplanation, setTopBarExplanation, sharePage, setSharePage, campaignDonations, setCampaignDonations, billboard, setBillboard, showLevelOnce, setShowLevelOnce, fullscreen, setFullscreen, mobile, setMobile }}>
             {children}
 
         </UserContext.Provider>

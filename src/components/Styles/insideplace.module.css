@@ -179,11 +179,14 @@ p2 {
         margin: 0%;
     }
     .box {
-        height: 73px;
+        height: 18vh;
         width: 600px;
     }
     .guests {
-        height: 82px;
+        height: 20vh;
         width: 82px;
+    }
+    h2 {
+        font-size: 20px;
     }
 }

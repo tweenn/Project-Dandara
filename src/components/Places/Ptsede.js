@@ -110,23 +110,11 @@ function Ptsede() {
             })
             setCurrentQuest(currentQuest + 1)
         }
-        if (currentQuest === 4) {
-            await updateDoc(Ref, {
-                quest: currentQuest + 2
-            })
-            setCurrentQuest(currentQuest + 2)
-        }
         if (currentQuest === 13) {
             await updateDoc(Ref, {
                 quest: currentQuest + 1
             })
             setCurrentQuest(currentQuest + 1)
-        }
-        if (currentQuest === 12) {
-            await updateDoc(Ref, {
-                quest: currentQuest + 2
-            })
-            setCurrentQuest(currentQuest + 2)
         }
     }
 

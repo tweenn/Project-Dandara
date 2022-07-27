@@ -37,3 +37,26 @@
     left: 605px;
     font-size: large;
 }
+
+@media screen and (max-width: 950px) and (min-width: 500px) {
+    .moneybar {
+        left: 58vw;
+        font-size: 5vh;
+    }
+    .countdownbar {
+        left: 7vw;
+        font-size: 5vh;
+    }
+    .followersbar {
+        left: 31vw;
+        font-size: 5vh;
+    }
+    .respectbar {
+        left: 47vw;
+        font-size: 5vh;
+    }
+    .rankbar {
+        left: 76vw;
+        font-size: 5vh;
+    }
+}

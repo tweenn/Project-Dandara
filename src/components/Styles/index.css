@@ -8,180 +8,184 @@ body {
     background-repeat: no-repeat;
 }
 
+.MainGameWindow {
+    width: 800px;
+}
+
 #gamescreen {
-    width: 80vh;
-    height: 100vh;
+    width: 800px;
     overflow: scroll;
     scrollbar-width: 0px;
 }
 
 #bgcity {
-    position: absolute;
-    z-index: -999;
+    position: fixed;
+    width: 800px;
+    z-index: -1;
 }
 
 #ptsede {
-    position: absolute;
+    position: fixed;
     top: 54px;
     left: 65px;
 }
 
 #ptsede:hover {
-    position: absolute;
+    position: fixed;
     top: 54px;
     left: 65px;
     filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #businesscenter {
-    position: absolute;
+    position: fixed;
     top: 146px;
     left: 45px;
 }
 
 #businesscenter:hover {
-    position: absolute;
+    position: fixed;
     top: 146px;
     left: 45px;
     filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #apartment {
-    position: absolute;
+    position: fixed;
     top: 86px;
     left: 238px;
 }
 
 #apartment:hover {
-    position: absolute;
+    position: fixed;
     top: 86px;
     left: 238px;
     filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #hospital {
-    position: absolute;
+    position: fixed;
     top: 207px;
     left: 187px;
 }
 
 #hospital:hover {
-    position: absolute;
+    position: fixed;
     top: 207px;
     left: 187px;
     filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #university {
-    position: absolute;
+    position: fixed;
     top: 320px;
     left: 65px;
 }
 
 #university:hover {
-    position: absolute;
+    position: fixed;
     top: 320px;
     left: 65px;
     filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #mayorhall {
-    position: absolute;
+    position: fixed;
     top: 179px;
     left: 360px;
 }
 
 #mayorhall:hover {
-    position: absolute;
+    position: fixed;
     top: 179px;
     left: 360px;
     filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #kindamall {
-    position: absolute;
+    position: fixed;
     top: 24px;
     left: 361px;
 }
 
 #hotel {
-    position: absolute;
+    position: fixed;
     top: 86px;
     left: 527px;
 }
 
 #hotel:hover {
-    position: absolute;
+    position: fixed;
     top: 86px;
     left: 527px;
     filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #convenience {
-    position: absolute;
+    position: fixed;
     top: 74px;
     left: 572px;
 }
 
 #bank {
-    position: absolute;
+    position: fixed;
     top: 179px;
     left: 632px;
 }
 
 #bank:hover {
-    position: absolute;
+    position: fixed;
     top: 179px;
     left: 632px;
     filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #shoppingmall {
-    position: absolute;
+    position: fixed;
     top: 250px;
     left: 509px;
 }
 
 #shoppingmall:hover {
-    position: absolute;
+    position: fixed;
     top: 250px;
     left: 509px;
     filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #sports {
-    position: absolute;
+    position: fixed;
     top: 330px;
     left: 357px;
 }
 
 #sports:hover {
-    position: absolute;
+    position: fixed;
     top: 330px;
     left: 357px;
     filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #convenience2 {
-    position: absolute;
+    position: fixed;
     top: 333px;
     left: 438px;
 }
 
 #supermarket {
-    position: absolute;
+    position: fixed;
     top: 390px;
     left: 200px;
 }
 
 #camara {
-    position: absolute;
+    position: fixed;
     top: 400px;
     left: 250px;
 }
 
 #camara:hover {
-    position: absolute;
+    position: fixed;
     top: 400px;
     left: 250px;
     filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
@@ -189,11 +193,9 @@ body {
 
 #overlay {
     width: 800px;
-    height: 600px;
-    background-image: url(../../../public/img/overlay.png);
     background-size: auto;
     background-repeat: no-repeat;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     pointer-events: none;
@@ -222,13 +224,18 @@ body {
 }
 
 .bubblewrapper {
+    width: 800px;
+    height: 800px;
     z-index: 9999;
+    position: fixed;
+    top: 0px;
+    left: 0px;
 }
 
 #speechbubble {
     width: 620px;
     height: auto;
-    position: absolute;
+    position: fixed;
     left: 170px;
     top: 403px;
     cursor: pointer;
@@ -237,7 +244,7 @@ body {
 #bubblePortrait {
     width: 110px;
     height: auto;
-    position: absolute;
+    position: fixed;
     left: 656px;
     top: 418px;
     cursor: pointer;
@@ -246,7 +253,7 @@ body {
 .speechbubbletext {
     width: 410px;
     height: 190px;
-    position: absolute;
+    position: fixed;
     left: 190px;
     top: 410px;
     color: white;
@@ -259,7 +266,7 @@ body {
     height: 490px;
     background-color: rgba(0, 0, 0, 0.85);
     background-size: cover;
-    position: absolute;
+    position: fixed;
     top: 56px;
     color: white;
     display: flex;
@@ -274,7 +281,7 @@ body {
     height: 280px;
     background-color: rgba(0, 0, 0, 0.85);
     background-size: cover;
-    position: absolute;
+    position: fixed;
     top: 175px;
     color: white;
     display: flex;
@@ -289,7 +296,7 @@ body {
     height: 300px;
     background-color: rgba(0, 0, 0, 0.85);
     background-size: cover;
-    position: absolute;
+    position: fixed;
     top: 160px;
     left: 210px;
     color: white;
@@ -303,14 +310,26 @@ body {
     border-radius: 25px;
     width: 800px;
     height: 600px;
-    background-color: rgba(0, 0, 0, 0.85);
+    top: 0px;
+    background-color: rgba(0, 0, 0);
     background-size: cover;
-    position: absolute;
+    position: fixed;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.btnfullscreen {
+    border: none;
+    color: rgba(255, 255, 255, .7);
+    background: none;
+    cursor: pointer;
+    text-shadow: none;
+    position: fixed;
+    top: 550px;
+    width: 250px;
 }
 
 .topbarexplanation {
@@ -319,8 +338,9 @@ body {
     height: 600px;
     background-color: rgba(0, 0, 0, 0.85);
     background-size: cover;
-    position: absolute;
+    position: fixed;
     cursor: pointer;
+    top: 0px;
 }
 
 .selector1 {
@@ -331,7 +351,7 @@ body {
     left: 24px;
     background-color: rgba(255, 153, 36, 0.6);
     background-size: cover;
-    position: absolute;
+    position: fixed;
 }
 
 .selector2 {
@@ -342,7 +362,7 @@ body {
     left: 208px;
     background-color: rgba(255, 153, 36, 0.6);
     background-size: cover;
-    position: absolute;
+    position: fixed;
 }
 
 .selector3 {
@@ -353,7 +373,7 @@ body {
     left: 340px;
     background-color: rgba(255, 153, 36, 0.6);
     background-size: cover;
-    position: absolute;
+    position: fixed;
 }
 
 .selector4 {
@@ -364,7 +384,7 @@ body {
     left: 430px;
     background-color: rgba(255, 153, 36, 0.6);
     background-size: cover;
-    position: absolute;
+    position: fixed;
 }
 
 .selector5 {
@@ -375,7 +395,7 @@ body {
     left: 570px;
     background-color: rgba(255, 153, 36, 0.6);
     background-size: cover;
-    position: absolute;
+    position: fixed;
 }
 
 .continuar {
@@ -383,12 +403,12 @@ body {
     height: 30px;
     top: 250px;
     left: 250px;
-    position: absolute;
+    position: fixed;
     cursor: pointer;
 }
 
 .desc1 {
-    position: absolute;
+    position: fixed;
     width: 180px;
     top: 35px;
     left: 20px;
@@ -396,7 +416,7 @@ body {
 }
 
 .desc2 {
-    position: absolute;
+    position: fixed;
     width: 180px;
     top: 35px;
     left: -8px;
@@ -405,7 +425,7 @@ body {
 }
 
 .desc3 {
-    position: absolute;
+    position: fixed;
     width: 180px;
     top: 35px;
     left: -12px;
@@ -413,7 +433,7 @@ body {
 }
 
 .desc4 {
-    position: absolute;
+    position: fixed;
     width: 180px;
     top: 35px;
     left: 10px;
@@ -422,7 +442,7 @@ body {
 }
 
 .desc5 {
-    position: absolute;
+    position: fixed;
     width: 180px;
     top: 35px;
     left: 8px;
@@ -444,7 +464,7 @@ body {
 }
 
 .points {
-    position: absolute;
+    position: fixed;
     left: 260px;
     width: 80px;
     display: flex;
@@ -468,7 +488,7 @@ body {
 }
 
 .rating {
-    position: absolute;
+    position: fixed;
     left: 242px;
     width: 150px;
     display: flex;
@@ -476,7 +496,7 @@ body {
 }
 
 .rating2 {
-    position: absolute;
+    position: fixed;
     left: 437px;
     width: 150px;
     display: flex;
@@ -485,7 +505,7 @@ body {
 }
 
 .grade {
-    position: absolute;
+    position: fixed;
     height: 50px;
     font-size: 70px;
     top: 20px;
@@ -493,7 +513,7 @@ body {
 }
 
 .gradeTitle {
-    position: absolute;
+    position: fixed;
     top: 30px;
 }
 
@@ -502,7 +522,7 @@ body {
     width: 400px;
     height: 400px;
     background: none;
-    position: absolute;
+    position: fixed;
     top: -190px;
     left: 572px;
     color: white;
@@ -527,7 +547,7 @@ body {
     height: 490px;
     background-color: rgba(0, 0, 0, 0.85);
     background-size: cover;
-    position: absolute;
+    position: fixed;
     top: 56px;
     left: 70px;
     color: white;
@@ -567,7 +587,7 @@ body {
 }
 
 .centerRank {
-    position: absolute;
+    position: fixed;
     left: 300px;
     width: 150px;
     display: flex;
@@ -575,7 +595,7 @@ body {
 }
 
 .centerRank2 {
-    position: absolute;
+    position: fixed;
     left: 455px;
     width: 150px;
     display: flex;
@@ -583,7 +603,7 @@ body {
 }
 
 .buttonVoltar {
-    position: absolute;
+    position: fixed;
     top: 440px;
 }
 
@@ -593,33 +613,107 @@ body {
 }
 
 #billboard {
-    position: absolute;
+    position: fixed;
     top: 391px;
     left: 64px;
 }
 
 @media screen and (max-width: 950px) and (min-width: 500px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+    .MainGameWindow {
+        width: 100vw;
+        height: 100vh;
+    }
+    #gamescreen {
+        width: 100vw;
+        height: 100vh;
+    }
+    #bgcity {
+        width: 100vw;
+        height: 100vh;
+        padding: 0%;
+        margin: 0%;
+    }
+    .bubblewrapper {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0vh;
+        left: 0vw;
+        z-index: 9999;
+    }
     #speechbubble {
         position: fixed;
-        top: 180px;
+        height: 48vh;
+        width: 73vw;
+        top: 48vh;
+        left: 25vw;
     }
     #bubblePortrait {
         position: fixed;
-        top: 195px;
+        height: 40vh;
+        width: 15vw;
+        top: 54vh;
+        left: 81vw;
     }
     .speechbubbletext {
         position: fixed;
-        top: 187px;
+        height: 40vh;
+        width: 51vw;
+        top: 52vh;
+        left: 26.5vw;
     }
-    .selector1,
-    .selector2,
-    .selector3,
-    .selector4,
+    .selector1 {
+        position: fixed;
+        height: 8vh;
+        width: 23vw;
+        top: 3vh;
+        left: 3vw;
+    }
+    .selector2 {
+        position: fixed;
+        width: 11vw;
+        height: 8vh;
+        left: 26vw;
+        top: 3vh;
+    }
+    .selector3 {
+        position: fixed;
+        height: 8vh;
+        width: 9vw;
+        top: 3vh;
+        left: 43vw;
+    }
+    .selector4 {
+        position: fixed;
+        height: 8vh;
+        width: 14vw;
+        top: 3vh;
+        left: 54vw;
+    }
     .selector5 {
         position: fixed;
+        height: 8vh;
+        width: 16vw;
+        top: 3vh;
+        left: 71vw;
     }
     .topbarexplanation {
         position: fixed;
+        height: 100vh;
+        width: 100vw;
+        top: 0vh;
+    }
+    .continuar {
+        height: 10vh;
+        width: 45vw;
+        cursor: pointer;
+        position: fixed;
+        top: 50vh;
+        left: 33vw;
     }
     .ranking {
         height: 320px;
@@ -638,27 +732,233 @@ body {
     }
     .overlaypages {
         border-radius: 25px;
-        width: 650px;
-        height: 350px;
+        width: 70vw;
+        height: 95vh;
+        top: 2vh;
+        left: 15vw;
         background-color: rgba(0, 0, 0, 0.85);
         background-size: cover;
-        position: absolute;
-        top: 4px;
+        position: fixed;
         color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-    }
-    .grade {
-        top: 10px;
-        left: 480px;
     }
     .overlaylevelup {
-        top: 70px;
+        height: 77vh;
+        width: 56vw;
+        left: 22vw;
+        top: 10vh;
         position: fixed;
     }
     .topMenu {
         position: fixed;
+        left: 72vw;
+    }
+    #topbar {
+        width: 88vw;
+    }
+    #topbutton {
+        width: 8vw;
+        height: 10.8vh;
+        left: 91vw;
+    }
+    .overlayfullscreen {
+        width: 100vw;
+        height: 100vh;
+        z-index: 999;
+    }
+    .btnfullscreen {
+        top: 88vh;
+        width: 35vw;
+        left: 1vw;
+    }
+    #overlay {
+        width: 100vw;
+        height: 100vh;
+    }
+    #ptsede {
+        height: 26vh;
+        width: 22vw;
+        top: 5vh;
+        left: -3vw;
+    }
+    #ptsede:hover {
+        height: 26vh;
+        width: 22vw;
+        top: 5vh;
+        left: -3vw;
+    }
+    #businesscenter {
+        height: 32vh;
+        width: 26vw;
+        top: 21vh;
+        left: 8vw;
+    }
+    #businesscenter:hover {
+        height: 32vh;
+        width: 26vw;
+        top: 21vh;
+        left: 8vw;
+    }
+    #apartment {
+        height: 24vh;
+        width: 13vw;
+        top: 8vh;
+        left: 31vw;
+    }
+    #apartment:hover {
+        height: 24vh;
+        width: 13vw;
+        top: 8vh;
+        left: 31vw;
+    }
+    #hospital {
+        height: 34vh;
+        width: 22vw;
+        top: 29vh;
+        left: 23vw;
+    }
+    #hospital:hover {
+        height: 34vh;
+        width: 22vw;
+        top: 29vh;
+        left: 23vw;
+    }
+    #university {
+        height: 26vh;
+        width: 22vw;
+        top: 57vh;
+        left: 9vw;
+    }
+    #university:hover {
+        height: 26vh;
+        width: 22vw;
+        top: 57vh;
+        left: 9vw;
+    }
+    #mayorhall {
+        height: 25vh;
+        width: 19vw;
+        top: 23vh;
+        left: 45vw;
+    }
+    #mayorhall:hover {
+        height: 25vh;
+        width: 19vw;
+        top: 23vh;
+        left: 45vw;
+    }
+    #kindamall {
+        height: 24vh;
+        width: 20vw;
+        top: -3vh;
+        left: 50vw;
+    }
+    #hotel {
+        height: 30vh;
+        width: 19vw;
+        top: 3vh;
+        left: 64vw;
+    }
+    #hotel:hover {
+        height: 30vh;
+        width: 19vw;
+        top: 3vh;
+        left: 64vw;
+    }
+    #convenience {
+        height: 24vh;
+        width: 20vw;
+        top: -2vh;
+        left: 72vw;
+    }
+    #bank {
+        height: 24vh;
+        width: 18vw;
+        top: 24vh;
+        left: 79vw;
+    }
+    #bank:hover {
+        height: 24vh;
+        width: 20vw;
+    }
+    #shoppingmall {
+        height: 24vh;
+        width: 20vw;
+        top: 41vh;
+        left: 64vw;
+    }
+    #shoppingmall:hover {
+        height: 24vh;
+        width: 20vw;
+        top: 41vh;
+        left: 64vw;
+    }
+    #sports {
+        height: 17vh;
+        width: 11vw;
+        top: 58vh;
+        left: 44.5vw;
+    }
+    #sports:hover {
+        height: 17vh;
+        width: 11vw;
+        top: 58vh;
+        left: 44.5vw;
+    }
+    #convenience2 {
+        height: 20vh;
+        width: 15vw;
+        top: 58vh;
+        left: 53vw;
+    }
+    #supermarket {
+        height: 24vh;
+        width: 20vw;
+        top: 71vh;
+        left: 25vw;
+    }
+    #camara {
+        height: 25vh;
+        width: 17vw;
+        top: 74vh;
+        left: 32vw;
+    }
+    #camara:hover {
+        height: 24vh;
+        width: 20vw;
+    }
+    #billboard {
+        position: fixed;
+        width: 8.3vw;
+        height: 22vh;
+        top: 71.6vh;
+        left: 7.9vw;
+    }
+    .grade {
+        font-size: 15vh;
+        width: 9vw;
+        height: 9vh;
+        top: 13vh;
+        left: 46vw;
+    }
+    .campaignResults {
+        height: 80vh;
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+    }
+    .campaignResultsAtributes {
+        width: 60vw;
+        height: 5vh;
+    }
+    .rating {
+        position: fixed;
+        left: 39vw;
+        width: 20vw;
+        height: 5vh;
+    }
+    .rating2 {
+        left: 66vw;
+        width: 15vw;
+        height: 5vh;
     }
 }

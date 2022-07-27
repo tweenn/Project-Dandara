@@ -54,7 +54,7 @@ export const CampaignResults = () => {
                             .pauseFor(7500)
                             .typeString('NOTA DA CAMPANHA:')
                             .start();
-                    }} /></h2><br /><h2 className="grade"><Typewriter options={{ delay: 10, cursor: null }}
+                    }} /></h2><br /><br /><h2 className="grade"><Typewriter options={{ delay: 10, cursor: null }}
                         onInit={(typewriter) => {
                             typewriter
                                 .pauseFor(8500)
@@ -166,7 +166,7 @@ export const CampaignResults = () => {
                                 .pauseFor(6000)
                                 .typeString('CONVIDADO: ' + (guest ? guest[0] : 'Nenhum'))
                                 .start();
-                        }} /></h5><br />
+                        }} /></h5>
                     <h2><Typewriter options={{ delay: 10, cursor: null }}
                         onInit={(typewriter) => {
                             typewriter
@@ -181,8 +181,8 @@ export const CampaignResults = () => {
                                 .typeString('DOAÇÕES: ' + campaignDonations)
                                 .start();
                         }} /></h4>
+                    <button onClick={() => { UpdateActiveCampaign(); setActiveCampaign(null); UpdateMoney(); resetStars(); setFollowers(followers + campaignResult); UpdateFollowers(); UpdateGuest(); updateQuest(); }}>Voltar</button>
                 </div>
-                <button onClick={() => { UpdateActiveCampaign(); setActiveCampaign(null); UpdateMoney(); resetStars(); setFollowers(followers + campaignResult); UpdateFollowers(); UpdateGuest(); updateQuest(); }}>Voltar</button>
             </motion.div>
         )
     }

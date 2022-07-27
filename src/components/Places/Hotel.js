@@ -38,12 +38,6 @@ function Hotel() {
             })
             setCurrentQuest(currentQuest + 1)
         }
-        if (currentQuest === 8) {
-            await updateDoc(Ref, {
-                quest: currentQuest + 2
-            })
-            setCurrentQuest(currentQuest + 2)
-        }
     }
 
     useEffect(() => {
