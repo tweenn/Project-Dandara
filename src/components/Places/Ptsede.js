@@ -11,6 +11,7 @@ import { CampaignCreation } from "../BackgrondTasks/CampaignCreation";
 import { CampaignResults, UpdateStars } from "../BackgrondTasks/CampaignResultsPage";
 import { ShareCampaign } from "../BackgrondTasks/ShareCampaign";
 import { RespectManager } from "../BackgrondTasks/RespectManager";
+import { FullscreenManager } from "../BackgrondTasks/FullscreenManager";
 
 function Ptsede() {
 
@@ -185,6 +186,7 @@ function Ptsede() {
             <CampaignResults />
             <ShareCampaign />
             <SpeechBubbleContext />
+            <FullscreenManager />
             <UpdateStars />
             <RespectManager />
         </motion.div >

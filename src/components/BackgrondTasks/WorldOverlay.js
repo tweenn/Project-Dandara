@@ -1,11 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "./UserDataContext";
 
 export const WorldOverlay = () => {
 
     const { mobile } = useContext(UserContext)
-
-    console.log(mobile);
 
     if (window.innerWidth <= 950 && window.innerWidth > 450 || mobile) {
 
@@ -15,7 +13,16 @@ export const WorldOverlay = () => {
                 <img src='../img/bgcity_mobile.png' alt="" id="bgcity" />
             </>
         )
-    } else {
+    }
+    if (window.innerWidth < 450 || mobile) {
+        return (
+            <div className='fullscreencell'>
+                <h4 className='virar'>Vire seu celular</h4>
+                <img src="../img/cellphone.png" alt="" id="cellphone" />
+            </div>
+        )
+    }
+    else {
 
         return (
             <>

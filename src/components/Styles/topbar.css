@@ -4,6 +4,7 @@
     top: -3px;
     left: 460px;
     font-size: large;
+    z-index: 3;
 }
 
 .countdownbar {
@@ -12,6 +13,7 @@
     top: -3px;
     left: 52px;
     font-size: large;
+    z-index: 3;
 }
 
 .followersbar {
@@ -20,6 +22,7 @@
     top: -3px;
     left: 242px;
     font-size: large;
+    z-index: 3;
 }
 
 .respectbar {
@@ -28,6 +31,7 @@
     top: -3px;
     left: 372px;
     font-size: large;
+    z-index: 3;
 }
 
 .rankbar {
@@ -36,6 +40,7 @@
     top: -3px;
     left: 605px;
     font-size: large;
+    z-index: 3;
 }
 
 @media screen and (max-width: 950px) and (min-width: 500px) {

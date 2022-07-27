@@ -6,6 +6,7 @@ import { updateDoc, doc } from 'firebase/firestore';
 import { db } from "../BackgrondTasks/firebase-config";
 import { UserContext } from '../BackgrondTasks/UserDataContext';
 import { SpeechBubbleContext } from "../BackgrondTasks/SpeechBubble";
+import { FullscreenManager } from '../BackgrondTasks/FullscreenManager';
 
 function Hotel() {
 
@@ -99,6 +100,7 @@ function Hotel() {
                 </Link>
             </div>
             <SpeechBubbleContext />
+            <FullscreenManager />
         </motion.div >
 
     );

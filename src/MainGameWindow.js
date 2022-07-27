@@ -48,6 +48,7 @@ function MainGameWindow() {
       }
     }
     window.addEventListener('resize', updateMobileState);
+    window.screen.orientation.addEventListener('change', updateMobileState);
   })
 
   useEffect(() => {
