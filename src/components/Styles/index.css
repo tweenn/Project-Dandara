@@ -652,7 +652,7 @@ body {
 
 .centerRank {
     position: fixed;
-    left: 300px;
+    left: 318px;
     width: 150px;
     display: flex;
     justify-content: center;
@@ -660,7 +660,7 @@ body {
 
 .centerRank2 {
     position: fixed;
-    left: 455px;
+    left: 525px;
     width: 150px;
     display: flex;
     justify-content: center;
@@ -846,7 +846,7 @@ body {
         height: 26vh;
         width: 20vw;
         top: 29vh;
-        left: 12vw;
+        left: 10vw;
     }
     #businesscenter:hover {
         height: 26vh;
@@ -867,10 +867,10 @@ body {
         left: 31vw;
     }
     #hospital {
-        height: 34vh;
-        width: 22vw;
-        top: 33vh;
-        left: 23vw;
+        height: 31vh;
+        width: 18vw;
+        top: 37vh;
+        left: 25vw;
     }
     #hospital:hover {
         height: 34vh;

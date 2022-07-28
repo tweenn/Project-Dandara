@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from "./UserDataContext";
+import error from "../../sounds/error.mp3";
 
 export const WorldOverlay = () => {
 
@@ -15,6 +16,7 @@ export const WorldOverlay = () => {
         )
     }
     if (window.innerWidth < 450) {
+        new Audio(error).play();
         return (
             <div className='fullscreencell'>
                 <h4 className='virar'>Vire seu celular</h4>

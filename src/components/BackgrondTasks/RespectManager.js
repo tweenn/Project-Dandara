@@ -36,8 +36,7 @@ export const RespectManager = () => {
 
     useEffect(() => {
         calcRespect();
-        updateRespect();
-    }, [followers, respect])
+    }, [followers])
 
     if (showLevelUp && respect) {
         if (showLevelOnce === respect || respect > showLevelOnce) {

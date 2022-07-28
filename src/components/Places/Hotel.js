@@ -8,6 +8,10 @@ import { UserContext } from '../BackgrondTasks/UserDataContext';
 import { SpeechBubbleContext } from "../BackgrondTasks/SpeechBubble";
 import { FullscreenManager } from '../BackgrondTasks/FullscreenManager';
 import click from "../../sounds/click.mp3";
+import localartist from "../../sounds/localartist.mp3";
+import digitalinfluencer from "../../sounds/digitalinfluencer.mp3";
+import musician from "../../sounds/musician.mp3";
+import celebrity from "../../sounds/celebrity.mp3";
 
 function Hotel() {
 
@@ -69,7 +73,7 @@ function Hotel() {
                         <h4>Preço: 1000</h4>
                         <h4>Bônus: 2x</h4>
                     </div>
-                    <button disabled={money < 1000 || guest != null} onClick={() => { new Audio(click).play(); setGuest(['Artista Local', 2]); updateQuest2(); setMoney(money - 1000); setGuestCost(1000); }}>Contratar</button>
+                    <button disabled={money < 1000 || guest != null} onClick={() => { new Audio(localartist).play(); setGuest(['Artista Local', 2]); updateQuest2(); setMoney(money - 1000); setGuestCost(1000); }}>Contratar</button>
                 </div>
                 <div className={styles.box}>
                     <img src='../../img/digitalinfluencer.png' alt="" className={styles.guests} />
@@ -78,7 +82,7 @@ function Hotel() {
                         <h4>Preço: 3000</h4>
                         <h4>Bônus: 4x</h4>
                     </div>
-                    <button disabled={money < 3000 || guest != null} onClick={() => { new Audio(click).play(); setGuest(['Influencer Digital', 4]); setMoney(money - 3000); setGuestCost(3000); }}>Contratar</button>
+                    <button disabled={money < 3000 || guest != null} onClick={() => { new Audio(digitalinfluencer).play(); setGuest(['Influencer Digital', 4]); setMoney(money - 3000); setGuestCost(3000); }}>Contratar</button>
                 </div>
                 <div className={styles.box}>
                     <img src='../../img/musician.png' alt="" className={styles.guests} />
@@ -87,7 +91,7 @@ function Hotel() {
                         <h4>Preço: 10000</h4>
                         <h4>Bônus: 8x</h4>
                     </div>
-                    <button disabled={money < 10000 || guest != null} onClick={() => { new Audio(click).play(); setGuest(['Músico Famoso', 8]); setMoney(money - 10000); setGuestCost(10000); }}>Contratar</button>
+                    <button disabled={money < 10000 || guest != null} onClick={() => { new Audio(musician).play(); setGuest(['Músico Famoso', 8]); setMoney(money - 10000); setGuestCost(10000); }}>Contratar</button>
                 </div>
                 <div className={styles.box}>
                     <img src='../../img/celebrity.png' alt="" className={styles.guests} />
@@ -96,7 +100,7 @@ function Hotel() {
                         <h4>Preço: 20000</h4>
                         <h4>Bônus: 16x</h4>
                     </div>
-                    <button disabled={money < 20000 || guest != null} onClick={() => { new Audio(click).play(); setGuest(['Celebridade', 16]); setMoney(money - 20000); setGuestCost(20000); }}>Contratar</button>
+                    <button disabled={money < 20000 || guest != null} onClick={() => { new Audio(celebrity).play(); setGuest(['Celebridade', 16]); setMoney(money - 20000); setGuestCost(20000); }}>Contratar</button>
                 </div>
 
 

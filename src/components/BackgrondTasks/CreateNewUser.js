@@ -43,7 +43,8 @@ export const SetNewPlayerName = () => {
     }
     return <div className="login">
         <form onSubmit={createUserHandler}>
-            <h2>Escolha um nome para seu personagem:</h2>
+            <h5>Escolha um nome</h5>
+            <h5>para seu personagem:</h5>
             <input type="text" placeholder="Nome:" onChange={event => setPlayerName(event.target.value)} required />
             <button onClick={() => new Audio(click).play()} type="submit">Jogar!</button>
         </form>
