@@ -17,7 +17,7 @@ import menu from "./sounds/menu.mp3";
 
 function MainGameWindow() {
 
-  const { topMenuOpen, setTopMenuOpen, currentQuest, setMobile } = useContext(UserContext)
+  const { topMenuOpen, setTopMenuOpen, currentQuest, setMobile, mobile } = useContext(UserContext)
 
   const [animateSede, setAnimateSede] = useState(false);
   const [animateHotel, setAnimateHotel] = useState(false);
@@ -30,6 +30,7 @@ function MainGameWindow() {
   const [animateShopping, setAnimateShopping] = useState(false);
   const [animateSports, setAnimateSports] = useState(false);
   const [animateCamara, setAnimateCamara] = useState(false);
+  const [camara, setCamara] = useState();
 
   const updateAnimations = () => {
     if (currentQuest === 2 || currentQuest === 11) {
@@ -56,6 +57,18 @@ function MainGameWindow() {
   useEffect(() => {
     updateAnimations();
   }, [currentQuest])
+
+  const camaraMobile = () => {
+    if (window.innerWidth <= 950 && window.innerWidth > 450) {
+      setCamara('../img/camara_mobile.png');
+    } if (window.innerWidth < 450 || window.innerWidth > 950) {
+      setCamara('../img/camara.png');
+    }
+  }
+
+  useEffect(() => {
+    camaraMobile();
+  }, [mobile])
 
   return (
     <motion.div className="MainGameWindow"
@@ -163,7 +176,7 @@ function MainGameWindow() {
           y: [-45, 0, -45]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Camara">
-            <img onClick={() => new Audio(click).play()} src='../img/camara.png' alt="" id="camara" />
+            <img onClick={() => new Audio(click).play()} src={camara} alt="" id="camara" />
           </Link>
         </motion.div>
         <WorldOverlay />

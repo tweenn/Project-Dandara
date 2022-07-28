@@ -3,6 +3,7 @@ import { db } from "../BackgrondTasks/firebase-config";
 import { UserContext } from "./UserDataContext";
 import { doc, updateDoc } from 'firebase/firestore';
 import click from "../../sounds/click.mp3";
+import levelup from "../../sounds/levelup.mp3";
 
 export const RespectManager = () => {
 
@@ -38,8 +39,9 @@ export const RespectManager = () => {
         updateRespect();
     }, [followers, respect])
 
-    if (showLevelUp) {
+    if (showLevelUp && respect) {
         if (showLevelOnce === respect || respect > showLevelOnce) {
+            new Audio(levelup).play();
             return (
                 <div className="overlaylevelup">
                     <h2>Parabéns!</h2>

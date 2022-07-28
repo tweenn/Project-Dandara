@@ -4,7 +4,7 @@ import click from "../../sounds/click.mp3";
 
 export const FullscreenManager = () => {
 
-    const { fullscreen, setFullscreen, mobile } = useContext(UserContext);
+    const { fullscreen, setFullscreen } = useContext(UserContext);
     const [on, setOn] = useState(true);
 
     if (fullscreen === false) {
@@ -25,7 +25,7 @@ export const FullscreenManager = () => {
                     <button onClick={() => { new Audio(click).play(); toggleFullSceen(); setFullscreen(true); }}>Tela Cheia</button>
                 </div>
             )
-        } else return (
+        } else if (window.innerWidth < 950) return (
             <div className='overlayfullscreen'>
                 <h3>Para uma melhor experiência, ative o modo Tela Cheia:</h3>
                 <h4>(Também utilize seu celular na horizontal)</h4>
@@ -43,7 +43,7 @@ export const FullscreenManager = () => {
                 }
             }
         };
-        return (
+        if (window.innerWidth < 950) return (
             <button className='btnfullscreen' onClick={() => { new Audio(click).play(); toggleFullSceen(); setOn(!on) }}>◰ {on ? "Desativar " : "Ativar "}Modo Tela Cheia</button>
         )
     }

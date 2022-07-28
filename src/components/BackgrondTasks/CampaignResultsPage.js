@@ -5,6 +5,7 @@ import { doc, updateDoc } from 'firebase/firestore';
 import Typewriter from 'typewriter-effect';
 import { motion } from "framer-motion";
 import click from "../../sounds/click.mp3";
+import applause from "../../sounds/applause.mp3";
 
 export const CampaignResults = () => {
 
@@ -60,7 +61,8 @@ export const CampaignResults = () => {
                             typewriter
                                 .pauseFor(8500)
                                 .typeString(gradeLetter)
-                                .start();
+                                .start()
+                                .callFunction(() => new Audio(applause).play());
                         }} /></h2><br /><br />
                 <div className="campaignResults">
                     <div className="campaignResultsAtributes">

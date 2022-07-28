@@ -9,6 +9,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    align-items: center;
+    justify-content: center;
 }
 
 form {
@@ -82,5 +84,17 @@ button:disabled {
     }
     form {
         padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .login {
+        height: 100vh;
+        width: 100vw;
+        top: 0vh;
+        background-image: url(../../../public/img/loginbg_mobile_upright.png);
+        background-position: center;
+        align-items: center;
+        justify-content: center;
     }
 }

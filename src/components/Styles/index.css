@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    width: 100vw;
     padding: 0%;
     margin: 0%;
     font-family: 'Fredoka One', cursive;
@@ -9,13 +10,20 @@ body {
 }
 
 .MainGameWindow {
-    width: 800px;
+    width: 100vw;
+    height: 100vh;
 }
 
 #gamescreen {
-    width: 800px;
+    width: 100vw;
+    height: 100vh;
     overflow: scroll;
     scrollbar-width: 0px;
+}
+
+.loginwrapper {
+    display: flex;
+    justify-content: center;
 }
 
 #bgcity {
@@ -525,7 +533,7 @@ body {
 
 .points {
     position: fixed;
-    left: 260px;
+    left: 330px;
     width: 80px;
     display: flex;
     align-items: center;
@@ -533,10 +541,11 @@ body {
 }
 
 .campaignResults {
-    height: 268px;
+    height: 318px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 }
 
 .campaignResultsAtributes {
@@ -549,7 +558,7 @@ body {
 
 .rating {
     position: fixed;
-    left: 242px;
+    left: 316px;
     width: 150px;
     display: flex;
     justify-content: center;
@@ -557,7 +566,7 @@ body {
 
 .rating2 {
     position: fixed;
-    left: 437px;
+    left: 508px;
     width: 150px;
     display: flex;
     align-items: center;
@@ -568,13 +577,8 @@ body {
     position: fixed;
     height: 50px;
     font-size: 70px;
-    top: 20px;
+    top: 80px;
     color: white;
-}
-
-.gradeTitle {
-    position: fixed;
-    top: 30px;
 }
 
 .topMenu {
@@ -679,18 +683,6 @@ body {
 }
 
 @media screen and (max-width: 950px) and (min-width: 500px) {
-    body {
-        height: 100vh;
-        width: 100vw;
-    }
-    .MainGameWindow {
-        width: 100vw;
-        height: 100vh;
-    }
-    #gamescreen {
-        width: 100vw;
-        height: 100vh;
-    }
     #bgcity {
         width: 100vw;
         height: 100vh;
@@ -789,7 +781,9 @@ body {
     }
     .overlayshare {
         position: fixed;
-        top: 90px;
+        width: 50vw;
+        height: 70vh;
+        top: 15vh;
     }
     .overlaypages {
         border-radius: 25px;
@@ -801,6 +795,7 @@ body {
         background-size: cover;
         position: fixed;
         color: white;
+        z-index: 1;
     }
     .overlaylevelup {
         height: 77vh;
@@ -827,9 +822,9 @@ body {
         z-index: 4;
     }
     .btnfullscreen {
-        top: 88vh;
+        top: 89vh;
         width: 35vw;
-        left: 1vw;
+        left: 0vw;
     }
     #overlay {
         width: 100vw;
@@ -838,172 +833,176 @@ body {
     #ptsede {
         height: 26vh;
         width: 22vw;
-        top: 5vh;
+        top: 9vh;
         left: -3vw;
     }
     #ptsede:hover {
         height: 26vh;
         width: 22vw;
-        top: 5vh;
+        top: 9vh;
         left: -3vw;
     }
     #businesscenter {
-        height: 32vh;
-        width: 26vw;
-        top: 21vh;
-        left: 8vw;
+        height: 26vh;
+        width: 20vw;
+        top: 29vh;
+        left: 12vw;
     }
     #businesscenter:hover {
-        height: 32vh;
-        width: 26vw;
-        top: 21vh;
-        left: 8vw;
+        height: 26vh;
+        width: 20vw;
+        top: 29vh;
+        left: 12vw;
     }
     #apartment {
         height: 24vh;
         width: 13vw;
-        top: 8vh;
+        top: 12vh;
         left: 31vw;
     }
     #apartment:hover {
         height: 24vh;
         width: 13vw;
-        top: 8vh;
+        top: 12vh;
         left: 31vw;
     }
     #hospital {
         height: 34vh;
         width: 22vw;
-        top: 29vh;
+        top: 33vh;
         left: 23vw;
     }
     #hospital:hover {
         height: 34vh;
         width: 22vw;
-        top: 29vh;
+        top: 33vh;
         left: 23vw;
     }
     #university {
         height: 26vh;
         width: 22vw;
-        top: 57vh;
+        top: 61vh;
         left: 9vw;
     }
     #university:hover {
         height: 26vh;
         width: 22vw;
-        top: 57vh;
+        top: 61vh;
         left: 9vw;
     }
     #mayorhall {
         height: 25vh;
         width: 19vw;
-        top: 23vh;
+        top: 27vh;
         left: 45vw;
     }
     #mayorhall:hover {
         height: 25vh;
         width: 19vw;
-        top: 23vh;
+        top: 27vh;
         left: 45vw;
     }
     #kindamall {
         height: 24vh;
         width: 20vw;
-        top: -3vh;
+        top: 1vh;
         left: 50vw;
     }
     #hotel {
         height: 30vh;
         width: 19vw;
-        top: 3vh;
+        top: 7vh;
         left: 64vw;
     }
     #hotel:hover {
         height: 30vh;
         width: 19vw;
-        top: 3vh;
+        top: 7vh;
         left: 64vw;
     }
     #convenience {
         height: 24vh;
         width: 20vw;
-        top: -2vh;
+        top: 2vh;
         left: 72vw;
     }
     #bank {
         height: 24vh;
         width: 18vw;
-        top: 24vh;
+        top: 28vh;
         left: 79vw;
     }
     #bank:hover {
         height: 24vh;
         width: 18vw;
-        top: 24vh;
+        top: 28vh;
         left: 79vw;
     }
     #shoppingmall {
         height: 24vh;
         width: 20vw;
-        top: 41vh;
+        top: 45vh;
         left: 64vw;
     }
     #shoppingmall:hover {
         height: 24vh;
         width: 20vw;
-        top: 41vh;
+        top: 45vh;
         left: 64vw;
     }
     #sports {
         height: 17vh;
         width: 11vw;
-        top: 58vh;
+        top: 62vh;
         left: 44.5vw;
     }
     #sports:hover {
         height: 17vh;
         width: 11vw;
-        top: 58vh;
+        top: 62vh;
         left: 44.5vw;
     }
     #convenience2 {
         height: 20vh;
         width: 15vw;
-        top: 58vh;
+        top: 62vh;
         left: 53vw;
     }
     #supermarket {
         height: 24vh;
         width: 20vw;
-        top: 71vh;
+        top: 75vh;
         left: 25vw;
     }
     #camara {
         height: 25vh;
         width: 17vw;
-        top: 74vh;
+        top: 78vh;
         left: 32vw;
     }
     #camara:hover {
         height: 25vh;
         width: 17vw;
-        top: 74vh;
+        top: 78vh;
         left: 32vw;
     }
     #billboard {
         position: fixed;
         width: 8.3vw;
         height: 22vh;
-        top: 71.6vh;
+        top: 75.6vh;
         left: 7.9vw;
     }
     .grade {
         font-size: 15vh;
         width: 9vw;
         height: 9vh;
-        top: 13vh;
+        top: 12vh;
         left: 46vw;
+    }
+    .gradeTitle {
+        position: fixed;
+        top: 30px;
     }
     .campaignResults {
         height: 80vh;
@@ -1040,5 +1039,7 @@ body {
     .loginwrapper {
         height: 100vh;
         width: 100vw;
+        align-items: center;
+        justify-content: center;
     }
 }
