@@ -79,7 +79,7 @@ function MainGameWindow() {
       <div id="gamescreen">
         <motion.div animate={animateSede ? {
           scale: [.9, 1, .9],
-          x: [-20, 0, -20],
+          x: [-50, 0, -50],
           y: [10, 0, 10]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Ptsede">
@@ -88,7 +88,7 @@ function MainGameWindow() {
         </motion.div>
         <motion.div animate={animateBusiness ? {
           scale: [.9, 1, .9],
-          x: [-15, 0, -15],
+          x: [-45, 0, -45],
           y: [20, 0, 20]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/BusinessCenter">
@@ -97,7 +97,7 @@ function MainGameWindow() {
         </motion.div>
         <motion.div animate={animateApartment ? {
           scale: [.9, 1, .9],
-          x: [-10, 0, -10],
+          x: [-40, 0, -40],
           y: [10, 0, 10]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Apartment">
@@ -106,7 +106,7 @@ function MainGameWindow() {
         </motion.div>
         <motion.div animate={animateHospital ? {
           scale: [.9, 1, .9],
-          x: [-10, 0, -10],
+          x: [-40, 0, -40],
           y: [25, 0, 25]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Hospital">
@@ -115,7 +115,7 @@ function MainGameWindow() {
         </motion.div>
         <motion.div animate={animateUniversity ? {
           scale: [.9, 1, .9],
-          x: [-20, 0, -20],
+          x: [-50, 0, -50],
           y: [30, 0, 30]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/University">
@@ -124,6 +124,7 @@ function MainGameWindow() {
         </motion.div>
         <motion.div animate={animateMayor ? {
           scale: [.9, 1, .9],
+          x: [-20, 0, -20],
           y: [20, 0, 20]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/MayorHall">
@@ -134,7 +135,7 @@ function MainGameWindow() {
         <img src='../img/convenience.png' alt="" id="convenience" />
         <motion.div animate={animateHotel ? {
           scale: [.9, 1, .9],
-          x: [20, 0, 20],
+          x: [-10, 0, -10],
           y: [10, 0, 10]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Hotel">
@@ -143,7 +144,6 @@ function MainGameWindow() {
         </motion.div>
         <motion.div animate={animateBank ? {
           scale: [.9, 1, .9],
-          x: [30, 0, 30],
           y: [20, 0, 20]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Bank">
@@ -152,7 +152,7 @@ function MainGameWindow() {
         </motion.div>
         <motion.div animate={animateShopping ? {
           scale: [.9, 1, .9],
-          x: [10, 0, 10],
+          x: [-20, 0, -20],
           y: [30, 0, 30]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/ShoppingMall">
@@ -161,7 +161,7 @@ function MainGameWindow() {
         </motion.div>
         <motion.div animate={animateSports ? {
           scale: [1.2, 1, 1.2],
-          x: [20, 0, 20],
+          x: [60, 0, 60],
           y: [-70, 0, -70]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Sports">
@@ -172,7 +172,7 @@ function MainGameWindow() {
         <img src='../img/supermarket.png' alt="" id="supermarket" />
         <motion.div animate={animateCamara ? {
           scale: [1.1, 1, 1.1],
-          x: [10, 0, 10],
+          x: [40, 0, 40],
           y: [-45, 0, -45]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Camara">
