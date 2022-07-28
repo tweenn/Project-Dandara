@@ -4,6 +4,7 @@ import { db } from "../BackgrondTasks/firebase-config";
 import { doc, updateDoc } from 'firebase/firestore';
 import { motion } from "framer-motion";
 import { FacebookShareButton, TelegramShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
+import click from "../../sounds/click.mp3";
 
 export const ShareCampaign = () => {
 
@@ -39,19 +40,19 @@ export const ShareCampaign = () => {
         return (
             <div className="overlayshare">
                 <h3>Compartilhe com seus amigos:</h3>
-                <FacebookShareButton onClick={() => { resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} quote={quote} hashtag={hashtag}>
+                <FacebookShareButton onClick={() => { new Audio(click).play(); resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} quote={quote} hashtag={hashtag}>
                     Facebook
                 </FacebookShareButton>
-                <TwitterShareButton onClick={() => { resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} title={title} hashtag={hashtag}>
+                <TwitterShareButton onClick={() => { new Audio(click).play(); resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} title={title} hashtag={hashtag}>
                     Twitter
                 </TwitterShareButton>
-                <WhatsappShareButton onClick={() => { resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} title={title}>
+                <WhatsappShareButton onClick={() => { new Audio(click).play(); resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} title={title}>
                     WhatsApp
                 </WhatsappShareButton>
-                <TelegramShareButton onClick={() => { resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} title={title}>
+                <TelegramShareButton onClick={() => { new Audio(click).play(); resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} title={title}>
                     Telegram
                 </TelegramShareButton>
-                <button onClick={() => { shareOthers(); resetCampaignCountdown(); setSharePage(false); updateQuest(); }}>
+                <button onClick={() => { new Audio(click).play(); shareOthers(); resetCampaignCountdown(); setSharePage(false); updateQuest(); }}>
                     Outras Opções
                 </button>
             </div>

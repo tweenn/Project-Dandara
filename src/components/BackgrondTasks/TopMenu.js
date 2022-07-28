@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { UserContext } from "./UserDataContext";
 import { motion } from "framer-motion";
 import { AuthContext } from './AuthContex'
+import click from "../../sounds/click.mp3";
 
 function TopMenu() {
 
@@ -18,8 +19,8 @@ function TopMenu() {
             >
                 <button className="topMenuButtons">Seu Perfil</button>
                 <button className="topMenuButtons">Configurações</button>
-                <button className="topMenuButtons" onClick={() => { setRankingOpen(true); setTopMenuOpen(false); }}>Ranking</button>
-                <button className="topMenuButtons" onClick={() => signOut()}>Sair</button>
+                <button className="topMenuButtons" onClick={() => { new Audio(click).play(); setRankingOpen(true); setTopMenuOpen(false); }}>Ranking</button>
+                <button className="topMenuButtons" onClick={() => { new Audio(click).play(); signOut() }}>Sair</button>
             </motion.div>
         )
 

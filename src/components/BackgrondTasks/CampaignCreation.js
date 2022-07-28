@@ -3,6 +3,9 @@ import { db } from "../BackgrondTasks/firebase-config";
 import { UserContext } from '../BackgrondTasks/UserDataContext';
 import { doc, updateDoc } from 'firebase/firestore';
 import { motion } from "framer-motion";
+import click from "../../sounds/click.mp3";
+import plus from "../../sounds/plus.mp3";
+import minus from "../../sounds/minus.mp3";
 
 export const CampaignCreation = () => {
 
@@ -200,10 +203,10 @@ export const CampaignCreation = () => {
                             <h5>{ArtPoints}</h5>
                         </div>
                         <div>
-                            <button className="smallbutton" onClick={() => { setArtPoints(ArtPoints + 1); setAvaliablePoints(AvaliablePoints - 1); SetMultipliers() }} disabled={AvaliablePoints <= 0}>+</button>
-                            <button className="smallbutton" onClick={() => { setArtPoints(ArtPoints - 1); setAvaliablePoints(AvaliablePoints + 1); SetMultipliers() }} disabled={ArtPoints <= 0}>-</button>
-                            <button className="smallbutton" onClick={() => { setArtPoints(ArtPoints + 10); setAvaliablePoints(AvaliablePoints - 10); SetMultipliers() }} disabled={AvaliablePoints < 10}>+10</button>
-                            <button className="smallbutton" onClick={() => { setArtPoints(ArtPoints - 10); setAvaliablePoints(AvaliablePoints + 10); SetMultipliers() }} disabled={ArtPoints < 10}>-10</button>
+                            <button className="smallbutton" onClick={() => { new Audio(plus).play(); setArtPoints(ArtPoints + 1); setAvaliablePoints(AvaliablePoints - 1); SetMultipliers() }} disabled={AvaliablePoints <= 0}>+</button>
+                            <button className="smallbutton" onClick={() => { new Audio(minus).play(); setArtPoints(ArtPoints - 1); setAvaliablePoints(AvaliablePoints + 1); SetMultipliers() }} disabled={ArtPoints <= 0}>-</button>
+                            <button className="smallbutton" onClick={() => { new Audio(plus).play(); setArtPoints(ArtPoints + 10); setAvaliablePoints(AvaliablePoints - 10); SetMultipliers() }} disabled={AvaliablePoints < 10}>+10</button>
+                            <button className="smallbutton" onClick={() => { new Audio(minus).play(); setArtPoints(ArtPoints - 10); setAvaliablePoints(AvaliablePoints + 10); SetMultipliers() }} disabled={ArtPoints < 10}>-10</button>
                         </div>
                     </div>
                     <div className="atributeslist">
@@ -212,10 +215,10 @@ export const CampaignCreation = () => {
                             <h5>{TextPoints}</h5>
                         </div>
                         <div>
-                            <button className="smallbutton" onClick={() => { setTextPoints(TextPoints + 1); setAvaliablePoints(AvaliablePoints - 1); SetMultipliers() }} disabled={AvaliablePoints <= 0}>+</button>
-                            <button className="smallbutton" onClick={() => { setTextPoints(TextPoints - 1); setAvaliablePoints(AvaliablePoints + 1); SetMultipliers() }} disabled={TextPoints <= 0}>-</button>
-                            <button className="smallbutton" onClick={() => { setTextPoints(TextPoints + 10); setAvaliablePoints(AvaliablePoints - 10); SetMultipliers() }} disabled={AvaliablePoints < 10}>+10</button>
-                            <button className="smallbutton" onClick={() => { setTextPoints(TextPoints - 10); setAvaliablePoints(AvaliablePoints + 10); SetMultipliers() }} disabled={TextPoints < 10}>-10</button>
+                            <button className="smallbutton" onClick={() => { new Audio(plus).play(); setTextPoints(TextPoints + 1); setAvaliablePoints(AvaliablePoints - 1); SetMultipliers() }} disabled={AvaliablePoints <= 0}>+</button>
+                            <button className="smallbutton" onClick={() => { new Audio(minus).play(); setTextPoints(TextPoints - 1); setAvaliablePoints(AvaliablePoints + 1); SetMultipliers() }} disabled={TextPoints <= 0}>-</button>
+                            <button className="smallbutton" onClick={() => { new Audio(plus).play(); setTextPoints(TextPoints + 10); setAvaliablePoints(AvaliablePoints - 10); SetMultipliers() }} disabled={AvaliablePoints < 10}>+10</button>
+                            <button className="smallbutton" onClick={() => { new Audio(minus).play(); setTextPoints(TextPoints - 10); setAvaliablePoints(AvaliablePoints + 10); SetMultipliers() }} disabled={TextPoints < 10}>-10</button>
                         </div>
                     </div>
                     <div className="atributeslist">
@@ -224,10 +227,10 @@ export const CampaignCreation = () => {
                             <h5>{VideoPoints}</h5>
                         </div>
                         <div>
-                            <button className="smallbutton" onClick={() => { setVideoPoints(VideoPoints + 1); setAvaliablePoints(AvaliablePoints - 1); SetMultipliers() }} disabled={AvaliablePoints <= 0}>+</button>
-                            <button className="smallbutton" onClick={() => { setVideoPoints(VideoPoints - 1); setAvaliablePoints(AvaliablePoints + 1); SetMultipliers() }} disabled={VideoPoints <= 0}>-</button>
-                            <button className="smallbutton" onClick={() => { setVideoPoints(VideoPoints + 10); setAvaliablePoints(AvaliablePoints - 10); SetMultipliers() }} disabled={AvaliablePoints < 10}>+10</button>
-                            <button className="smallbutton" onClick={() => { setVideoPoints(VideoPoints - 10); setAvaliablePoints(AvaliablePoints + 10); SetMultipliers() }} disabled={VideoPoints < 10}>-10</button>
+                            <button className="smallbutton" onClick={() => { new Audio(plus).play(); setVideoPoints(VideoPoints + 1); setAvaliablePoints(AvaliablePoints - 1); SetMultipliers() }} disabled={AvaliablePoints <= 0}>+</button>
+                            <button className="smallbutton" onClick={() => { new Audio(minus).play(); setVideoPoints(VideoPoints - 1); setAvaliablePoints(AvaliablePoints + 1); SetMultipliers() }} disabled={VideoPoints <= 0}>-</button>
+                            <button className="smallbutton" onClick={() => { new Audio(plus).play(); setVideoPoints(VideoPoints + 10); setAvaliablePoints(AvaliablePoints - 10); SetMultipliers() }} disabled={AvaliablePoints < 10}>+10</button>
+                            <button className="smallbutton" onClick={() => { new Audio(minus).play(); setVideoPoints(VideoPoints - 10); setAvaliablePoints(AvaliablePoints + 10); SetMultipliers() }} disabled={VideoPoints < 10}>-10</button>
                         </div>
                     </div>
                     <div className="atributeslist">
@@ -236,17 +239,17 @@ export const CampaignCreation = () => {
                             <h5>{MusicPoints}</h5>
                         </div>
                         <div>
-                            <button className="smallbutton" onClick={() => { setMusicPoints(MusicPoints + 1); setAvaliablePoints(AvaliablePoints - 1) }} disabled={AvaliablePoints <= 0}>+</button>
-                            <button className="smallbutton" onClick={() => { setMusicPoints(MusicPoints - 1); setAvaliablePoints(AvaliablePoints + 1) }} disabled={MusicPoints <= 0}>-</button>
-                            <button className="smallbutton" onClick={() => { setMusicPoints(MusicPoints + 10); setAvaliablePoints(AvaliablePoints - 10) }} disabled={AvaliablePoints < 10}>+10</button>
-                            <button className="smallbutton" onClick={() => { setMusicPoints(MusicPoints - 10); setAvaliablePoints(AvaliablePoints + 10) }} disabled={MusicPoints < 10}>-10</button>
+                            <button className="smallbutton" onClick={() => { new Audio(plus).play(); setMusicPoints(MusicPoints + 1); setAvaliablePoints(AvaliablePoints - 1) }} disabled={AvaliablePoints <= 0}>+</button>
+                            <button className="smallbutton" onClick={() => { new Audio(minus).play(); setMusicPoints(MusicPoints - 1); setAvaliablePoints(AvaliablePoints + 1) }} disabled={MusicPoints <= 0}>-</button>
+                            <button className="smallbutton" onClick={() => { new Audio(plus).play(); setMusicPoints(MusicPoints + 10); setAvaliablePoints(AvaliablePoints - 10) }} disabled={AvaliablePoints < 10}>+10</button>
+                            <button className="smallbutton" onClick={() => { new Audio(minus).play(); setMusicPoints(MusicPoints - 10); setAvaliablePoints(AvaliablePoints + 10) }} disabled={MusicPoints < 10}>-10</button>
                         </div>
                     </div>
                 </div>
                 <h2>Convidado: {guest ? guest[0] : 'Nenhum'}</h2>
                 <div>
-                    <button onClick={() => { CampaignTotal() }} disabled={AvaliablePoints > 0 || campaignCost > money}>Confirmar Campanha</button>
-                    <button onClick={() => { setCampaign(''); resetResources() }}>Cancelar Campanha</button>
+                    <button onClick={() => { new Audio(click).play(); CampaignTotal() }} disabled={AvaliablePoints > 0 || campaignCost > money}>Confirmar Campanha</button>
+                    <button onClick={() => { new Audio(click).play(); setCampaign(''); resetResources() }}>Cancelar Campanha</button>
                 </div>
             </motion.div>
 

@@ -3,6 +3,7 @@ import { db } from "../BackgrondTasks/firebase-config";
 import { doc, updateDoc } from 'firebase/firestore';
 import { UserContext, } from './UserDataContext';
 import { motion } from "framer-motion";
+import click from "../../sounds/click.mp3";
 
 export const TopBarExplanationFront = () => {
 
@@ -17,7 +18,7 @@ export const TopBarExplanationFront = () => {
 
     if (currentQuest === 1) {
         return (
-            <motion.div onClick={() => { updateQuest(); }} initial={{ scale: 0 }}
+            <motion.div onClick={() => { new Audio(click).play(); updateQuest(); }} initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}>
                 <motion.div initial={{ scale: 0 }}
@@ -75,7 +76,7 @@ export const TopBarExplanationBack = () => {
                     animate={{ scale: 1 }}
                     exit={{ scale: 0 }}
                     transition={{ delay: 5 }} className='continuar'>
-                    <h2 onClick={() => { updateQuest(); }}>Clique para continuar</h2>
+                    <h2 onClick={() => { new Audio(click).play(); updateQuest(); }}>Clique para continuar</h2>
                 </motion.div>
             </div>
         );

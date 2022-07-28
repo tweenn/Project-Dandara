@@ -5,6 +5,7 @@ import { AuthContext } from './AuthContex';
 import { UserContext } from './UserDataContext';
 import { useNavigate } from 'react-router-dom';
 import "../Styles/login.css";
+import click from "../../sounds/click.mp3";
 
 export const SetNewPlayerName = () => {
     const { user } = useContext(AuthContext);
@@ -44,7 +45,7 @@ export const SetNewPlayerName = () => {
         <form onSubmit={createUserHandler}>
             <h2>Escolha um nome para seu personagem:</h2>
             <input type="text" placeholder="Nome:" onChange={event => setPlayerName(event.target.value)} required />
-            <button type="submit">Jogar!</button>
+            <button onClick={() => new Audio(click).play()} type="submit">Jogar!</button>
         </form>
     </div>
 }

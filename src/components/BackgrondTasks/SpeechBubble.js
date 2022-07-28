@@ -3,6 +3,8 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { db } from "../BackgrondTasks/firebase-config";
 import { UserContext } from './UserDataContext';
 import Typewriter from 'typewriter-effect';
+import bubblesound from "../../sounds/bubble.mp3";
+import click from "../../sounds/click.mp3";
 
 export const BubbleContext = createContext({})
 
@@ -34,8 +36,9 @@ export const SpeechBubbleContext = ({ children }) => {
 
 
     if (bubble) {
+        new Audio(bubblesound).play()
         return (
-            <div onClick={() => { RemoveBubble(); }} className="bubblewrapper">
+            <div onClick={() => { new Audio(click).play(); RemoveBubble(); }} className="bubblewrapper">
                 <img src='../../img/speechbubble.png' alt="" id="speechbubble" />
                 <img src={bubblePortrait} alt="" id="bubblePortrait" />
                 <div className="speechbubbletext" >

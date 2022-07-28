@@ -12,10 +12,12 @@ import { RespectManager } from "./components/BackgrondTasks/RespectManager";
 import { ExtrasOverlay } from "./components/BackgrondTasks/ExtrasOverlay";
 import { WorldOverlay } from "./components/BackgrondTasks/WorldOverlay";
 import { FullscreenManager } from "./components/BackgrondTasks/FullscreenManager";
+import click from "./sounds/clickplace.mp3";
+import menu from "./sounds/menu.mp3";
 
 function MainGameWindow() {
 
-  const { topMenuOpen, setTopMenuOpen, currentQuest, mobile, setMobile } = useContext(UserContext)
+  const { topMenuOpen, setTopMenuOpen, currentQuest, setMobile } = useContext(UserContext)
 
   const [animateSede, setAnimateSede] = useState(false);
   const [animateHotel, setAnimateHotel] = useState(false);
@@ -68,7 +70,7 @@ function MainGameWindow() {
           y: [10, 0, 10]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Ptsede">
-            <img src='../img/ptsede.png' alt="" id="ptsede" />
+            <img onClick={() => new Audio(click).play()} src='../img/ptsede.png' alt="" id="ptsede" />
           </Link>
         </motion.div>
         <motion.div animate={animateBusiness ? {
@@ -77,7 +79,7 @@ function MainGameWindow() {
           y: [20, 0, 20]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/BusinessCenter">
-            <img src='../img/businesscenter.png' alt="" id="businesscenter" />
+            <img onClick={() => new Audio(click).play()} src='../img/businesscenter.png' alt="" id="businesscenter" />
           </Link>
         </motion.div>
         <motion.div animate={animateApartment ? {
@@ -86,7 +88,7 @@ function MainGameWindow() {
           y: [10, 0, 10]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Apartment">
-            <img src='../img/apartment.png' alt="" id="apartment" />
+            <img onClick={() => new Audio(click).play()} src='../img/apartment.png' alt="" id="apartment" />
           </Link>
         </motion.div>
         <motion.div animate={animateHospital ? {
@@ -95,7 +97,7 @@ function MainGameWindow() {
           y: [25, 0, 25]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Hospital">
-            <img src='../img/hospital.png' alt="" id="hospital" />
+            <img onClick={() => new Audio(click).play()} src='../img/hospital.png' alt="" id="hospital" />
           </Link>
         </motion.div>
         <motion.div animate={animateUniversity ? {
@@ -104,7 +106,7 @@ function MainGameWindow() {
           y: [30, 0, 30]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/University">
-            <img src='../img/university.png' alt="" id="university" />
+            <img onClick={() => new Audio(click).play()} src='../img/university.png' alt="" id="university" />
           </Link>
         </motion.div>
         <motion.div animate={animateMayor ? {
@@ -112,7 +114,7 @@ function MainGameWindow() {
           y: [20, 0, 20]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/MayorHall">
-            <img src='../img/mayorhall.png' alt="" id="mayorhall" />
+            <img onClick={() => new Audio(click).play()} src='../img/mayorhall.png' alt="" id="mayorhall" />
           </Link>
         </motion.div>
         <img src='../img/kindamall.png' alt="" id="kindamall" />
@@ -123,7 +125,7 @@ function MainGameWindow() {
           y: [10, 0, 10]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Hotel">
-            <img src='../img/hotel.png' alt="" id="hotel" />
+            <img onClick={() => new Audio(click).play()} src='../img/hotel.png' alt="" id="hotel" />
           </Link>
         </motion.div>
         <motion.div animate={animateBank ? {
@@ -132,7 +134,7 @@ function MainGameWindow() {
           y: [20, 0, 20]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Bank">
-            <img src='../img/bank.png' alt="" id="bank" />
+            <img onClick={() => new Audio(click).play()} src='../img/bank.png' alt="" id="bank" />
           </Link>
         </motion.div>
         <motion.div animate={animateShopping ? {
@@ -141,7 +143,7 @@ function MainGameWindow() {
           y: [30, 0, 30]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/ShoppingMall">
-            <img src='../img/shoppingmall.png' alt="" id="shoppingmall" />
+            <img onClick={() => new Audio(click).play()} src='../img/shoppingmall.png' alt="" id="shoppingmall" />
           </Link>
         </motion.div>
         <motion.div animate={animateSports ? {
@@ -150,7 +152,7 @@ function MainGameWindow() {
           y: [-70, 0, -70]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Sports">
-            <img src='../img/sports.png' alt="" id="sports" />
+            <img onClick={() => new Audio(click).play()} src='../img/sports.png' alt="" id="sports" />
           </Link>
         </motion.div>
         <img src='../img/convenience2.png' alt="" id="convenience2" />
@@ -161,7 +163,7 @@ function MainGameWindow() {
           y: [-45, 0, -45]
         } : false} transition={{ repeat: Infinity, duration: 1 }}>
           <Link to="/Camara">
-            <img src='../img/camara.png' alt="" id="camara" />
+            <img onClick={() => new Audio(click).play()} src='../img/camara.png' alt="" id="camara" />
           </Link>
         </motion.div>
         <WorldOverlay />
@@ -175,7 +177,7 @@ function MainGameWindow() {
         <RankPulling />
         <Ranking />
         <RespectManager />
-        <button id="topbutton" onClick={() => setTopMenuOpen(!topMenuOpen)} />
+        <button id="topbutton" onClick={() => { new Audio(menu).play(); setTopMenuOpen(!topMenuOpen) }} />
       </div>
     </motion.div>
   )

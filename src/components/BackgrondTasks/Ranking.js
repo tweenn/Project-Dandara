@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { UserContext } from "./UserDataContext";
 import { motion } from "framer-motion";
 import { RespectManager } from "../BackgrondTasks/RespectManager";
+import click from "../../sounds/click.mp3";
 
 function Ranking() {
 
@@ -47,7 +48,7 @@ function Ranking() {
                     })}
                 </div>
                 <div className="buttonVoltar" onClick={() => { setRankingOpen(false); }}>
-                    <button>Voltar</button>
+                    <button onClick={() => new Audio(click).play()}>Voltar</button>
                 </div>
                 <RespectManager />
             </motion.div>

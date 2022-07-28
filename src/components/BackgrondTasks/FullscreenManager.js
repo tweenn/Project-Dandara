@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react'
 import { UserContext } from "./UserDataContext";
+import click from "../../sounds/click.mp3";
 
 export const FullscreenManager = () => {
 
@@ -16,11 +17,19 @@ export const FullscreenManager = () => {
                 }
             }
         };
-        return (
+        if (window.innerWidth < 450) {
+            return (
+                <div className='overlayfullscreenupright'>
+                    <h3 className='h3upright'>Para uma melhor experiência, ative o modo Tela Cheia:</h3>
+                    <h4 className='h4upright'>(Também utilize seu celular na horizontal)</h4>
+                    <button onClick={() => { new Audio(click).play(); toggleFullSceen(); setFullscreen(true); }}>Tela Cheia</button>
+                </div>
+            )
+        } else return (
             <div className='overlayfullscreen'>
                 <h3>Para uma melhor experiência, ative o modo Tela Cheia:</h3>
                 <h4>(Também utilize seu celular na horizontal)</h4>
-                <button onClick={() => { toggleFullSceen(); setFullscreen(true); }}>Tela Cheia</button>
+                <button onClick={() => { new Audio(click).play(); toggleFullSceen(); setFullscreen(true); }}>Tela Cheia</button>
             </div>
         )
     }
@@ -35,7 +44,7 @@ export const FullscreenManager = () => {
             }
         };
         return (
-            <button className='btnfullscreen' onClick={() => { toggleFullSceen(); setOn(!on) }}>◰ {on ? "Desativar " : "Ativar "}Modo Tela Cheia</button>
+            <button className='btnfullscreen' onClick={() => { new Audio(click).play(); toggleFullSceen(); setOn(!on) }}>◰ {on ? "Desativar " : "Ativar "}Modo Tela Cheia</button>
         )
     }
 

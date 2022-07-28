@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { db } from "../BackgrondTasks/firebase-config";
 import { UserContext } from "./UserDataContext";
 import { doc, updateDoc } from 'firebase/firestore';
+import click from "../../sounds/click.mp3";
 
 export const RespectManager = () => {
 
@@ -45,7 +46,7 @@ export const RespectManager = () => {
                     <h4>Seu nível de respeito agora é:</h4><h1>{respect}</h1><br />
                     <h4>Continue ganhando mais seguidores </h4>
                     <h4>para evoluir ainda mais!</h4>
-                    <button onClick={() => { updateShowLevelOnce(); setShowLevelUp(false); }}>Voltar</button>
+                    <button onClick={() => { new Audio(click).play(); updateShowLevelOnce(); setShowLevelUp(false); }}>Voltar</button>
                 </div>
             )
         }

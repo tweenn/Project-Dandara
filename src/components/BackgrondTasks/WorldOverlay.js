@@ -14,7 +14,7 @@ export const WorldOverlay = () => {
             </>
         )
     }
-    if (window.innerWidth < 450 || mobile) {
+    if (window.innerWidth < 450) {
         return (
             <div className='fullscreencell'>
                 <h4 className='virar'>Vire seu celular</h4>

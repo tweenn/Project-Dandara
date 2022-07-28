@@ -324,6 +324,31 @@ body {
     z-index: 5;
 }
 
+.overlayfullscreenupright {
+    border-radius: 25px;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    background-color: rgba(0, 0, 0);
+    background-size: cover;
+    position: fixed;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.h3upright {
+    padding-left: 1vw;
+    padding-top: 15vh;
+    font-size: 11px;
+}
+
+.h4upright {
+    font-size: 11px;
+}
+
 .fullscreencell {
     width: 100vw;
     height: 950px;
@@ -914,7 +939,9 @@ body {
     }
     #bank:hover {
         height: 24vh;
-        width: 20vw;
+        width: 18vw;
+        top: 24vh;
+        left: 79vw;
     }
     #shoppingmall {
         height: 24vh;
@@ -959,8 +986,10 @@ body {
         left: 32vw;
     }
     #camara:hover {
-        height: 24vh;
-        width: 20vw;
+        height: 25vh;
+        width: 17vw;
+        top: 74vh;
+        left: 32vw;
     }
     #billboard {
         position: fixed;
@@ -1000,5 +1029,16 @@ body {
     .points {
         left: 44vw;
         width: 5vw;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+    .loginwrapper {
+        height: 100vh;
+        width: 100vw;
     }
 }

@@ -4,6 +4,7 @@ import { UserContext } from './UserDataContext';
 import { doc, updateDoc } from 'firebase/firestore';
 import Typewriter from 'typewriter-effect';
 import { motion } from "framer-motion";
+import click from "../../sounds/click.mp3";
 
 export const CampaignResults = () => {
 
@@ -181,7 +182,7 @@ export const CampaignResults = () => {
                                 .typeString('DOAÇÕES: ' + campaignDonations)
                                 .start();
                         }} /></h4>
-                    <button onClick={() => { UpdateActiveCampaign(); setActiveCampaign(null); UpdateMoney(); resetStars(); setFollowers(followers + campaignResult); UpdateFollowers(); UpdateGuest(); updateQuest(); }}>Voltar</button>
+                    <button onClick={() => { new Audio(click).play(); UpdateActiveCampaign(); setActiveCampaign(null); UpdateMoney(); resetStars(); setFollowers(followers + campaignResult); UpdateFollowers(); UpdateGuest(); updateQuest(); }}>Voltar</button>
                 </div>
             </motion.div>
         )

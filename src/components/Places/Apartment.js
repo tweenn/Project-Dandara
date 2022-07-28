@@ -1,6 +1,7 @@
 import styles from '../Styles/insideplace.module.css'
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import click from "../../sounds/click.mp3";
 
 
 function Apartment() {
@@ -14,7 +15,7 @@ function Apartment() {
         >
             <p>Seu Apartamento</p>
             <Link to="/MainGameWindow">
-                <button>
+                <button onClick={() => new Audio(click).play()}>
                     Voltar
                 </button>
             </Link>

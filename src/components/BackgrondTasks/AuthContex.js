@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "./firebase-config";
 import { Navigate, Link } from "react-router-dom";
+import click from "../../sounds/click.mp3";
 
 const provider = new GoogleAuthProvider();
 
@@ -51,14 +52,14 @@ export const AuthProvider = ({ children }) => {
                 <form onSubmit={handleLogin}>
                     <input type="email" placeholder="Digite o seu e-mail." onChange={e => setEmail(e.target.value)} />
                     <input type="password" placeholder="Digite a sua senha." onChange={e => setPassword(e.target.value)} />
-                    <button type="submit">Entrar</button>
+                    <button onClick={() => new Audio(click).play()} type="submit">Entrar</button>
                     {error && <span className="spanLogin">E-mail/Senha inválidos.</span>}
                 </form>
                 <Link to="/AccountCreation">
-                    <button>Criar nova conta</button>
+                    <button onClick={() => new Audio(click).play()}>Criar nova conta</button>
                 </Link>
                 <br />
-                <button onClick={() => signInWithGoogle()}>Entrar com o Google</button>
+                <button onClick={() => { signInWithGoogle(); new Audio(click).play() }}>Entrar com o Google</button>
             </div>
         </div>
     };
@@ -70,7 +71,7 @@ export const AuthProvider = ({ children }) => {
                 <form onSubmit={handleLogin}>
                     <input type="email" placeholder="Digite o seu e-mail." onChange={e => setEmail(e.target.value)} />
                     <input type="password" placeholder="Digite a sua senha." onChange={e => setPassword(e.target.value)} />
-                    <button type="submit">Entrar</button>
+                    <button onClick={() => new Audio(click).play()} type="submit">Entrar</button>
                     {error && <span className="spanLogin">E-mail/Senha inválidos.</span>}
                 </form>
             </div>
