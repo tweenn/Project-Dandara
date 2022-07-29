@@ -52,6 +52,24 @@ button {
     width: 44px;
 }
 
+.changesong {
+    background-image: url(../../../public/img/forward.png);
+    opacity: .7;
+    height: 20px;
+}
+
+.volumeplus {
+    background-image: url(../../../public/img/volumeplus.png);
+    opacity: .7;
+    height: 20px;
+}
+
+.volumeminus {
+    background-image: url(../../../public/img/volumeminus.png);
+    opacity: .7;
+    height: 20px;
+}
+
 button:disabled {
     width: 210px;
     height: 40px;

@@ -3,7 +3,7 @@ import { UserContext } from "./UserDataContext";
 
 export const ExtrasOverlay = () => {
 
-    const { billboard } = useContext(UserContext);
+    const { billboard, music } = useContext(UserContext);
     const [on, setOn] = useState(true);
 
     if (billboard) {

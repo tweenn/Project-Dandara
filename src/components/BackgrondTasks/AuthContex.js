@@ -67,7 +67,8 @@ export const AuthProvider = ({ children }) => {
     const signInEmail2 = () => {
         return <div className="loginWrapper">
             <div className="login">
-                <h2>Conta criada com sucesso! Favor efetuar o login:</h2>
+                <h3>Conta criada com sucesso!</h3>
+                <h3>Favor efetuar o login:</h3>
                 <form onSubmit={handleLogin}>
                     <input type="email" placeholder="Digite o seu e-mail." onChange={e => setEmail(e.target.value)} />
                     <input type="password" placeholder="Digite a sua senha." onChange={e => setPassword(e.target.value)} />

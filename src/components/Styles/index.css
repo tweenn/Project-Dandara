@@ -682,6 +682,33 @@ body {
     left: 64px;
 }
 
+.player {
+    position: fixed;
+    top: 560px;
+    left: 30px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music {
+    border: none;
+    color: rgba(255, 255, 255, .7);
+    background: none;
+    text-shadow: none;
+}
+
+.music2 {
+    border: none;
+    color: rgba(255, 255, 255, .7);
+    background: none;
+    text-shadow: none;
+    margin-right: 10px;
+    font-style: italic;
+    font-size: 16px;
+}
+
 @media screen and (max-width: 950px) and (min-width: 500px) {
     #bgcity {
         width: 100vw;
@@ -825,6 +852,24 @@ body {
         top: 89vh;
         width: 35vw;
         left: 0vw;
+    }
+    .player {
+        top: 91vh;
+        left: 67vw;
+        width: 30vw;
+    }
+    .music {
+        font-size: 4vh;
+        margin-right: .5vw;
+    }
+    .music2 {
+        border: none;
+        color: rgba(255, 255, 255, .7);
+        background: none;
+        text-shadow: none;
+        margin-right: 10px;
+        font-style: italic;
+        font-size: 3.8vh;
     }
     #overlay {
         width: 100vw;

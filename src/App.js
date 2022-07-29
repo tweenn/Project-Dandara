@@ -1,12 +1,14 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import React from "react";
+import React, { useContext } from "react";
 import { AuthProvider } from './components/BackgrondTasks/AuthContex';
 import AnimatedRoutes from './components/BackgrondTasks/AnimatedRoutes'
 import { UserDataContext } from './components/BackgrondTasks/UserDataContext';
 import { Helmet } from "react-helmet";
+import { Music } from './components/BackgrondTasks/Music';
 
 
 function App() {
+
 
     return (
         <>
@@ -15,6 +17,7 @@ function App() {
             </Helmet>
             <AuthProvider>
                 <UserDataContext>
+                    <Music />
                     <Router>
                         <AnimatedRoutes />
                     </Router>
