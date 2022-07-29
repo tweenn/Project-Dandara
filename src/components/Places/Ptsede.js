@@ -158,26 +158,26 @@ function Ptsede() {
                 <h2>Criar Campanha Publicitária:</h2>
                 <div className={styles.Campanha}>
                     <div>
-                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { new Audio(click).play(); setCampaign('Outdoors'); setCampaignCost(1000); setDisableCampaign(true); updateQuest2(); }}>
+                        <button className="buttonMobile" disabled={disableCampaign || currentQuest < 10} onClick={() => { new Audio(click).play(); setCampaign('Outdoors'); setCampaignCost(1000); setDisableCampaign(true); updateQuest2(); }}>
                             Outdoors
                         </button>
-                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { new Audio(click).play(); setCampaign('Jornais e Revistas'); setCampaignCost(2000); setDisableCampaign(true); }}>
+                        <button className="buttonMobile" disabled={disableCampaign || currentQuest < 10} onClick={() => { new Audio(click).play(); setCampaign('Jornais e Revistas'); setCampaignCost(2000); setDisableCampaign(true); }}>
                             Jornais e Revistas
                         </button>
                     </div>
                     <div>
-                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { new Audio(click).play(); setCampaign('Rádio'); setCampaignCost(4000); setDisableCampaign(true); }}>
+                        <button className="buttonMobile" disabled={disableCampaign || currentQuest < 10} onClick={() => { new Audio(click).play(); setCampaign('Rádio'); setCampaignCost(4000); setDisableCampaign(true); }}>
                             Rádio
                         </button>
-                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { new Audio(click).play(); setCampaign('Internet'); setCampaignCost(5000); setDisableCampaign(true); }}>
+                        <button className="buttonMobile" disabled={disableCampaign || currentQuest < 10} onClick={() => { new Audio(click).play(); setCampaign('Internet'); setCampaignCost(5000); setDisableCampaign(true); }}>
                             Internet
                         </button>
                     </div>
                     <div>
-                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { new Audio(click).play(); setCampaign('Redes Sociais'); setCampaignCost(10000); setDisableCampaign(true); }}>
+                        <button className="buttonMobile" disabled={disableCampaign || currentQuest < 10} onClick={() => { new Audio(click).play(); setCampaign('Redes Sociais'); setCampaignCost(10000); setDisableCampaign(true); }}>
                             Redes Sociais
                         </button>
-                        <button className="buttonMobile" disabled={disableCampaign} onClick={() => { new Audio(click).play(); setCampaign('Televisão'); setCampaignCost(50000); setDisableCampaign(true); }}>
+                        <button className="buttonMobile" disabled={disableCampaign || currentQuest < 10} onClick={() => { new Audio(click).play(); setCampaign('Televisão'); setCampaignCost(50000); setDisableCampaign(true); }}>
                             Televisão
                         </button>
                     </div>

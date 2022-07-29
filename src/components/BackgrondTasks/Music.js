@@ -32,12 +32,12 @@ export const Music = () => {
             <div className='player'>
                 <h4 className='music'>Música: </h4><h5 className='music2'>{songName}</h5>
                 <button className='changesong' onClick={() => changeSong()}></button>
-                <button className='volumeminus' onClick={() => setVolume(volume - .1)}></button>
-                <button className='volumeplus' onClick={() => setVolume(volume + .1)}></button>
+                <button className='volumeminus' onClick={() => setVolume(volume > 0 ? volume - .1 : volume)}></button>
+                <button className='volumeplus' onClick={() => setVolume(volume < 10 ? volume + .1 : volume)}></button>
                 <ReactHowler
                     src={songPlaying}
                     playing={true}
-                    onEnd={changeSong}
+                    onEnd={volume > 0 ? changeSong : console.log()}
                     volume={volume}
                 />
             </div >
