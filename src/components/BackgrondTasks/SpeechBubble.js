@@ -69,7 +69,7 @@ export const SpeechBubbleContext = ({ children }) => {
                 const createBubbleText = () => {
                     setBubblePortrait('../../img/Port-Dandara.png');
                     setBubble(true);
-                    setBubbleText('Agora que você já um pouco da nossa interface, vamos começar? Clique na <p2>Sede do Partido</p2> localizada na parte <p2>superior esquerda</p2> do mapa.');
+                    setBubbleText('Agora que você já conhece um pouco da nossa interface, vamos começar? Clique na <p2>Sede do Partido</p2> localizada na parte <p2>superior esquerda</p2> do mapa.');
                 }
                 createBubbleText();
             }
