@@ -43,7 +43,7 @@ export const TopBarExplanationFront = () => {
                     animate={{ scale: 1 }}
                     exit={{ scale: 0 }}
                     transition={{ delay: 3 }} className='selector4'>
-                    <h3 className="desc4">Seu Orçamento</h3>
+                    <h3 className="desc4">Seus Créditos</h3>
                 </motion.div>
                 <motion.div initial={{ scale: 0 }}
                     animate={{ scale: 1 }}

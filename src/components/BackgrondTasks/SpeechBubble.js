@@ -78,7 +78,7 @@ export const SpeechBubbleContext = ({ children }) => {
             const createBubbleText = () => {
                 setBubblePortrait('../../img/Port-Tesoureiro.png');
                 setBubble(true);
-                setBubbleText('Olá <p2> ' + playerName + '</p2>! Eu sou o tesoureiro do partido. Todos os dias você deve visitar a nossa sede para garantir o recebimento do seu orçamento. O valor que você recebe diariamente aumentará de acordo com a sua <p2>reputação</p2>. Clique agora em <p2>Receber Orçamento</p2>.');
+                setBubbleText('Olá <p2> ' + playerName + '</p2>! Eu sou o tesoureiro do partido. Todos os dias você deve visitar a nossa sede para garantir o recebimento dos seus créditos. A quantidade que você recebe diariamente aumentará de acordo com a sua <p2>reputação</p2>. Clique agora em <p2>Receber Créditos</p2>.');
             }
             createBubbleText();
         }
@@ -94,7 +94,7 @@ export const SpeechBubbleContext = ({ children }) => {
             const createBubbleText = () => {
                 setBubblePortrait('../../img/Port-Hotelmanager.png');
                 setBubble(true);
-                setBubbleText('Olá <p2> ' + playerName + '</p2>! Nosso Hotel é sempre visitado por diversos <p2>artistas e famosos</p2> que, por um preço justo, se juntarão à sua <p2>próxima campanha publicitária</p2>, garantindo um super <p2>bônus</p2> no seu resultado! <br />E você está com sorte! Nossa <p2>Artista Local</p2> está disponível e dentro do seu orçamento, clique em <p2>contratar</p2>.');
+                setBubbleText('Olá <p2> ' + playerName + '</p2>! Nosso Hotel é sempre visitado por diversos <p2>artistas e famosos</p2> que, por créditos, se juntarão à sua <p2>próxima campanha publicitária</p2>, garantindo um super <p2>bônus</p2> no seu resultado! <br />E você está com sorte! Nossa <p2>Artista Local</p2> está disponível, clique em <p2>contratar</p2>.');
             }
             createBubbleText();
         }

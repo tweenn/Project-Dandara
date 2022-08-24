@@ -190,8 +190,8 @@ export const CampaignCreation = () => {
             >
                 <div>
                     <h3>Criação de Campanha para {campaign}</h3>
-                    <h4 className="alignright">Custo: {campaignCost}</h4>
-                    <h4 className="alignright">Seu orçamento atual: {money}</h4>
+                    <h4 className="alignright">Custo: {campaignCost} créditos</h4>
+                    <h4 className="alignright">Seu créditos: {money}</h4>
                 </div>
                 <div>
                     <h4>Alocação de Recursos Disponíveis:</h4> <h5>{AvaliablePoints}</h5>

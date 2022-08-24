@@ -622,12 +622,6 @@ body {
     flex-direction: column;
 }
 
-.rankingscroll {
-    height: 290px;
-    overflow-y: auto;
-    scrollbar-color: rgb(255, 153, 36) #ff4800;
-}
-
 ::-webkit-scrollbar {
     height: 0px;
     width: 0px;
@@ -642,6 +636,14 @@ body {
     background: transparent;
 }
 
+.rankingscroll {
+    height: 240px;
+    overflow-y: scroll;
+    scrollbar-color: rgb(255, 153, 36) #ff4800;
+    scrollbar-width: 0px;
+    padding: 0%;
+}
+
 .rankingSections {
     width: 500px;
     display: flex;
@@ -650,17 +652,26 @@ body {
     justify-content: space-between;
 }
 
-.centerRank {
-    position: fixed;
-    left: 318px;
-    width: 150px;
+.leftRankTitle {
+    width: 120px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
-.centerRank2 {
-    position: fixed;
-    left: 525px;
+.leftRank {
+    width: 85px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.rightRank {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+}
+
+.centerRank {
+    left: 318px;
     width: 150px;
     display: flex;
     justify-content: center;
@@ -668,7 +679,7 @@ body {
 
 .buttonVoltar {
     position: fixed;
-    top: 440px;
+    top: 480px;
 }
 
 .extrasOverlay {
@@ -800,7 +811,7 @@ body {
         position: fixed;
     }
     .rankingscroll {
-        height: 140px;
+        height: 160px;
     }
     .buttonVoltar {
         position: fixed;

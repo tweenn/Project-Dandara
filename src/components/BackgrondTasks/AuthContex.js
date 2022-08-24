@@ -1,10 +1,11 @@
 import { createContext, useEffect, useState } from "react";
-import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, FacebookAuthProvider } from "firebase/auth";
 import { app } from "./firebase-config";
 import { Navigate, Link } from "react-router-dom";
 import click from "../../sounds/click.mp3";
 
 const provider = new GoogleAuthProvider();
+const provider2 = new FacebookAuthProvider();
 
 export const AuthContext = createContext({})
 
@@ -60,6 +61,7 @@ export const AuthProvider = ({ children }) => {
                 </Link>
                 <br />
                 <button onClick={() => { signInWithGoogle(); new Audio(click).play() }}>Entrar com o Google</button>
+                <button onClick={() => { signInFacebook(); new Audio(click).play() }}>Entrar com o Facebook</button>
             </div>
         </div>
     };
@@ -102,6 +104,27 @@ export const AuthProvider = ({ children }) => {
 
             });
     };
+
+    const signInFacebook = () => {
+        const auth = getAuth();
+        signInWithPopup(auth, provider2)
+            .then((result) => {
+                const credential = FacebookAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                const user = result.user;
+                setUser(user)
+                sessionStorage.setItem("@AuthFirebase:token", token);
+                sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
+
+            }).catch((error) => {
+
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const email = error.customData.email;
+                const credential = FacebookAuthProvider.credentialFromError(error);
+
+            });
+    }
 
     function signOut() {
         sessionStorage.clear()

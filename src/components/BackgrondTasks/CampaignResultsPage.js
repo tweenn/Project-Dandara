@@ -216,7 +216,7 @@ export const CampaignResults = () => {
                             typewriter
                                 .pauseFor(7000)
                                 .callFunction(() => new Audio(moneysound).play())
-                                .typeString('DOAÇÕES: ' + campaignDonations)
+                                .typeString('DOAÇÕES: ' + campaignDonations + ' créditos')
                                 .start();
                         }} /></h4>
                     <button onClick={() => { new Audio(click).play(); UpdateActiveCampaign(); setActiveCampaign(null); UpdateMoney(); resetStars(); setFollowers(followers + campaignResult); UpdateFollowers(); UpdateGuest(); updateQuest(); }}>Voltar</button>

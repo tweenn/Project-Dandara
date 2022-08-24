@@ -146,13 +146,13 @@ function Ptsede() {
             <div className={styles.wrapper}>
                 <h1>Sede do Partido</h1>
                 <div className={styles.headergrouped}>
-                    <h4>Orçamento total: {money}</h4><br />
+                    <h4>Créditos totais: {money}</h4><br />
                     <h4>Nível de respeito: {respect}</h4><br />
-                    <h4>Orçamento diário: {dailyMoney}</h4><br />
+                    <h4>Créditos diários: {dailyMoney}</h4><br />
                 </div>
                 <div className={styles.grouped}>
                     <button className="buttonMobile" disabled={disable} onClick={() => { new Audio(click).play(); updateDisabledSede(); updateSedeCountdown(); updateMoney(); setMoney(newMoney); setDisable(true); setCountdownTimer(Date.now() + 86400000); updateQuest2(); }}>
-                        Receber Orçamento
+                        Receber Créditos
                     </button><ShowCountdown />
                 </div>
                 <h2>Criar Campanha Publicitária:</h2>
