@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { UserContext } from './UserDataContext';
-import { db } from "../BackgrondTasks/firebase-config";
+import { db } from "./firebase-config";
 import { doc, updateDoc } from 'firebase/firestore';
 import { FacebookShareButton, TelegramShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
 import click from "../../sounds/click.mp3";

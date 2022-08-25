@@ -15,6 +15,7 @@ import University from '../Places/University';
 import MainMenu from '../../MainMenu';
 import AccountCreation from '../BackgrondTasks/AccountCreation';
 import MainMenuRegistered from '../../MainMenuRegistered';
+import PublicRanking from './PublicRanking';
 import { PrivateRoutes } from './PrivateIndex';
 
 
@@ -25,6 +26,7 @@ export default function AnimatedRoutes() {
             <Route path="/" element={<MainMenu />} />
             <Route path="/MainMenuRegistered" element={<MainMenuRegistered />} />
             <Route path="/AccountCreation" element={<AccountCreation />} />
+            <Route path="/PublicRanking" element={<PublicRanking />} />
             <Route path="/MainGameWindow" element={<PrivateRoutes />}>
                 <Route path="/MainGameWindow" element={<MainGameWindow />} />
             </Route>
