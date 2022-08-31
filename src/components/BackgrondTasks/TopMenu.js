@@ -6,7 +6,7 @@ import click from "../../sounds/click.mp3";
 
 function TopMenu() {
 
-    const { topMenuOpen, setRankingOpen, setTopMenuOpen, setSettingsOpen } = useContext(UserContext)
+    const { topMenuOpen, setRankingOpen, setTopMenuOpen, setProfileOpen } = useContext(UserContext)
     const { signOut } = useContext(AuthContext)
 
     if (topMenuOpen) {
@@ -17,7 +17,7 @@ function TopMenu() {
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
             >
-                <button className="topMenuButtons">Seu Perfil</button>
+                <button className="topMenuButtons" onClick={() => { new Audio(click).play(); setProfileOpen(true); setTopMenuOpen(false); }}>Seu Perfil</button>
                 <button className="topMenuButtons" onClick={() => { new Audio(click).play(); setRankingOpen(true); setTopMenuOpen(false); }}>Ranking</button>
                 <button className="topMenuButtons" onClick={() => { new Audio(click).play(); setTopMenuOpen(false); signOut(); }}>Sair</button>
             </motion.div>

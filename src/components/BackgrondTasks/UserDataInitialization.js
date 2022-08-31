@@ -9,7 +9,7 @@ import MainGameWindow from '../../MainGameWindow'
 export const UserDataInit = () => {
 
     const { user } = useContext(AuthContext);
-    const { id, setMoney, setPlayerName, setCurrentQuest, setFollowers, setRespect, setBillboard, setShowLevelOnce } = useContext(UserContext);
+    const { id, setMoney, setPlayerName, setCurrentQuest, setFollowers, setRespect, setBillboard, setShowLevelOnce, setAvatarRef } = useContext(UserContext);
 
     if (id) {
         if (id === user.email) {
@@ -23,6 +23,7 @@ export const UserDataInit = () => {
                 setRespect(doc.data().respect);
                 setBillboard(doc.data().billboard);
                 setShowLevelOnce(doc.data().showlevelonce)
+                setAvatarRef(doc.data().avatarref)
             })
         }
         return <MainGameWindow />

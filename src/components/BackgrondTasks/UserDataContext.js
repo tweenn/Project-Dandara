@@ -33,21 +33,24 @@ export const UserDataContext = ({ children }) => {
     const [topMenuOpen, setTopMenuOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
     const [rankingOpen, setRankingOpen] = useState(false);
+    const [profileOpen, setProfileOpen] = useState(false);
     const [rankingAll, setRankingAll] = useState();
     const [guest, setGuest] = useState();
     const [guestCost, setGuestCost] = useState();
     const [topBarExplanation, setTopBarExplanation] = useState(true);
     const [sharePage, setSharePage] = useState(false);
+    const [shareRanking, setShareRanking] = useState(false);
     const [campaignDonations, setCampaignDonations] = useState(null);
     const [billboard, setBillboard] = useState(false);
     const [showLevelOnce, setShowLevelOnce] = useState();
     const [fullscreen, setFullscreen] = useState(false);
     const [mobile, setMobile] = useState(false);
+    const [avatarRef, setAvatarRef] = useState(null);
 
     return (
         <UserContext.Provider
 
-            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect, campaign, setCampaign, campaignCost, setCampaignCost, campaignResult, setCampaignResult, activeCampaign, setActiveCampaign, campaignStars, setCampaignStars, ArtStars, setArtStars, TextStars, setTextStars, MusicStars, setMusicStars, VideoStars, setVideoStars, gradeLetter, setGradeLetter, tributeImportance, setTributeImportance, rank, setRank, totalPlayers, setTotalPlayers, topMenuOpen, setTopMenuOpen, rankingOpen, setRankingOpen, rankingAll, setRankingAll, guest, setGuest, guestCost, setGuestCost, topBarExplanation, setTopBarExplanation, sharePage, setSharePage, campaignDonations, setCampaignDonations, billboard, setBillboard, showLevelOnce, setShowLevelOnce, fullscreen, setFullscreen, mobile, setMobile, ArtStarSound, setArtStarSound, TextStarSound, setTextStarSound, MusicStarSound, setMusicStarSound, VideoStarSound, setVideoStarSound, gradeSound, setGradeSound, settingsOpen, setSettingsOpen }}>
+            value={{ money, setMoney, playerName, setPlayerName, id, setId, currentQuest, setCurrentQuest, followers, setFollowers, respect, setRespect, campaign, setCampaign, campaignCost, setCampaignCost, campaignResult, setCampaignResult, activeCampaign, setActiveCampaign, campaignStars, setCampaignStars, ArtStars, setArtStars, TextStars, setTextStars, MusicStars, setMusicStars, VideoStars, setVideoStars, gradeLetter, setGradeLetter, tributeImportance, setTributeImportance, rank, setRank, totalPlayers, setTotalPlayers, topMenuOpen, setTopMenuOpen, rankingOpen, setRankingOpen, rankingAll, setRankingAll, guest, setGuest, guestCost, setGuestCost, topBarExplanation, setTopBarExplanation, sharePage, setSharePage, campaignDonations, setCampaignDonations, billboard, setBillboard, showLevelOnce, setShowLevelOnce, fullscreen, setFullscreen, mobile, setMobile, ArtStarSound, setArtStarSound, TextStarSound, setTextStarSound, MusicStarSound, setMusicStarSound, VideoStarSound, setVideoStarSound, gradeSound, setGradeSound, settingsOpen, setSettingsOpen, shareRanking, setShareRanking, profileOpen, setProfileOpen, avatarRef, setAvatarRef }}>
             {children}
 
         </UserContext.Provider>

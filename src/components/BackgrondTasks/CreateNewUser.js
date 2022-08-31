@@ -9,7 +9,7 @@ import click from "../../sounds/click.mp3";
 
 export const SetNewPlayerName = () => {
     const { user } = useContext(AuthContext);
-    const { setMoney, setPlayerName, playerName, setId, setCurrentQuest, setFollowers, setRespect, setBillboard, setShowLevelOnce } = useContext(UserContext);
+    const { setMoney, setPlayerName, playerName, setId, setCurrentQuest, setFollowers, setRespect, setBillboard, setShowLevelOnce, setAvatarRef } = useContext(UserContext);
 
     const navigate = useNavigate();
 
@@ -39,6 +39,7 @@ export const SetNewPlayerName = () => {
         setRespect(1);
         setBillboard(false);
         setShowLevelOnce(2);
+        setAvatarRef(null);
         navigate('/MainGameWindow');
     }
     return <div className="login">

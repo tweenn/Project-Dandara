@@ -5,22 +5,22 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { FacebookShareButton, TelegramShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
 import click from "../../sounds/click.mp3";
 
-export const ShareCampaign = () => {
+export const ShareRanking = () => {
 
-    const { id, setSharePage, sharePage, currentQuest, setCurrentQuest } = useContext(UserContext);
+    const { id, setShareRanking, shareRanking, currentQuest, setCurrentQuest } = useContext(UserContext);
 
     const Ref = doc(db, 'users', id)
 
-    const shareUrl = 'https://dandara.pegar.site'
-    const quote = 'Acabei de criar uma mega campanha no Project: Dandara! Venha jogar comigo também!'
+    const shareUrl = 'https://projectdandara.netlify.app/PublicRanking'
+    const quote = 'Já conhece o Dandaraverso? Veja só o nosso ranking e venha jogar com a gente!'
     const hashtag = '#dandara'
-    const title = 'Acabei de criar uma mega campanha no Project: Dandara! Venha jogar comigo também!'
+    const title = 'Já conhece o Dandaraverso? Veja só o nosso ranking e venha jogar com a gente!'
 
     const shareOthers = () => {
         navigator.share({
-            text: 'Acabei de criar uma mega campanha no Project: Dandara! Venha jogar comigo também!',
-            url: 'https://pegar.site.dandara',
-            title: 'Project: Dandara',
+            text: 'Já conhece o Dandaraverso? Veja só o nosso ranking e venha jogar com a gente!',
+            url: 'https://projectdandara.netlify.app/PublicRanking',
+            title: 'DandaraVerso',
         })
     }
 
@@ -35,23 +35,23 @@ export const ShareCampaign = () => {
         }
     }
 
-    if (sharePage) {
+    if (shareRanking) {
         return (
             <div className="overlayshare">
                 <h3>Compartilhe com seus amigos:</h3>
-                <FacebookShareButton onClick={() => { new Audio(click).play(); resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} quote={quote} hashtag={hashtag}>
+                <FacebookShareButton onClick={() => { new Audio(click).play(); setShareRanking(false) }} url={shareUrl} quote={quote} hashtag={hashtag}>
                     Facebook
                 </FacebookShareButton>
-                <TwitterShareButton onClick={() => { new Audio(click).play(); resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} title={title} hashtag={hashtag}>
+                <TwitterShareButton onClick={() => { new Audio(click).play(); setShareRanking(false) }} url={shareUrl} title={title} hashtag={hashtag}>
                     Twitter
                 </TwitterShareButton>
-                <WhatsappShareButton onClick={() => { new Audio(click).play(); resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} title={title}>
+                <WhatsappShareButton onClick={() => { new Audio(click).play(); setShareRanking(false) }} url={shareUrl} title={title}>
                     WhatsApp
                 </WhatsappShareButton>
-                <TelegramShareButton onClick={() => { new Audio(click).play(); resetCampaignCountdown(); setSharePage(false); updateQuest(); }} url={shareUrl} title={title}>
+                <TelegramShareButton onClick={() => { new Audio(click).play(); setShareRanking(false) }} url={shareUrl} title={title}>
                     Telegram
                 </TelegramShareButton>
-                <button onClick={() => { new Audio(click).play(); shareOthers(); resetCampaignCountdown(); setSharePage(false); updateQuest(); }}>
+                <button onClick={() => { new Audio(click).play(); shareOthers(); setShareRanking(false); }}>
                     Outras Opções
                 </button>
             </div>

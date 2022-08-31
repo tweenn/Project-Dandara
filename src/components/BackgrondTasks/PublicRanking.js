@@ -6,7 +6,7 @@ import { UserContext } from './UserDataContext';
 
 const userCollectionRef = collection(db, "users");
 
-function Ranking() {
+function PublicRanking() {
 
     const q = query(userCollectionRef, orderBy("followers", "desc"), limit(100));
 
@@ -20,15 +20,16 @@ function Ranking() {
 
         }
         getRank();
-    });
+    }, []);
 
     if (rankingAll) {
+
         return (
             <motion.div className="ranking"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
-            >   <p>teste</p>
+            >
                 <h1>RANKING</h1>
                 <div className="rankingSections">
                     <h3 className="leftRankTitle">Nome</h3>
@@ -37,13 +38,15 @@ function Ranking() {
                 </div>
                 <ul className="rankingscroll">
                     {rankingAll.map((rankingAll) => {
-                        <div key={rankingAll.email}>
-                            <li className="rankingSections">
-                                <h4 className="leftRank">{rankingAll.name}</h4>
-                                <h4 className="centerRank">{rankingAll.followers}</h4>
-                                <h4 className="rightRank">{rankingAll.respect}</h4>
-                            </li>
-                        </div>
+                        return (
+                            <div key={rankingAll.email}>
+                                <li className="rankingSections">
+                                    <h4 className="leftRank">{rankingAll.name}</h4>
+                                    <h4 className="centerRank">{rankingAll.followers}</h4>
+                                    <h4 className="rightRank">{rankingAll.respect}</h4>
+                                </li>
+                            </div>
+                        )
                     })}
                 </ul>
             </motion.div>
@@ -53,4 +56,4 @@ function Ranking() {
 
 
 
-export default Ranking
+export default PublicRanking

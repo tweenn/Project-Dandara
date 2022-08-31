@@ -720,6 +720,30 @@ body {
     font-size: 16px;
 }
 
+.profileAvatar {
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    height: 120px;
+    width: 120px;
+    border-radius: 25%;
+    border-color: rgb(255, 153, 36);
+    border-width: 2px;
+    border-style: solid;
+}
+
+.profilePicBtn {
+    position: absolute;
+    top: 170px;
+    left: 20px;
+}
+
+.file {
+    position: absolute;
+    top: 70px;
+    left: 55px;
+}
+
 @media screen and (max-width: 950px) and (min-width: 500px) {
     #bgcity {
         width: 100vw;

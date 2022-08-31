@@ -14,6 +14,7 @@ import { WorldOverlay } from "./components/BackgrondTasks/WorldOverlay";
 import { FullscreenManager } from "./components/BackgrondTasks/FullscreenManager";
 import click from "./sounds/clickplace.mp3";
 import menu from "./sounds/menu.mp3";
+import Profile from "./components/BackgrondTasks/Profile";
 
 function MainGameWindow() {
 
@@ -188,6 +189,7 @@ function MainGameWindow() {
         <TopBarExplanationFront />
         <RankPulling />
         <Ranking />
+        <Profile />
         <RespectManager />
         <button id="topbutton" onClick={() => { new Audio(menu).play(); setTopMenuOpen(!topMenuOpen) }} />
       </div>
