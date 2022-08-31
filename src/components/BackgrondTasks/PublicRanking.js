@@ -3,6 +3,8 @@ import { db } from "./firebase-config";
 import { collection, query, orderBy, getDocs, limit } from 'firebase/firestore';
 import { useContext, useEffect } from "react";
 import { UserContext } from './UserDataContext';
+import click from "../../sounds/click.mp3";
+import { Link } from 'react-router-dom';
 
 const userCollectionRef = collection(db, "users");
 
@@ -41,6 +43,7 @@ function PublicRanking() {
                         return (
                             <div key={rankingAll.email}>
                                 <li className="rankingSections">
+                                    <img src={rankingAll.avatarref ? rankingAll.avatarref : '../../img/defaultProfile.png'} className="rankingAvatar" alt="profilePicture" />
                                     <h4 className="leftRank">{rankingAll.name}</h4>
                                     <h4 className="centerRank">{rankingAll.followers}</h4>
                                     <h4 className="rightRank">{rankingAll.respect}</h4>
@@ -49,6 +52,9 @@ function PublicRanking() {
                         )
                     })}
                 </ul>
+                <Link to="/">
+                    <button onClick={() => { new Audio(click).play(); }}>Jogar!</button>
+                </Link>
             </motion.div>
         )
     }

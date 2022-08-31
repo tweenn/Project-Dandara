@@ -146,6 +146,14 @@ export const SpeechBubbleContext = ({ children }) => {
             }
             createBubbleText();
         }
+        if (currentQuest === 21) {
+            const createBubbleText = () => {
+                setBubblePortrait('../../img/Port-Tesoureiro.png');
+                setBubble(true);
+                setBubbleText('Agora, a melhor forma de conseguir <p2>mais créditos</p2> para a criação de <p2>mais campanhas</p2>, é se aventurar pela nossa cidade e descobrir as <p2>novas missões</p2> que preparamos para você, boa sorte!');
+            }
+            createBubbleText();
+        }
     }
 
     return (

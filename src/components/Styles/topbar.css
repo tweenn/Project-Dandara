@@ -45,7 +45,7 @@
 
 @media screen and (max-width: 950px) and (min-width: 500px) {
     .moneybar {
-        left: 58vw;
+        left: 60vw;
         font-size: 5vh;
     }
     .countdownbar {

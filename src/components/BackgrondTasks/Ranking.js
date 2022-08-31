@@ -29,6 +29,7 @@ function Ranking() {
                             return (
                                 <div key={id}>
                                     <li className="rankingSections">
+                                        <img src={rankingAll.avatarref ? rankingAll.avatarref : '../../img/defaultProfile.png'} className="rankingAvatar" alt="profilePicture" />
                                         <h6 className="leftRank">{rankingAll.name}</h6>
                                         <h6 className="centerRank">{rankingAll.followers}</h6>
                                         <h6 className="rightRank">{rankingAll.respect}</h6>
@@ -39,6 +40,7 @@ function Ranking() {
                             return (
                                 <div key={rankingAll.email}>
                                     <li className="rankingSections">
+                                        <img src={rankingAll.avatarref ? rankingAll.avatarref : '../../img/defaultProfile.png'} className="rankingAvatar" alt="profilePicture" />
                                         <h4 className="leftRank">{rankingAll.name}</h4>
                                         <h4 className="centerRank">{rankingAll.followers}</h4>
                                         <h4 className="rightRank">{rankingAll.respect}</h4>

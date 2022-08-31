@@ -649,11 +649,11 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .leftRankTitle {
-    width: 120px;
+    width: 200px;
     display: flex;
     justify-content: flex-start;
 }
@@ -671,10 +671,21 @@ body {
 }
 
 .centerRank {
-    left: 318px;
     width: 150px;
     display: flex;
     justify-content: center;
+    padding-right: 40px;
+    padding-left: 100px;
+}
+
+.rankingAvatar {
+    display: flex;
+    height: 30px;
+    width: 30px;
+    border-radius: 25%;
+    border-color: rgb(255, 153, 36);
+    border-width: 2px;
+    border-style: solid;
 }
 
 .buttonVoltar {
@@ -742,6 +753,12 @@ body {
     position: absolute;
     top: 70px;
     left: 55px;
+}
+
+.profileData {
+    position: absolute;
+    top: 220px;
+    left: 22px;
 }
 
 @media screen and (max-width: 950px) and (min-width: 500px) {

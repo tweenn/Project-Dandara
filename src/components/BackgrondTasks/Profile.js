@@ -10,12 +10,13 @@ import { doc, updateDoc, onSnapshot } from 'firebase/firestore';
 function Profile() {
 
 
-    const { profileOpen, id, setProfileOpen, avatarRef, setAvatarRef } = useContext(UserContext)
+    const { profileOpen, id, setProfileOpen, avatarRef, setAvatarRef, playerName, setPlayerName } = useContext(UserContext)
 
     const Ref = doc(db, 'users', id)
 
     const [imageUpload, setImageUpload] = useState(null);
     const [imageReady, setImageReady] = useState(false);
+    const [newName, setNewName] = useState('');
 
     const imageRef = imageUpload ? ref(storage, id) : null
 
@@ -41,6 +42,7 @@ function Profile() {
 
     onSnapshot(Ref, (doc) => {
         setAvatarRef(doc.data().avatarref);
+        setPlayerName(doc.data().name);
     })
 
     useEffect(() => {
@@ -61,6 +63,10 @@ function Profile() {
                     <img src={avatarRef ? avatarRef : '../../img/defaultProfile.png'} className="profileAvatar" alt="profilePicture" />
                     <input name="file" className="file" type={avatarRef ? 'hidden' : 'file'} onClick={() => { new Audio(click).play() }} onChange={(event) => { setImageUpload(event.target.files[0]); }} />
                     <button className="profilePicBtn" onClick={() => { new Audio(click).play(); avatarRef ? removeImage() : uploadImage().then(() => setImageReady(true)); }}>{avatarRef ? 'Remover Imagem' : 'Enviar Imagem'}</button>
+                    <div className="profileData">
+                        <h4>Nome:</h4><input type="text" defaultValue={playerName} onChange={e => setNewName(e.target.value)} />
+                        <button onClick={() => { new Audio(click).play(); updateDoc(Ref, { name: newName }) }}>Atualizar</button>
+                    </div>
                 </div>
                 <div className="buttonVoltar">
                     <button onClick={() => { new Audio(click).play(); setProfileOpen(false) }}>Voltar</button>

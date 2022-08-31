@@ -1,7 +1,6 @@
 import { useContext, useEffect } from "react";
 import { AuthContext } from "./components/BackgrondTasks/AuthContex";
 import { UpdateUserId } from "./components/BackgrondTasks/PreGameInitialization";
-import "./components/Styles/login.css";
 
 const Login = () => {
 
@@ -24,7 +23,6 @@ const Login = () => {
   }, [width])
 
   if (!signed) {
-
     return signInEmail();
 
   } else {

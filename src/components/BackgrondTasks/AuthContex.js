@@ -3,6 +3,8 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPasswor
 import { app } from "./firebase-config";
 import { Navigate, Link } from "react-router-dom";
 import click from "../../sounds/click.mp3";
+import ReactPlayer from 'react-player'
+import intro from "../../videos/Intro.mp4";
 
 const provider = new GoogleAuthProvider();
 const provider2 = new FacebookAuthProvider();
