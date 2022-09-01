@@ -11,7 +11,7 @@ export const ShareCampaign = () => {
 
     const Ref = doc(db, 'users', id)
 
-    const shareUrl = 'https://dandara.pegar.site'
+    const shareUrl = 'https://www.dandara1334.com/dandaraverso'
     const quote = 'Acabei de criar uma mega campanha no Project: Dandara! Venha jogar comigo também!'
     const hashtag = '#dandara'
     const title = 'Acabei de criar uma mega campanha no Project: Dandara! Venha jogar comigo também!'
@@ -19,7 +19,7 @@ export const ShareCampaign = () => {
     const shareOthers = () => {
         navigator.share({
             text: 'Acabei de criar uma mega campanha no Project: Dandara! Venha jogar comigo também!',
-            url: 'https://pegar.site.dandara',
+            url: 'https://www.dandara1334.com/dandaraverso',
             title: 'Project: Dandara',
         })
     }

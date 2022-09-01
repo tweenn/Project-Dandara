@@ -4,13 +4,11 @@ import Ptsede from "../Places/Ptsede";
 import MainGameWindow from '../../MainGameWindow'
 import BusinessCenter from '../Places/BusinessCenter';
 import Apartment from '../Places/Apartment';
-import Bank from '../Places/Bank';
 import Camara from '../Places/Camara';
 import Hospital from '../Places/Hospital';
 import Hotel from '../Places/Hotel';
 import MayorHall from '../Places/MayorHall';
 import ShoppingMall from '../Places/ShoppingMall';
-import Sports from '../Places/Sports';
 import University from '../Places/University';
 import MainMenu from '../../MainMenu';
 import AccountCreation from '../BackgrondTasks/AccountCreation';
@@ -39,9 +37,6 @@ export default function AnimatedRoutes() {
             <Route path="/Apartment" element={<PrivateRoutes />}>
                 <Route path="/Apartment" element={<Apartment />} />
             </Route>
-            <Route path="/Bank" element={<PrivateRoutes />}>
-                <Route path="/Bank" element={<Bank />} />
-            </Route>
             <Route path="/Camara" element={<PrivateRoutes />}>
                 <Route path="/Camara" element={<Camara />} />
             </Route>
@@ -56,9 +51,6 @@ export default function AnimatedRoutes() {
             </Route>
             <Route path="/ShoppingMall" element={<PrivateRoutes />}>
                 <Route path="/ShoppingMall" element={<ShoppingMall />} />
-            </Route>
-            <Route path="/Sports" element={<PrivateRoutes />}>
-                <Route path="/Sports" element={<Sports />} />
             </Route>
             <Route path="/University" element={<PrivateRoutes />}>
                 <Route path="/University" element={<University />} />

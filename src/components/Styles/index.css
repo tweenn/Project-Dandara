@@ -141,13 +141,6 @@ body {
     left: 632px;
 }
 
-#bank:hover {
-    position: fixed;
-    top: 179px;
-    left: 632px;
-    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
-}
-
 #shoppingmall {
     position: fixed;
     top: 250px;
@@ -165,13 +158,6 @@ body {
     position: fixed;
     top: 330px;
     left: 357px;
-}
-
-#sports:hover {
-    position: fixed;
-    top: 330px;
-    left: 357px;
-    filter: drop-shadow(0 0 1rem rgb(255, 153, 36)) brightness(110%);
 }
 
 #convenience2 {
@@ -761,6 +747,30 @@ body {
     left: 22px;
 }
 
+.missions {
+    width: 80%;
+}
+
+.picUpload {
+    position: absolute;
+    top: 10px;
+    left: 200px;
+    width: 250px;
+    height: 170px;
+}
+
+.filePic {
+    position: absolute;
+    top: 180px;
+    left: 215px;
+}
+
+.picBtn {
+    position: absolute;
+    top: 230px;
+    left: 220px;
+}
+
 @media screen and (max-width: 950px) and (min-width: 500px) {
     #bgcity {
         width: 100vw;
@@ -1029,12 +1039,6 @@ body {
         top: 28vh;
         left: 79vw;
     }
-    #bank:hover {
-        height: 24vh;
-        width: 18vw;
-        top: 28vh;
-        left: 79vw;
-    }
     #shoppingmall {
         height: 24vh;
         width: 20vw;
@@ -1048,12 +1052,6 @@ body {
         left: 64vw;
     }
     #sports {
-        height: 17vh;
-        width: 11vw;
-        top: 62vh;
-        left: 44.5vw;
-    }
-    #sports:hover {
         height: 17vh;
         width: 11vw;
         top: 62vh;

@@ -142,14 +142,7 @@ function MainGameWindow() {
             <img onClick={() => new Audio(click).play()} src='../img/hotel.png' alt="" id="hotel" />
           </Link>
         </motion.div>
-        <motion.div animate={animateBank ? {
-          scale: [.9, 1, .9],
-          y: [20, 0, 20]
-        } : false} transition={{ repeat: Infinity, duration: 1 }}>
-          <Link to="/Bank">
-            <img onClick={() => new Audio(click).play()} src='../img/bank.png' alt="" id="bank" />
-          </Link>
-        </motion.div>
+        <img src='../img/bank.png' alt="" id="bank" />
         <motion.div animate={animateShopping ? {
           scale: [.9, 1, .9],
           x: [-20, 0, -20],
@@ -159,15 +152,7 @@ function MainGameWindow() {
             <img onClick={() => new Audio(click).play()} src='../img/shoppingmall.png' alt="" id="shoppingmall" />
           </Link>
         </motion.div>
-        <motion.div animate={animateSports ? {
-          scale: [1.2, 1, 1.2],
-          x: [60, 0, 60],
-          y: [-70, 0, -70]
-        } : false} transition={{ repeat: Infinity, duration: 1 }}>
-          <Link to="/Sports">
-            <img onClick={() => new Audio(click).play()} src='../img/sports.png' alt="" id="sports" />
-          </Link>
-        </motion.div>
+        <img src='../img/sports.png' alt="" id="sports" />
         <img src='../img/convenience2.png' alt="" id="convenience2" />
         <img src='../img/supermarket.png' alt="" id="supermarket" />
         <motion.div animate={animateCamara ? {
