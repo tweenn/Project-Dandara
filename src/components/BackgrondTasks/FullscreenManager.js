@@ -33,19 +33,17 @@ export const FullscreenManager = () => {
             </div>
         )
     }
-    if (fullscreen === true) {
-        const toggleFullSceen = () => {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen();
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
-            }
-        };
-        if (window.innerWidth < 950) return (
-            <button className='btnfullscreen' onClick={() => { new Audio(click).play(); toggleFullSceen(); setOn(!on) }}>◰ {on ? "Desativar " : "Ativar "}Modo Tela Cheia</button>
-        )
-    }
-
+    // if (fullscreen === true) {
+    //     const toggleFullSceen = () => {
+    //         if (!document.fullscreenElement) {
+    //             document.documentElement.requestFullscreen();
+    //         } else {
+    //         if (document.exitFullscreen) {
+    //             document.exitFullscreen();
+    //         }
+    //     }
+    // };
+    if (window.innerWidth < 950) return (
+        <button className='btnfullscreen' onClick={() => { new Audio(click).play(); setOn(!on) }}>◰ {on ? "Desativar " : "Ativar "}Modo Tela Cheia</button>
+    )
 }
