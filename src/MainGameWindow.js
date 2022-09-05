@@ -167,7 +167,7 @@ function MainGameWindow() {
         <WorldOverlay />
         <SpeechBubbleContext />
         <ExtrasOverlay />
-        <FullscreenManager />
+        {/* <FullscreenManager /> */}
         <TopBarExplanationBack />
         <Topbar />
         <TopMenu />
