@@ -29,7 +29,7 @@ export const FullscreenManager = () => {
             <div className='overlayfullscreen'>
                 <h3>Para uma melhor experiência, ative o modo Tela Cheia:</h3>
                 <h4>(Também utilize seu celular na horizontal)</h4>
-                <button onClick={() => { new Audio(click).play(); toggleFullSceen(); setFullscreen(true); }}>Tela Cheia</button>
+                <button onClick={() => { new Audio(click).play(); setFullscreen(true); }}>Tela Cheia</button>
             </div>
         )
     }
